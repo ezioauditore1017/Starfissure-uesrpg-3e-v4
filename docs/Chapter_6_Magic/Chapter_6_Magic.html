@@ -1,0 +1,3576 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Chapter_6_Magic</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Chapter_6_Magic"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chapter_6_Magic"/><meta name="twitter:description" content="Chapter 6: Magic The Charm is intensified by the energy you bring to it, by your own skills, just as all spells are."/><meta property="og:description" content="Chapter 6: Magic The Charm is intensified by the energy you bring to it, by your own skills, just as all spells are."/><meta property="og:image:alt" content="Chapter 6: Magic The Charm is intensified by the energy you bring to it, by your own skills, just as all spells are."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Chapter_6_Magic/Chapter_6_Magic"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Chapter_6_Magic/Chapter_6_Magic"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Chapter 6: Magic The Charm is intensified by the energy you bring to it, by your own skills, just as all spells are."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXEdpdGh1YlxcU3RhcmZpc3N1cmUtdWVzcnBnLTNlLXY0XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/Chapter_6_Magic/Chapter_6_Magic-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/Chapter_6_Magic/Chapter_6_Magic-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/Chapter_6_Magic/Chapter_6_Magic-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Chapter_6_Magic/Chapter_6_Magic"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-16"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-16" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Chapter_6_Magic/">Chapter_6_Magic</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Chapter_6_Magic</a></div></nav><h1 class="article-title">Chapter_6_Magic</h1><p show-comma="true" class="content-meta"><time datetime="2025-09-18T18:46:52.331Z">Sep 18, 2025</time><span>54 min read</span></p></div></div><article class="popover-hint"><h1 id="chapter-6-magic">Chapter 6: Magic<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-6-magic" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>The Charm is intensified by the energy you bring to it, by your own skills, just as all spells are. Your imagination
+and your Willpower are the keys. There is no need for a spell to give you a resistance to air, or a resistance to flowers, and
+after you cast the Charm, you must forget there is even a need for a spell to give you resistance to fire. Do not confuse
+what I am saying: resistance is not about ignoring the fires reality. You will feel the substance of flame, the texture of it,
+its hunger, and even the heat of it, but you will know that it will not hurt or injure you.</p>
+<p>Sotha Sil, 2920, Last Year of the First Era</p>
+<p>There are a number of ways that any given magical effect can be
+manifested. The main four methods of using magic (listed below)
+are the focus of this chapter, as they are the most common
+means of manipulating magicka.</p>
+<pre><code>Spellcasting allows characters to draw on their own 
+</code></pre>
+<p>magicka reserves in order to generate an effect in the
+physical world. Spell casters cast spells using the skill cor-
+responding to the school of magic that the spell is associated
+with. Casters either learn spells or create them from ones
+they already know, though this can be risky.
+Enchanting involves using the magicka from souls them-
+selves to fuel magic stored within an object. Enchanters
+can use the Enchanting skill to create a number of different
+items with many possible effects.</p>
+<pre><code>  Alchemy uses the magicka trapped within different things 
+</code></pre>
+<p>as power to fuel potions with magical effects. Alchemists
+can use the Alchemy skill to create a variety of potions.
+Ritual Magic is a form of spellcasting that, while it often
+requires extensive preparation, can produce potent effects.
+Thus Ritual Magic uses the six standard spellcasting Skills,
+though the amount of power involved means that rituals
+can prove quite dangerous if botched.</p>
+<p>Racial and Birthsign powers can be found in Powers in Chapter
+2. Other advanced forms of magic exist as well: their rules can
+be found in the Elite Advances section.</p>
+<p>Very few can master it, but all are touched by its presence.</p>
+<p>Magic is the general term used for the focusing of the raw
+energy that flows from Aetherius into Mundus by way of the sun
+and stars into various properties and for various purposes. This
+energy is often referred to as magicka. All magical energy comes
+from Aetherius, and from its magicka Mundus was created.
+Magicka comprises every spirit; it is the energy of all living
+things and can be harnessed in a variety of ways. This chapter
+contains rules for magic in its most common forms, as well as
+other aspects of the arcane that may be relevant in the course
+of the players adventure.</p>
+<p>The various magic effects are divided into parent Schools of
+magic. Exactly which schools are recognized, and how theyre
+organized, varies from era to era in Tamriel, but for the sake
+of simplicity this rulebook will utilize the following schools:</p>
+<pre><code>  The school of Alteration revolves around altering the 
+</code></pre>
+<p>physical and magical properties of the world. This can
+be used to augment the self and allies, or hinder enemies.
+The school of Conjuration focuses on calling upon oth-
+erworldly entities. These entities can manifest in a number
+of different forms.</p>
+<pre><code>  The school of Destruction centers on harming targets in 
+</code></pre>
+<p>a variety of ways. Either through direct damage or sapping
+their abilities and defenses.</p>
+<pre><code>  The school of Illusion focuses on affecting light and the 
+</code></pre>
+<p>minds of sentient targets. Illusion can be used to manipulate
+an enemys perception of reality, or augment ones own.
+The school of Mysticism is a more obscure school, and
+its spells manipulate magicka itself. Mysticism can be used
+for many effects, including binding and trapping souls, or
+reflecting spells.</p>
+<pre><code>  The school of Restoration revolves around augmenting 
+</code></pre>
+<p>and restoring the abilities and body of a target. It also
+contains effects that can be used against the undead.</p>
+<p>These are not the only schools of magic in the UESRPG either.
+Certain supplements contain more obscure or dangerous rules
+for characters wishing to harness unique varieties of magic.</p>
+<p>Note - Schools
+The makeup of the schools of magic have varied drastically
+over the eras. The division portrayed here is the one
+utilized in The Elder Scrolls III: Morrowind. If playing a
+game in a different era, it is possible to simply regroup
+the spells and effects to reflect the historically correct
+school-division. Alternatively the group can simply leave
+things as they are for convenience.</p>
+<p>126</p>
+<p>SpellCaStinG</p>
+<p>Spellcasting is the act of drawing on ones own magicka reserves
+in order to generate some sort of effect on the world. Spells can
+be used to create, change, destroy, or manipulate the world and
+the beings within it.</p>
+<p>Spell Components
+Casting spells requires a combination of physical components
+(typically precise hand motions), verbal components (incan-
+tations or words of power), and the mental component of
+channeling ones magicka into the desired effect. Characters
+can combine all three of these components in order to produce
+a magical effect, which is known as casting a spell.</p>
+<p>Spell Levels
+Each spells Spell Level is used to determine how much
+magicka it costs for a character to cast (the specific cost will be
+listed with the spell). Higher level spells produce more powerful
+effects. Each level of a spell is its own distinct spell and must
+be learned separately. Some spells have fewer than 7 levels.</p>
+<p>Spell Levels/Names</p>
+<p>Spell Level Name</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>Novice</p>
+<p>Apprentice</p>
+<p>Journeyman</p>
+<p>Adept</p>
+<p>Expert</p>
+<p>Master</p>
+<p>Grandmaster</p>
+<p>Learning a spell takes a number of days equal to the level
+of the spell and typically requires a character to study from
+a spell tome or learn from a teacher.</p>
+<p>Spell Schools
+Each spell has one or more associated schools of magic. These
+reflect the type of effect the spell generates and also determine
+which skill(s) the character must use in order to cast it.</p>
+<p>Spell Types
+In addition to whatever school it is associated with, spells fall
+into one of two types: Conventional or Unconventional spells.</p>
+<p>Conventional Spells are tried and true spells that fall clearly
+within a single school and produce only a single effect. They are
+spells that have been refined over generations by the mages of
+Tamriel: simple incantations and patterns that produce reliable
+effects. In game terms conventional spells are premade spells;
+they exist as a set of  easy premade options to choose from.</p>
+<p>Unconventional Spells are spells that produce more than a
+single effect, can be classified as belonging to more than one
+school, or are simply a unique variation on a standard effect.
+These spells are considered the realm of over-eager apprentices
+and learned masters: experimental magic that can bring great
+risks and great rewards. In game terms unconventional spells
+are custom spells; they are how players can tinker with magic.</p>
+<p>Spell Attributes
+Many spells have attributes listed in their profiles that modify
+their rules or clarify how they function in game terms. The
+effects for these attributes are detailed in the Conventional
+Spells section later in this chapter.</p>
+<p>Effect Durations
+Effect durations are measured in rounds and end immediately
+after the initiative step on which they took effect. For example,
+if an Orc is stunned for 2 rounds on their turn, they remain
+stunned until right after the end of their turn 2 rounds later
+(assuming their turn takes place at the same initiative step as</p>
+<p>127</p>
+<p>it did originally).</p>
+<p>Casting Spells
+In structured time, characters use the Cast Magic action to cast
+spells. Follow these steps to resolve spellcasts:</p>
+<p>Step 1: Caster Declares Spell and Targets
+First the caster must choose a spell to cast from among those they
+know. If the spell has a target (or targets) other than themself,
+they must choose them now provided they satisfy the spell
+conditions (range, etc).</p>
+<p>Step 2: Casting Test
+The caster makes a skill test with the skill corresponding to the
+school of the spell (the Destruction skill for Destruction spells,
+and so forth). This test suffers a -10 penalty for each point
+by which the spell level exceeds the characters Spellcasting
+Level with that spell. Their Spellcasting Level is determined
+by taking the spells school skill level and adding one.  If the
+character is untrained in that schools skill, the Spellcasting
+Level in that school is considered zero, and they cannot cast
+spells from that school.</p>
+<p>Spell Components
+If the character cannot speak they suffer a -20 penalty to the
+casting test. They suffer an additional -20 penalty to the test if
+they do not have two free hands, either because they are holding
+items or because their movement is restricted in some way.</p>
+<p>Step 3: Resolve the Spell
+Pass or fail, the caster reduces their magicka by the listed cost of
+the spell. If this would reduce the characters magicka to below
+zero, then the spell is not successfully cast.</p>
+<p>If the caster passed the test, resolve the effects of the spell as
+written. If the character is casting a multi-part spell, then resolve</p>
+<p>each part of the spell simultaneously (meaning that none of the
+parts benefit from the effects of any of the other parts).</p>
+<p>Attack Spells
+Spells with the attack attribute count as attacks. They are
+resolved as appropriate for an attack of that type (either ranged
+or melee):
+The casting test for the spell is also the attack test, and the
+casters degrees of success are compared to the defenders.
+Spell casting tests can suffer from circumstantial modifiers
+that the GM rules are appropriate.
+Spells cannot gain or benefit from advantages.
+Spells cannot be parried or countered, only blocked/evaded.
+Critical successes cause damaging spells to deal maximum
+damage. Non-damaging spells double their Magicka cost
+reduction from Spell Restraint (still subject to the 1 cost
+minimum).
+Spells cannot benefit from Stamina points.
+Spells with the AoE attribute are resolved as AoE attacks.</p>
+<p>Spell Restraint
+On a successful spellcast, a mage can use their will to limit
+excessive use of magicka. This is known as Spell Restraint
+or restrained spellcasting. A character can choose to reduce the
+cost of a successfully cast spell by their Willpower bonus to a
+minimum of 1.</p>
+<p>While typically this is desirable, sometimes not holding back
+with a spell can have extra benefits. Some spells have the
+Overload attribute, which will state certain extra effects the
+character can benefit from if they choose not to restrain the
+spell when casting it.</p>
+<p>Magical Backfires
+If a character critically fails when casting a spell, or fails normally
+when casting either an unconventional spell or any spell with a
+spell level above their Spellcasting Level in the corresponding
+school, then they suffer a Magical Backfire. A Magical Backfire is
+an uncontrolled, and often harmful, consequence of incorrectly
+manipulating unfamiliar magic. Find the table corresponding
+to the backfired spells school in the Magical Mishaps section,
+roll a d4, and add the spell level to the result of the roll.</p>
+<p>Resolving Opposing Spell Effects
+Certain spell effects can be seen as opposing (Enrage and Calm,
+for instance), which can bring some confusion if a target struck
+by one is then hit by the other. Resolve all such instances by
+simply assuming that the newer spell effect overrides the old one.</p>
+<p>128</p>
+<p>Conventional SpellS</p>
+<p>Conventional spells are tried and true spells that fall clearly
+within a single school and produce only a single effect. They are
+spells that have been refined over generations by the mages of
+Tamriel: simple, elegant incantations and patterns that produce
+reliable effects. This section contains rules for using conventional
+spells and a full list of them.</p>
+<p>Spell Profiles
+Each conventional spell profile listed here includes the follow-
+ing: the name of the spell, its school, its spell level(s)/strength,
+corresponding magicka costs, spell attributes, and rules for
+resolving the spell. The Spell Strength of a spell is simply a
+variable that is used to quantify the strength of the spell in its
+rules entry, and that is based on the spell level.</p>
+<p>Spell Levels/Names</p>
+<p>Spell Level</p>
+<p>Name</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>Novice</p>
+<p>Apprentice</p>
+<p>Journeyman</p>
+<p>Adept</p>
+<p>Expert</p>
+<p>Master</p>
+<p>Grandmaster</p>
+<p>Unless otherwise specified, spell effects do not stack with
+themselves.</p>
+<p>Spell Attributes
+Many spells have attributes listed in their profiles that modify
+their rules or clarify how they function in game terms. The rules
+for spell attributes apply to all types of spells but are included
+in this section for convenience:</p>
+<p>Attack: Using this effect is considered an Attack for the</p>
+<p>purposes of determining Attacks per round.</p>
+<p>Instant: This spell can be cast using a Secondary Action,
+permitting the caster to either cast the spell on their turn
+or as a Reaction outside of their turn.</p>
+<p>Upkeep: The caster can, as a free action, refresh the
+effect (including any required tests or rolls, not includ-
+ing the casting test, using the original target(s)) and
+duration  of  this  spell  when  it  ends  by  paying  the
+original cost that they paid for the spell as long as the
+requirements  for  the  spell  (like  range)  are  still  met.</p>
+<p>the spell if they have cast a different spell since the original
+cast. If a spell has the Attack attribute, then upkeeping the
+spell counts toward the maximum attacks per round limit.
+Overload: The caster benefits from an extra effect (as spec-
+ified) if not restraining this spell.
+Reinforce: By default, spells with the Reinforce attribute
+have no extra effects. When a character takes the Mage
+Guard and the Arcane Defender talents, they benefit from
+a bonus to the spell effect if not restraining the spell.
+Ranged (range): Spell can affect a target within the listed
+range.
+Melee (range): Spell counts as melee with the listed range.
+Does not provoke attacks of opportunity.</p>
+<pre><code>  AoE (range, form): This spell counts as a ranged, area of 
+</code></pre>
+<p>effect of the given form/radius. Pulse form AoEs affect
+the caster.
+Direct: This spell has a target or targets but is not an attack
+and cannot be defended against by normal means.
+Mindlock (X): Reduces the casters max AP by X to a
+minimum of zero.
+[Variation]: This spell has multiple variations, each cor-
+responding to one of the listed items. Each variation is its
+own spell that must be learned separately.</p>
+<p>Alteration
+The school of Alteration revolves around altering the physical
+and magical properties of the world. This can be used to aug-
+ment the self and allies or hinder enemies.</p>
+<p>Armor
+Normal physical armor is far too bulky for most mages. This spell
+magically reinforces ones being to be on par with even the most
+well forged steel.
+Upkeep, Reinforce, Instant
+1</p>
+<p>Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>6</p>
+<p>11</p>
+<p>16</p>
+<p>21</p>
+<p>26</p>
+<p>31</p>
+<p>36</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Caster gains [Spell Strength] AR to all hit locations for 1 minute.<br/>
+This spell only stacks with physical armor.</p>
+<p>Burden
+All that armor that bandit is wearing looks pretty heavy. And now
+its twice as heavy. Proof that Alteration is the best school of magic.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>7</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>10</p>
+<p>+10</p>
+<p>13</p>
+<p>+0</p>
+<p>16</p>
+<p>-10</p>
+<p>19</p>
+<p>-20</p>
+<p>22</p>
+<p>-30</p>
+<p>25</p>
+<p>-40</p>
+<p>If the spell has no listed duration, then treat the effect as
+having a 1 round duration for the purposes of upkeep.
+Additionally, spells with no listed duration cannot be upkept</p>
+<p>Target character within 50m must make a Strength test (ignore
+encumbrance penalties) with a [Spell Strength] modifier or raise
+their Encumbrance level by one for 1 round. This spell can stack</p>
+<p>129</p>
+<p>and each instance of this spell is upkept separately.</p>
+<p>Feather
+All that loot gets pretty heavy. And now its not. Even further proof
+that Alteration is the best school of magic.
+Upkeep, Instant
+3
+Level:</p>
+<p>Cost:</p>
+<pre><code> 11
+</code></pre>
+<p>Caster lowers their Encumbrance level by one for 1 round and
+treats their armor as being one weight class lighter (character
+counts as being trained to wear this type of armor even if they
+normally would not be).</p>
+<p>Jump
+Leap towards the heavens! Bound for the sky! Remember to pack
+your slowfall amulet!
+Instant</p>
+<p>Level:</p>
+<pre><code>1
+</code></pre>
+<p>Cost:</p>
+<p>2</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+
+2
+</code></pre>
+<p>3</p>
+<pre><code>2
+
+3
+</code></pre>
+<p>4</p>
+<pre><code>3
+
+4
+</code></pre>
+<p>5</p>
+<pre><code>4
+
+5
+</code></pre>
+<p>6</p>
+<pre><code>5
+
+6
+</code></pre>
+<p>7</p>
+<pre><code>6
+
+7
+</code></pre>
+<p>8</p>
+<pre><code>7
+</code></pre>
+<p>The next time the caster jumps within 1 minute they may jump
+[Spell Strength] meters higher or further.</p>
+<p>Levitate
+Because sometimes just jumping does not cover it. Try not to abuse
+this and get it banned in every civilized province again.
+Upkeep</p>
+<p>Level:</p>
+<pre><code>1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>7</p>
+<p>3</p>
+<p>13</p>
+<p>6</p>
+<p>19</p>
+<p>9</p>
+<p>25</p>
+<p>12</p>
+<p>31</p>
+<p>15</p>
+<p>37</p>
+<p>18</p>
+<p>43</p>
+<p>21</p>
+<p>The caster gains the Flyer ([Spell Strength]) trait for 1 minute.</p>
+<p>Lock
+A useful but often overlooked spell, allowing one to magically seal
+a door or container with a simple incantation.
+Instant</p>
+<p>Level:</p>
+<pre><code>1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>4</p>
+<p>2</p>
+<p>7</p>
+<p>4</p>
+<p>10</p>
+<p>6</p>
+<p>13</p>
+<p>8</p>
+<p>16</p>
+<p>10</p>
+<p>19</p>
+<p>12</p>
+<p>22</p>
+<p>14</p>
+<p>The caster chooses a door or container within 1 meter, which
+immediately locks itself. Defeating this lock requires an extended
+Subterfuge test with a success threshold of [Spell Strength].</p>
+<p>Magic Armor
+A generic protection spell against all forms of magical damage.
+Upkeep, Reinforce, Instant
+1</p>
+<p>Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>7</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+</code></pre>
+<p>13</p>
+<pre><code>2
+</code></pre>
+<p>19</p>
+<pre><code>3
+</code></pre>
+<p>25</p>
+<p>31</p>
+<p>37</p>
+<p>43</p>
+<pre><code>4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Caster gains [Spell Strength] magic AR to all hit locations for
+1 minute. This spell only stacks with physical armor.</p>
+<p>Magic Shield
+I am sure you are starting to realize just how powerful magic can
+be. This spell is for when your enemy does too.
+Upkeep, Reinforce, Instant
+1</p>
+<p>Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>3</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+</code></pre>
+<p>5</p>
+<pre><code>2
+</code></pre>
+<p>7</p>
+<pre><code>3
+</code></pre>
+<p>9</p>
+<pre><code>4
+</code></pre>
+<p>11</p>
+<pre><code>5
+</code></pre>
+<p>13</p>
+<pre><code>6
+</code></pre>
+<p>15</p>
+<pre><code>7
+</code></pre>
+<p>Target character within 50m of the caster gains a magical barrier
+with [Spell Strength] HP that envelopes them and protects
+against magical damage for 1 round. Any damage the caster
+takes from this damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>Open
+Why bother fiddling around with flimsy lockpicks when you can
+pop just about any lock with this spell?
+Instant</p>
+<p>Level:</p>
+<pre><code>1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>4</p>
+<p>2</p>
+<p>7</p>
+<p>4</p>
+<p>10</p>
+<p>6</p>
+<p>13</p>
+<p>8</p>
+<p>16</p>
+<p>10</p>
+<p>19</p>
+<p>12</p>
+<p>22</p>
+<p>14</p>
+<p>The caster chooses a locked door or container within 1 meter.
+If the extended test threshold to unlock it is [Spell Strength] or
+lower, then it instantly unlocks itself.</p>
+<p>Repair
+How many backwater village blacksmiths would you trust to repair
+your masterwork ebony scimitar? I thought so. Use this instead.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>4</p>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>7</p>
+<p>2</p>
+<p>10</p>
+<p>3</p>
+<p>13</p>
+<p>4</p>
+<p>16</p>
+<p>5</p>
+<p>19</p>
+<p>6</p>
+<p>22</p>
+<p>7</p>
+<p>Removes [Spell Strength] levels of the Damaged (X) quality
+from a piece of armor, shield, or weapon within 1m of the caster.</p>
+<p>130</p>
+<p>Shield
+Eventually, you may slip up. This spell makes sure that your mistakes
+only cost you your dignity, instead of your life.
+Upkeep, Reinforce, Instant
+1</p>
+<p>Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>3</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+</code></pre>
+<p>5</p>
+<pre><code>2
+</code></pre>
+<p>7</p>
+<pre><code>3
+</code></pre>
+<p>9</p>
+<pre><code>4
+</code></pre>
+<p>11</p>
+<pre><code>5
+</code></pre>
+<p>13</p>
+<pre><code>6
+</code></pre>
+<p>15</p>
+<pre><code>7
+</code></pre>
+<p>Target character within 50m of the caster gains a magical barrier
+with [Spell Strength] HP that envelopes them and protects
+against physical damage for 1 round. Any damage the caster
+takes from this damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>Slowfall
+Maybe you did not watch your step. Maybe you got carried away
+with your levitation spells. Keep this handy so you have time to
+rectify your mistake before you splatter all over the ground.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>2</p>
+<p>[Spell Str.]</p>
+<pre><code>2
+</code></pre>
+<p>3</p>
+<p>4</p>
+<p>4</p>
+<p>6</p>
+<p>5</p>
+<p>8</p>
+<p>6</p>
+<p>10</p>
+<p>7</p>
+<p>12</p>
+<p>8</p>
+<p>14</p>
+<p>The next time the caster falls within 1 minute they may ignore
+up to the first [Spell Strength] meters when calculating their
+distance for fall damage.</p>
+<p>[Type] Armor
+If you know ahead of time what sort of energies your enemies will
+use against you, this spell proves to be invaluable protection.
+Upkeep, Reinforce, Instant, [Fire, Frost, Shock, Poison]
+7
+3</p>
+<p>Level:</p>
+<pre><code>1
+
+5
+
+6
+
+4
+
+2
+</code></pre>
+<p>[Type] Shield
+Use this in conjunction with the appropriate armor spell and laugh
+in the face of that cocky Pyromancer as your very flesh takes on
+properties of the fire that they themselves wield.
+Upkeep, Reinforce, Instant, [Fire, Frost, Shock, Poison]
+7
+3</p>
+<p>Level:</p>
+<pre><code>1
+
+5
+
+6
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>5</p>
+<p>[Spell Str.]</p>
+<pre><code>1
+</code></pre>
+<p>9</p>
+<pre><code>2
+</code></pre>
+<p>13</p>
+<p>17</p>
+<p>21</p>
+<p>25</p>
+<p>29</p>
+<p>Cost:</p>
+<p>2</p>
+<pre><code>3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>[Spell Str.]</p>
+<pre><code>1
+</code></pre>
+<p>3</p>
+<pre><code>2
+</code></pre>
+<p>4</p>
+<pre><code>3
+</code></pre>
+<p>5</p>
+<pre><code>4
+</code></pre>
+<p>6</p>
+<pre><code>5
+</code></pre>
+<p>7</p>
+<pre><code>6
+</code></pre>
+<p>8</p>
+<pre><code>7
+</code></pre>
+<p>Caster gains [Spell Strength] [type] AR to all hit locations for
+1 minute. This spell only stacks with physical armor.</p>
+<p>Target character within 50m of the caster gains a magical barrier
+with [Spell Strength] HP that envelopes them and protects
+against [Type] damage for 1 round. Any damage the caster takes
+from this damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>131</p>
+<p>Water Breathing
+Ah, the spell made infamous by Breathing Water. Please test
+your mastery of this spell in a wash basin at your local mages
+guild before you go pearl diving in the ocean.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code>5
+
+6
+
+3
+
+4
+
+2
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>2</p>
+<p>1</p>
+<p>3</p>
+<p>2</p>
+<p>4</p>
+<p>3</p>
+<p>5</p>
+<p>4</p>
+<p>6</p>
+<p>5</p>
+<p>7</p>
+<p>6</p>
+<p>8</p>
+<p>7</p>
+<p>The character can breathe water as if it were air for [Spell
+Strength] minutes.</p>
+<p>Water Walking
+Its so calming to walk along the surface of Lake Rumare early in
+the morning on my way back to the university.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code>7
+
+5
+
+6
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<pre><code>2
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>3</p>
+<p>2</p>
+<p>4</p>
+<p>3</p>
+<p>5</p>
+<p>4</p>
+<p>6</p>
+<p>5</p>
+<p>7</p>
+<p>6</p>
+<p>8</p>
+<p>7</p>
+<p>The character can walk on water as if it were land for [Spell
+Strength] minutes.</p>
+<p>Ward
+Another reliable method to reduce all the hard work an enemy puts
+into killing you to nothing.
+Reinforce, Instant, Ward is also a Restoration spell</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>3</p>
+<p>6</p>
+<p>5</p>
+<p>7</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>9</p>
+<p>11</p>
+<p>10</p>
+<p>13</p>
+<p>11</p>
+<p>15</p>
+<p>12</p>
+<p>May be cast as a reaction to an attack in place of the characters
+normal defense and does not provoke Attacks of Opportunity.
+Caster generates a magical ward that acts as a shield for all
+damage, gaining [Spell Strength] Magical and Physical BR.
+Power Block is incompatible with this shield.</p>
+<p>132</p>
+<p>Conjuration
+The school of Conjuration focuses on calling upon otherworldly
+entities. These entities can manifest in a number of different
+forms.</p>
+<p>Spell Str.</p>
+<p>Weapon Profile</p>
+<p>1 Primitive Quality</p>
+<p>2 Standard</p>
+<p>3 Proven Quality</p>
+<p>Conjure [Armor]
+Manifests a set of infernal armour on the casters body.
+Upkeep, Instant
+2
+Level:</p>
+<pre><code>5
+
+6
+
+3
+
+4
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>15</p>
+<p>1</p>
+<p>22</p>
+<p>2</p>
+<p>29</p>
+<p>3</p>
+<p>36</p>
+<p>4</p>
+<p>43</p>
+<p>5</p>
+<p>50</p>
+<p>6</p>
+<p>Summons one of the following sets of Bound Daedric armour
+(Both Arms; Both Legs; Body; or Head) that follows the profile
+determined by its [Spell Strength]. The armour slots this spell
+summons must be determined when the spell is learned.</p>
+<p>Spell Str.</p>
+<p>Armor Profile</p>
+<p>1 Inferior Partial Daedric</p>
+<p>2 Inferior Full Daedric</p>
+<p>3 Partial Daedric</p>
+<p>4 Full Daedric</p>
+<p>5 Superior Partial Daedric</p>
+<p>6 Superior Full Daedric</p>
+<p>This piece of armor magically replaces whatever armor the caster
+is currently wearing on that location for one minute. The armor
+piece counts as one weight class lighter for the purpose of armor
+penalties and does not need to be among the casters trained
+armor classes in its combat style. The armour has the Bound
+and Summoned traits.</p>
+<p>Conjure [Weapon]
+Invokes a spectral weapon of Daedric origin in ones hands.
+Upkeep, Instant
+2
+Level:</p>
+<pre><code>6
+
+4
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>15</p>
+<p>1</p>
+<p>29</p>
+<p>2</p>
+<p>43</p>
+<p>3</p>
+<p>Summons a Bound Daedric weapon or shield of casters choice
+that follows the profile determined by its [Spell Strength]. The
+weapon type must be determined when the spell is learned.</p>
+<p>This weapon appears in the casters hand(s) for the duration
+of the spell or until the weapon leaves the casters hands. The
+caster gains a [Spell Strength] weapon (with ammo) with the
+Bound and Summoned traits of the chosen type for 1 minute.
+Weapons with the reload quality are not loaded when they
+are summoned; however, the value of the first reload action is
+reduced by 1. If the weapon is not in any of the casters Combat
+Styles, they count it as being Trained (+0).</p>
+<p>Summon Construct
+Conjures a Construct from the realms of Oblivion and binds it to
+the will of the caster for a time.
+Upkeep, Mindlock(Spell Strength)</p>
+<p>Summoned Creature</p>
+<p>Level Cost</p>
+<p>Spell Strength</p>
+<p>Flesh Atronach</p>
+<p>Hulking Flesh Atronach</p>
+<p>4</p>
+<p>6</p>
+<p>21</p>
+<p>29</p>
+<p>2</p>
+<p>3</p>
+<p>Summons a construct with the Summoned trait, which appears
+within five meters of the caster. Immediately after being sum-
+moned, the Construct must make a Willpower test against
+the DoS of the Conjuration test. If the Conjurer wins the test,
+the Construct gains the Bound trait and persists for 1 round.
+If the Construct wins the Opposed test, it is not Bound and
+can act as it pleases, typically murdering its summoner. The
+unbound Construct can test Willpower at the end of each round
+to maintain itself in Mundus.</p>
+<p>Keeping the Construct in line imposes [Spell Str] Mindlock on
+the caster. Roll initiative for the Construct when its summoned,
+as it acts on its own turn. If the spell ends because the caster
+chooses not to upkeep this spell and the summoned creature
+has the Bound trait, the creature loses the Summoned trait and
+returns to their plane of origin.</p>
+<p>If this spell is restrained, the summoned creatures Maximum AP
+is reduced by 1 while they have the Bound trait. If the Spell is
+Upkept, summoned creatures do not retest their Willpower test.</p>
+<p>For each time the spell is purchased, pick one spell profile from
+the table above.</p>
+<p>133</p>
+<p>Sunder Binding
+The caster focus their will and attempts to sunder the binding of
+a conjured creature within sight.
+Direct, Sunder Binding is also a Mysticism spell
+6</p>
+<p>Level:</p>
+<pre><code>1
+
+7
+
+5
+
+3
+
+4
+
+2
+</code></pre>
+<p>Cost:</p>
+<p>5</p>
+<p>6</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>+10</p>
+<p>7</p>
+<p>0</p>
+<p>8</p>
+<p>-10</p>
+<p>9</p>
+<p>-20</p>
+<p>10</p>
+<p>-30</p>
+<p>11</p>
+<p>-40</p>
+<p>The caster of this spell picks a target within 50m that has the
+Summoned trait. Target must make an opposed Willpower Test
+vs the caster with a [Spell Strength] modifier or be sent back to
+the place from whence it came.</p>
+<p>Summon Daedra
+Conjures a Daedra from the realms of Oblivion and binds it to the
+will of the caster for a time.
+Upkeep, Mindlock(Spell Strength)</p>
+<p>Summoned Creature</p>
+<p>Level Cost</p>
+<p>Spell Strength</p>
+<p>Daedrat</p>
+<p>Scamp</p>
+<p>Banekin</p>
+<p>Hell Hound</p>
+<p>Clannfear</p>
+<p>Flame Atronach</p>
+<p>Hunger</p>
+<p>Dremora Churl</p>
+<p>Dremora Caitiff</p>
+<p>Frost Atronach</p>
+<p>Ogrim</p>
+<p>Spider Daedra</p>
+<p>Storm Atronach</p>
+<p>Dremora Kynmarcher</p>
+<p>Auroran</p>
+<p>Winged Twilight</p>
+<p>Aureal (Golden Saint)</p>
+<p>Mazken (Dark Seducer)</p>
+<p>Xivilai</p>
+<p>Dremora Lord</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>4</p>
+<p>4</p>
+<p>4</p>
+<p>4</p>
+<p>5</p>
+<p>5</p>
+<p>5</p>
+<p>6</p>
+<p>6</p>
+<p>6</p>
+<p>7</p>
+<p>7</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>12</p>
+<p>13</p>
+<p>16</p>
+<p>16</p>
+<p>17</p>
+<p>18</p>
+<p>19</p>
+<p>20</p>
+<p>20</p>
+<p>22</p>
+<p>23</p>
+<p>24</p>
+<p>27</p>
+<p>28</p>
+<p>28</p>
+<p>32</p>
+<p>33</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>3</p>
+<p>2</p>
+<p>2</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>7</p>
+<p>34</p>
+<p>Daedroth
+Summons a Daedra with the Summoned trait, which appears
+within five meters of the caster. Immediately after being sum-
+moned, the Daedra must make a Willpower test against the
+DoS of the Conjuration test. If the Conjurer wins the test, the
+Daedra gains the Bound trait and persists for 1 round. If the
+Daedra wins the Opposed test, it is not Bound and can act as
+it pleases, typically murdering its summoner. The unbound
+Daedra  can test Willpower at the end of each round to maintain
+itself in Mundus.</p>
+<p>Keeping the Daedra in line imposes [Spell Str] Mindlock on
+the caster. Roll initiative for the Daedra when its summoned,
+as it acts on its own turn. If the spell ends because the caster
+chooses not to upkeep this spell and the summoned creature
+has the Bound trait, the creature loses the Summoned trait and
+returns to their plane of origin.</p>
+<p>If this spell is restrained, the summoned creatures Maximum AP
+is reduced by 1 while they have the Bound trait. If the Spell is
+Upkept, summoned creatures do not retest their Willpower test.
+For each time the spell is purchased, pick one spell profile from
+the table above.</p>
+<p>134</p>
+<p>Destruction
+The school of Destruction focuses on harming targets in a variety
+of ways, either through direct damage or sapping their abilities
+and defenses.</p>
+<p>Chain Lightning
+The satisfaction of popping your enemies heads off with a well-placed
+chain lightning is a feeling that is quite difficult to capture.
+Ranged (50m), Attack, Overload (+WB to Dmg)
+6</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>9</p>
+<p>11</p>
+<p>13</p>
+<p>15</p>
+<p>17</p>
+<p>19</p>
+<p>21</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Fires a bolt of lightning at target character within 50m. Deals
+[Spell Strength] shock damage. The bolt then jumps to another
+target of the casters choice within 10m and deals damage (use
+the first roll). Repeat this for a third and final target.</p>
+<p>Disintegrate Armor
+Nevermind the danger! The embarrassment alone of suddenly
+finding oneself denuded in the middle of battle can cause even the
+most stalwart opponent to reconsider and flee.
+Ranged (100m), Attack</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<pre><code> 6
+</code></pre>
+<p>1</p>
+<p>10</p>
+<p>2</p>
+<p>14</p>
+<p>3</p>
+<p>18</p>
+<p>4</p>
+<p>22</p>
+<p>5</p>
+<p>26</p>
+<p>6</p>
+<p>30</p>
+<p>7</p>
+<p>Fires a bolt of energy at target character within 100m. Instead
+of dealing damage, this attack applies the Damaged ([Spell
+Strength]) quality to the piece of armor on the location it hits
+(or shield, if it is blocked by a shield).</p>
+<p>Disintegrate Weapon
+Thats a nice weapon you have there. It would be a shame if some-
+thing happened to it.
+Ranged (100m), Attack</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<pre><code> 6
+</code></pre>
+<p>1</p>
+<p>10</p>
+<p>2</p>
+<p>14</p>
+<p>3</p>
+<p>18</p>
+<p>4</p>
+<p>22</p>
+<p>5</p>
+<p>26</p>
+<p>6</p>
+<p>30</p>
+<p>7</p>
+<p>Fires a bolt of energy at target character within 100m. Instead
+of dealing damage, this attack applies the Damaged ([Spell
+Strength]) quality to weapons the character is wielding.</p>
+<p>Drain Magicka
+A waste of good magicka. Drains the target of their precious energies,
+rendering them nothing more than a man in a dress.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>6</p>
+<p>[Spell Str.]</p>
+<p>4</p>
+<p>8</p>
+<p>8</p>
+<p>10</p>
+<p>12</p>
+<p>12</p>
+<p>16</p>
+<p>14</p>
+<p>20</p>
+<p>16</p>
+<p>24</p>
+<p>18</p>
+<p>28</p>
+<p>Target character within 50m must make a Willpower test or
+lose [Spell Strength] MP.</p>
+<p>Fatigue
+If for some reason you do not want to kill your target, you might
+opt to reduce their combat effectiveness in the hopes of getting them
+to surrender.
+Direct, Attack, Upkeep
+2</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+</code></pre>
+<p>Cost:</p>
+<pre><code> 6
+</code></pre>
+<p>8</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>+10</p>
+<p>10</p>
+<p>+0</p>
+<p>12</p>
+<p>-10</p>
+<p>14</p>
+<p>-20</p>
+<p>16</p>
+<p>-30</p>
+<p>18</p>
+<p>-40</p>
+<p>Target character within 50m must make an Endurance test with
+a [Spell Strength] modifier or lose 1 SP.</p>
+<p>Poisonbloom
+A vile spell by most standards. Magicka derived poisons are an
+excruciating way to go.
+AoE (2m, sphere), Attack, Overload (+WB to Dmg)</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<pre><code> 8
+</code></pre>
+<p>10</p>
+<p>12</p>
+<p>14</p>
+<p>16</p>
+<pre><code> 6
+</code></pre>
+<p>18</p>
+<pre><code> 7
+</code></pre>
+<p>20</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Target point within 100m explodes with poison gas. Deals
+[Spell Strength] poison damage to all targets caught within 2m.</p>
+<p>135</p>
+<p>[Type] Bite
+A staple in the spellswords arsenal. Simple and efficient.
+Melee (1m), Attack, Overload (+WB to Dmg), [Fire, Frost,
+Shock]</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>3</p>
+<p>5</p>
+<p>7</p>
+<p>9</p>
+<p>11</p>
+<p>13</p>
+<p>15</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Fires a burst of elemental energy at target character within 1m.
+Deals [Spell Strength] [type] damage.</p>
+<p>[Type] Bolt
+Whether it is the wrath of a Firebolt or the chill of a Frostbolt,
+when your average citizen thinks of the Destruction school, these
+are the spells they imagine.
+Ranged (100m), Attack, Overload (+WB to Dmg), [Fire,
+Frost, Shock]</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<p>4</p>
+<p>6</p>
+<p>8</p>
+<p>10</p>
+<p>12</p>
+<pre><code> 6
+</code></pre>
+<p>14</p>
+<pre><code> 7
+</code></pre>
+<p>16</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Fires a bolt of elemental energy at target character within 100m.
+Deals [Spell Strength] [type] damage.</p>
+<p>[Type] Cloak
+Like the spines of a Durzog, Cloak spells warn everyone that if they
+get too close they will regret it.
+Upkeep, Overload (+WB to Dmg), [Fire, Frost, Shock]
+7
+3</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 5
+
+ 6
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>6</p>
+<p>8</p>
+<p>10</p>
+<p>12</p>
+<p>14</p>
+<p>16</p>
+<p>18</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Swirling elemental energy surrounds the caster for 1 round,
+dealing [Spell Strength] [type] damage to all targets within 1
+meter at the end of each of the casters turns while the spell is
+active.</p>
+<p>[Type] Cone
+Point in a direction you do not particularly care for. Cast spell.
+Cackle madly as all burns, freezes or disintegrates before you.
+AoE (5m, cone), Attack, [Fire, Frost, Shock], Overload (+WB
+to Dmg)</p>
+<p>Sunbeam
+When you are dealing with a den full of vampires, accept no
+substitutes.
+AoE (30m, beam), Attack, Overload (+WB to Dmg)</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>10</p>
+<p>13</p>
+<p>16</p>
+<p>19</p>
+<p>22</p>
+<p>25</p>
+<p>29</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Deals [Spell Strength] fire damage to all targets within a 1m wide
+line 30m in a chosen direction. Damage dealt counts as sunlight.</p>
+<p>[Type] Ball
+Crowd clearing at its finest. Just try not to hit your friends.
+AoE (2m, sphere), Attack, Overload (+WB to Dmg), [Fire,
+Frost, Shock]</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<p>8</p>
+<p>10</p>
+<p>12</p>
+<p>14</p>
+<p>16</p>
+<pre><code> 6
+</code></pre>
+<p>18</p>
+<pre><code> 7
+</code></pre>
+<p>20</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<p>9</p>
+<p>11</p>
+<p>13</p>
+<p>15</p>
+<p>17</p>
+<pre><code> 6
+</code></pre>
+<p>19</p>
+<pre><code> 7
+</code></pre>
+<p>21</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Target point within 100m explodes with elemental energy.
+Deals [Spell Strength] [type] damage to all targets caught
+within 2m.</p>
+<p>A stream of elemental energy hits all targets within a 5m cone
+originating from the caster, dealing [Spell Strength] [type]
+damage to all targets caught within it.</p>
+<p>136</p>
+<p>Ha! I caught that snooty Breton girls hair on fire today, and
+managed a little lightning bolt. Even hit the target! I cant
+believe it; those books were just what I needed. They seemed
+really hard, but it was all about clearing out my head and
+not letting nerves stop me. And Guzgikh? Turns out he
+started the same wayhe didnt cast a spell for years, but
+before long could destroy a whole village! This is great!</p>
+<p>Oshguras Destruction Journal</p>
+<p>[Type] Rune
+If you are feeling tactical, a magical rune cunningly placed can be
+a far more effective use of your time and magicka if planned well.
+[Fire, Frost, Shock], Overload (+WB to Dmg)</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<p>9</p>
+<p>11</p>
+<p>13</p>
+<p>15</p>
+<p>17</p>
+<pre><code> 6
+</code></pre>
+<p>19</p>
+<pre><code> 7
+</code></pre>
+<p>21</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Creates a magical rune that takes up 1 square meter on target
+surface within 1 meter. After a 1 round delay the rune becomes
+barely visible (-20 to any vision based tests to spot it). The caster
+chooses one or more conditions upon which the rune detonates.
+The rune persists indefinitely.</p>
+<p>Proximity: The rune detonates whenever a character comes
+within a certain distance (chosen by the caster).
+Time: The rune detonates after a set amount of time.
+Manual: The caster can detonate the rune manually from
+any distance by using the Cast Magic action.</p>
+<p>When the rune detonates it does so in a burst of elemental
+energy, dealing [Spell Strength] [type] damage to all targets
+within 3 meters. This counts as an area of effect attack and can
+be evaded, but only if a character is aware of the rune.</p>
+<p>[Type] Storm
+For when collateral damage is a non-issue.
+AoE (7m, sphere), Attack, Upkeep, [Fire, Frost, Shock]
+7
+3</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 5
+
+ 6
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>9</p>
+<p>11</p>
+<p>13</p>
+<p>15</p>
+<p>17</p>
+<p>19</p>
+<p>21</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Target point within 100m explodes with elemental energy. Deals
+[Spell Strength] [type] damage to all targets caught within 7m.
+Leaves behind a persistent zone in this area for 1 round that
+deals the same damage to any characters who pass through it
+(or end their turn in it if they started there). Upkeeping the
+spell does not let you move the storm, it merely refreshes the
+effect and duration.</p>
+<p>Weakness to [Type]
+Sure a Fireball hurts, but what if you want it to hurt even more?
+Upkeep, [Fire, Frost, Shock, Poison], Direct
+2</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>5</p>
+<p>1</p>
+<p>6</p>
+<p>2</p>
+<p>7</p>
+<p>3</p>
+<p>8</p>
+<p>4</p>
+<p>9</p>
+<p>5</p>
+<p>10</p>
+<p>6</p>
+<p>11</p>
+<p>7</p>
+<p>Target character within 50m gains the Weakness ([type],
+[Spell Strength]) trait for 1 round.</p>
+<p>Weakness to Magic
+For when you want to cause the utmost suffering.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 5
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>7</p>
+<p>1</p>
+<p>10</p>
+<p>2</p>
+<p>13</p>
+<p>3</p>
+<p>16</p>
+<p>4</p>
+<p>19</p>
+<p>5</p>
+<pre><code> 6
+
+ 7
+</code></pre>
+<p>22</p>
+<p>6</p>
+<p>25</p>
+<p>7</p>
+<p>Target character within 50m gains the Weakness (magic,
+[Spell Strength]) trait for 1 round.</p>
+<p>137</p>
+<p>Illusion
+The school of Illusion focuses on affecting light and the minds of
+sentient targets. Illusion can be used to manipulate an enemys
+perception of reality or augment ones own.</p>
+<p>Blind
+You cant hit what you cant see.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 3
+
+ 2
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>7</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>10</p>
+<p>+10</p>
+<p>13</p>
+<p>+0</p>
+<p>16</p>
+<p>-10</p>
+<p>19</p>
+<p>-20</p>
+<p>22</p>
+<p>-30</p>
+<p>25</p>
+<p>-40</p>
+<p>Target character within 50m must make a Willpower test
+with a [Spell Strength] modifier or be Blinded for 1 round.</p>
+<p>Calm
+Suppresses most higher level emotional responses. Negotiations
+between certain hostile parties will sometimes require this spell be
+cast on every participant to ensure reasonable discourse.
+Direct</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 7
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>10</p>
+<p>+10</p>
+<p>13</p>
+<p>+0</p>
+<p>16</p>
+<p>-10</p>
+<p>19</p>
+<p>-20</p>
+<p>22</p>
+<p>-30</p>
+<p>25</p>
+<p>-40</p>
+<p>Target character within 50m must make a Willpower test
+with a [Spell Strength] modifier or be calmed for 1 minute. A
+calmed character loses the will to fight. While calmed, they
+cannot willingly attack any character unless that character
+attacks them first, at which point they snap out of the effect.</p>
+<p>Note: If a character while under this spells effect is struck by a
+Frenzy effect, then this spell effect is immediately nullified</p>
+<p>Chameleon
+Easier than full blown invisibility and not nearly as fragile of an
+enchantment. Allows full use of ones abilities while still retaining
+an element of stealth.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>4</p>
+<p>-5</p>
+<p>7</p>
+<p>-10</p>
+<p>10</p>
+<p>-15</p>
+<p>13</p>
+<p>-20</p>
+<p>16</p>
+<p>-25</p>
+<p>19</p>
+<p>-30</p>
+<p>22</p>
+<p>-35</p>
+<p>Caster gains the Chameleon ([Spell Strength]) condition for
+1 minute.</p>
+<p>Charm
+Despite its use in almost any social situation being considered a
+faux pas at best, and illegal at worst, it remains one of the most
+commonly used and taught spells of the Illusion school.
+Direct, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 6
+</code></pre>
+<p>8</p>
+<p>[Spell Str.]</p>
+<p>+5</p>
+<p>+10</p>
+<p>10</p>
+<p>+15</p>
+<p>12</p>
+<p>+20</p>
+<p>14</p>
+<p>+25</p>
+<p>16</p>
+<p>+30</p>
+<p>18</p>
+<p>+35</p>
+<p>Target character within 50m becomes receptive to others, and
+the next character to attempt a Persuade or Deceive test on
+them within 1 minute receives a [Spell Strength] bonus.</p>
+<p>Courage
+Some naysayers claim this is actually nothing more than low level
+induced insanity on the casters part. And no, a shot of brandy does
+not double as a potion of courage in a pinch.
+Upkeep, AoE (7m, pulse), Instant</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 8
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+5</p>
+<p>10</p>
+<p>+10</p>
+<p>12</p>
+<p>+15</p>
+<p>14</p>
+<p>+20</p>
+<p>16</p>
+<p>+25</p>
+<p>18</p>
+<p>+30</p>
+<p>20</p>
+<p>+35</p>
+<p>All willing characters within 7m of the caster receive a
+[Spell Strength] bonus to any Fear tests within 1 minute.
+Characters under the effects of fear can make a Willpower
+test with the same bonus to snap out of the effects. This is not
+considered an Attack.</p>
+<p>Frenzy
+If for whatever reason the situation calls for all the tact of a drunken
+Nord, this spell will always deliver.
+Direct</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 8
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>12</p>
+<p>+10</p>
+<p>16</p>
+<p>+0</p>
+<p>20</p>
+<p>-10</p>
+<p>24</p>
+<p>-20</p>
+<p>28</p>
+<p>-30</p>
+<p>32</p>
+<p>-40</p>
+<p>Target character within 50m must make a Willpower test with
+a [Spell Strength] modifier or gain the Frenzied condition.</p>
+<p>Note: If a character while under this spells effect is struck by a Calm
+effect, then this spell effect is immediately nullified.</p>
+<p>Horror
+An enemy that is too scared to fight is not an enemy you have to
+worry about.
+Direct, Attack
+Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 12
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>20</p>
+<p>+10</p>
+<p>28</p>
+<p>+0</p>
+<p>36</p>
+<p>-10</p>
+<p>44</p>
+<p>-20</p>
+<p>52</p>
+<p>-30</p>
+<p>60</p>
+<p>-40</p>
+<p>Target character within 50m must make a Horror ([Spell
+Strength]) test.</p>
+<p>138</p>
+<p>Invisibility
+The iconic spell of the Illusion school is remarkably fragile as almost
+any vigorous activity will break the spell and leave you exposed.
+Upkeep</p>
+<p>Panic
+A slightly less drastic version of the horror spell. Only induces mild
+to severe panic as opposed to outright life threatening fear.
+Direct</p>
+<p>Level:</p>
+<pre><code> 5
+</code></pre>
+<p>Cost:</p>
+<pre><code> 13
+</code></pre>
+<p>Caster gains the Invisible condition for 1 round. They lose this
+condition if they attack or cast another spell during this time.</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 6
+</code></pre>
+<p>8</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>+10</p>
+<p>10</p>
+<p>+0</p>
+<p>12</p>
+<p>-10</p>
+<p>14</p>
+<p>-20</p>
+<p>16</p>
+<p>-30</p>
+<p>18</p>
+<p>-40</p>
+<p>Target character within 50m must make a Panic ([Spell
+Strength]) test.</p>
+<p>Light
+One of the simplest cantrips an Illusion apprentice will master.
+A fuel-free light source on command is an under-appreciated
+convenience.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Paralyze
+A real fight ender if you can get it to land. This spell is taxing to
+cast, but well worth it.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 2
+</code></pre>
+<p>[Spell Str.]</p>
+<p>10</p>
+<p>3</p>
+<p>20</p>
+<p>4</p>
+<p>30</p>
+<p>5</p>
+<p>40</p>
+<p>6</p>
+<p>50</p>
+<p>7</p>
+<p>60</p>
+<p>8</p>
+<p>70</p>
+<p>Cost:</p>
+<pre><code> 11
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>18</p>
+<p>+10</p>
+<p>25</p>
+<p>+0</p>
+<p>32</p>
+<p>-10</p>
+<p>39</p>
+<p>-20</p>
+<p>46</p>
+<p>-30</p>
+<p>53</p>
+<p>-40</p>
+<p>Creates a light orbiting the caster that illuminates an area within
+[Spell Strength] meters for 1 minute.</p>
+<p>Target character within 50m must make a Willpower test
+with a [Spell Strength] modifier or be Paralyzed for 1 round.</p>
+<p>Muffle
+Commonly found as an enchantment on the gear of less than repu-
+table individuals. Makes one harder to hear in almost all regards.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>-5</p>
+<p>7</p>
+<p>-10</p>
+<p>10</p>
+<p>-15</p>
+<p>13</p>
+<p>-20</p>
+<p>16</p>
+<p>-25</p>
+<p>19</p>
+<p>-30</p>
+<p>22</p>
+<p>-35</p>
+<p>Caster gains the Muffled ([Spell Strength]) condition for 1
+minute.</p>
+<p>Night Eye
+Why waste the magicka on casting an expensive and fragile invis-
+ibility spell when a mundane patch of darkness and the use of this
+spell allow for much of the same benefits?
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>4</p>
+<p>10</p>
+<p>7</p>
+<p>20</p>
+<p>10</p>
+<p>30</p>
+<p>13</p>
+<p>40</p>
+<p>16</p>
+<p>50</p>
+<p>19</p>
+<p>60</p>
+<p>22</p>
+<p>70</p>
+<p>Caster gains the ability to see in the dark up to [Spell Strength]
+meters away for 1 minute.</p>
+<p>Sanctuary
+Unlike the brutish methods of Alteration, this spell takes the path
+of least resistance and subtly alters the actions of those around you
+to simply decrease your chance of getting hit in the first place.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 8
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>15</p>
+<p>2</p>
+<p>22</p>
+<p>3</p>
+<p>29</p>
+<p>4</p>
+<p>36</p>
+<p>5</p>
+<p>43</p>
+<p>6</p>
+<p>50</p>
+<p>7</p>
+<p>Caster gains [Spell Strength] additional degrees of success on
+successful defense tests for 1 round. They can also move 1 meter
+further than normal to avoid AoE attacks on a successful evade
+test.</p>
+<p>Silence
+As amusing as this is to cast on long-winded individuals, its ability
+to cause even an experienced mage to trip up casting at least one
+spell is not to be underestimated.
+Upkeep, Direct
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 7
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>10</p>
+<p>+10</p>
+<p>13</p>
+<p>+0</p>
+<p>16</p>
+<p>-10</p>
+<p>19</p>
+<p>-20</p>
+<p>22</p>
+<p>-30</p>
+<p>25</p>
+<p>-40</p>
+<p>Target character within 50m must make a Willpower test
+with a [Spell Strength] modifier or be Silenced for 1 round.</p>
+<p>139</p>
+<p>Mysticism
+The school of Mysticism is a more obscure school, and its spells
+manipulate magicka itself. Mysticism can be used for many
+effects, including binding and trapping souls or reflecting spells.</p>
+<p>Absorb [Characteristic]
+Whether a warrior or a mage, each relies on their own specializa-
+tions to be effective. Weaken them and render their abilities to an
+almost useless state.
+Ranged (100m), [Str, End, Ag, Int, Wp, Prc, Prs], Upkeep</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 10
+</code></pre>
+<p>[Spell Str.]</p>
+<p>5</p>
+<p>18</p>
+<p>10</p>
+<p>26</p>
+<p>15</p>
+<p>34</p>
+<p>20</p>
+<p>42</p>
+<p>25</p>
+<p>50</p>
+<p>30</p>
+<p>58</p>
+<p>35</p>
+<p>Fires a bolt of draining magic at target character within 100m.
+Inflicts a [Spell Strength] penalty to all the targets tests using
+the [Type] Characteristic and a [Spell Strength] bonus to all the
+casters tests with the [Type] Characteristic for one round. If this
+spell is affected by a Reflect spell or effect, it has no net effect.</p>
+<p>Absorb Life
+A notoriously hard spell to pin to just one school. The schools of
+Restoration, Necromancy and Mysticism have all laid claim to it
+at one point or another. Save this for when youre feeling vampiric.
+Melee (1m), Attack, Overload (+WB to Dmg)</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+</code></pre>
+<p>Cost:</p>
+<p>4</p>
+<p>7</p>
+<p>10</p>
+<p>13</p>
+<p>16</p>
+<pre><code> 6
+</code></pre>
+<p>19</p>
+<pre><code> 7
+</code></pre>
+<p>22</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Saps the life of target character within 1m. Deals [Spell Strength]
+magic damage. The caster regenerates HP equal to half (round
+up) of the damage dealt (after any reduction). If this spell is
+affected by a reflect spell or effect, it has no net effect.</p>
+<p>Absorb Magicka
+Ultimately a net loss for all involved when cast normally. However,
+when enchanted into a weapon, this spell is essential for those born
+under the sign of the Atronach.
+Direct</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>7</p>
+<p>10</p>
+<p>13</p>
+<p>16</p>
+<p>19</p>
+<p>22</p>
+<p>25</p>
+<p>[Spell Str.]</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10  2d6</p>
+<p>2d8</p>
+<p>2d10</p>
+<p>Target character within 50m must make a Willpower test
+or lose [Spell Strength] magicka. The caster regenerates MP
+equal to the magicka lost. If this spell is affected by a reflect
+spell or effect, it has no net effect.</p>
+<p>Detect [Type]
+The intent and use behind an object actually changes its magical
+signature. This allows one to detect and distinguish between objects,
+such as a key from a dagger.
+Upkeep, Instant, [Life, Undead, Magic, (other)]
+6</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>6</p>
+<p>10</p>
+<p>11</p>
+<p>20</p>
+<p>16</p>
+<p>30</p>
+<p>21</p>
+<p>40</p>
+<p>26</p>
+<p>50</p>
+<p>31</p>
+<p>60</p>
+<p>36</p>
+<p>70</p>
+<p>Caster gains the ability to see objects/effects of the chosen
+[type] within [Spell Strength] meters. This appears as a faint,
+shimmering outline even in the dark, through objects, and/or
+if blind for 1 minute.</p>
+<p>Dispel
+Undoes both harmful and beneficial magical effects from all
+schools of magic.
+1
+Level:</p>
+<pre><code> 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<pre><code> 5
+</code></pre>
+<p>1</p>
+<p>9</p>
+<p>2</p>
+<p>13</p>
+<p>3</p>
+<p>17</p>
+<p>4</p>
+<p>21</p>
+<p>5</p>
+<p>25</p>
+<p>6</p>
+<p>29</p>
+<p>7</p>
+<p>Removes all magical effects from any source of [Spell
+Strength] level or lower from the caster. Constant enchant-
+ments reactivate after 1d4 rounds.</p>
+<p>Ethereal Form
+Before you get any ideas, the ladies dorm here on campus has been
+warded against such spells. So unless you want to explain to the
+Archmage why you are stuck in a |, please use this responsibly.
+Upkeep</p>
+<p>Level:</p>
+<pre><code> 4
+</code></pre>
+<p>Cost:</p>
+<pre><code> 11
+</code></pre>
+<p>Caster gains the Incorporeal trait for 1 round.</p>
+<p>Mark
+You know the saying: Home is where your mark is!
+Instant</p>
+<p>Level:</p>
+<pre><code> 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 6
+</code></pre>
+<p>Places an invisible, magic mark at the casters current location
+that a character can teleport to with the Recall spell.  The
+amount of marks a character can keep track of is equal to
+their Intelligence Bonus.</p>
+<p>140</p>
+<p>Recall
+Good for a quick escape or to simply make life easier.
+Instant</p>
+<p>Level:</p>
+<pre><code> 3
+</code></pre>
+<p>Cost:</p>
+<pre><code> 16
+</code></pre>
+<p>Instantly transports the caster to the location of one of their
+magic marks placed with the Mark spell. Cannot be used to
+travel between planes.</p>
+<p>Reflect
+A difficult spell to cast, but worth it to give your enemies a taste of
+their own magicka.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>7</p>
+<p>2</p>
+<p>10</p>
+<p>3</p>
+<p>13</p>
+<p>4</p>
+<p>16</p>
+<p>5</p>
+<p>19</p>
+<p>6</p>
+<p>22</p>
+<p>7</p>
+<p>Any time the caster would be hit by a spell (after any defense,
+but before resolving effects), roll a d10. If the result is a roll of
+[Spell Strength] or lower, instead resolve the spell against its
+original caster. Lasts for 1 round.</p>
+<p>Soul Trap
+A rather morbid spell, even if used ethically on white souls. Traps
+a beings soul energy on death into a naturally-occurring soul gem.
+Upkeep, Direct
+2
+Level:</p>
+<p>Cost:</p>
+<pre><code> 16
+</code></pre>
+<p>Target character within 50m has their soul magically tethered
+to an appropriate empty soul gem (only black soul gems can
+hold the souls of men, mer, and the beast races) of the casters
+choice within 1m of their person. If the target dies within
+1 minute, then their soul is trapped within the gem, and it
+gains soul energy equal to the size of their soul. If this spell is
+affected by a Reflect spell or effect, then the casters own soul
+is trapped within the chosen soul gem. Soul Trap is seen as a
+hostile action when cast on an unwilling target, but it is not
+considered an Attack.</p>
+<p>Telekinesis
+Many a supposed poltergeist hauntings are actually nothing more
+than a bored apprentice practicing their telekinesis spell on the
+unwitting locals.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>7</p>
+<p>2</p>
+<p>10</p>
+<p>3</p>
+<p>13</p>
+<p>4</p>
+<p>16</p>
+<p>5</p>
+<p>19</p>
+<p>6</p>
+<p>22</p>
+<p>7</p>
+<p>The caster gains the Telekinesis ([Spell Strength]) trait for 1
+minute.</p>
+<p>Sunder Binding
+The caster focus their will and attempts to sunder the binding of
+a conjured creature within sight.
+Direct, Sunder Binding is also a Conjuration spell</p>
+<p>Level:</p>
+<pre><code>1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+</code></pre>
+<p>Cost:</p>
+<p>5</p>
+<p>6</p>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>+10</p>
+<p>7</p>
+<p>0</p>
+<p>8</p>
+<p>-10</p>
+<p>9</p>
+<p>-20</p>
+<p>10</p>
+<p>-30</p>
+<p>11</p>
+<p>-40</p>
+<p>The caster of this spell picks a target within 50m that has the
+Summoned trait. Target must make an opposed Willpower Test
+vs the caster with a [Spell Strength] modifier or be sent back to
+the place from whence it came.</p>
+<p>Telepathy
+It is theorized that the Dwemer possessed a low level telepathic
+connection, allowing them to communicate across great distances.
+The rest of us have to do it the hard way.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>7</p>
+<p>2</p>
+<p>10</p>
+<p>3</p>
+<p>13</p>
+<p>4</p>
+<p>16</p>
+<p>5</p>
+<p>19</p>
+<p>6</p>
+<p>22</p>
+<p>7</p>
+<p>The caster gains the Telepathy ([Spell Strength]) trait for 1
+minute.</p>
+<p>Spell Absorption
+Why waste perfectly good magicka when your enemy is so intent
+on throwing it at you?
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>7</p>
+<p>2</p>
+<p>10</p>
+<p>3</p>
+<p>13</p>
+<p>4</p>
+<p>16</p>
+<p>5</p>
+<p>19</p>
+<p>6</p>
+<p>22</p>
+<p>7</p>
+<p>The caster gains the Spell Absorption ([Spell Strength]) trait
+for 1 round.</p>
+<p>141</p>
+<p>Necromancy
+Necromancy is the dark art of death magic, and of raising the
+dead and creating undead monstrosities. Necromancy is fuelled
+by black magicks and feeds on the living, and serves as an
+enticing shortcut to power for the less scrupulous mages that
+roam Tamriel.</p>
+<p>Reanimation
+A common spell amongst Necromancers, Reanimation spells allow
+a Necromancer to temporarily imbue a corpse with false life to
+serve them.
+Upkeep, Direct, Mindlock (1)
+1</p>
+<p>Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>14
+[Spell Str.] Puny Tiny</p>
+<p>9</p>
+<p>19</p>
+<p>24</p>
+<p>29</p>
+<p>34</p>
+<p>39</p>
+<p>Small</p>
+<p>Std.</p>
+<p>Lrg. Huge Mass.</p>
+<p>(Std. is Standard, Lrg. is Large, Mass. is Massive)</p>
+<p>Summon Wraith
+A simple incantation to bind a spirit to the necromancers will
+Upkeep, Mindlock (2)
+5</p>
+<p>Level:</p>
+<p>4</p>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>18</p>
+<p>1</p>
+<p>22</p>
+<p>2</p>
+<p>(Spell Strength 1 summons a Wraith, and 2 summons an Gloom
+Wraith)</p>
+<p>The caster summons a Wraith or a Gloom Wraith into Mundus
+for one round. The caster and the Wraith must immediately roll
+an Opposed Willpower test; if the caster succeeds, the Wraith
+has the Bound trait for the duration.</p>
+<p>Restoration
+The school of Restoration revolves around augmenting and
+restoring the abilities and body of a target. It also contains effects
+that can be used specifically against the Undead.</p>
+<p>Target corpse of [Spell Strength] size is reanimated for one
+minute, using the profile it had in life. The target must imme-
+diately test an Opposed Willpower with the caster. If the caster
+wins the test, the target also has the Bound trait. If the target
+wins the test, they are reanimated but are not Bound to the caster.</p>
+<p>Cure Disease
+Disease can be a taxing event while adventuring. Stop disease in
+its tracks and continue on wherever you go.
+Instant</p>
+<p>The target is reanimated with full HP, Stamina Points, Action
+Points, Magicka, and any uses of limited use abilities.</p>
+<p>The spell imbues the body with the spirit of a lesser daedra,
+and has no shred of the characters consciousness, soul, or any
+knowledge of their past life except for skills, talents, traits, and
+spells. They do not retain powers gained from their race.</p>
+<p>After the reanimated creature dies again or if the spell ends (due
+to unpaid upkeep or any other reason), the reanimated creature
+turns to a pile of ash and cannot be reanimated.</p>
+<p>Summon Ghost
+A simple incantation to bind a spirit to the necromancers will
+Upkeep, Mindlock (1)
+3</p>
+<p>Level:</p>
+<pre><code> 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>12</p>
+<p>1</p>
+<p>19</p>
+<p>2</p>
+<p>(Spell Strength 1 summons a Ghost, and 2 summons an Ancient
+Ghost)</p>
+<p>The caster summons a Ghost or an Ancient Ghost into Mundus
+for one round. The caster and the Ghost must immediately roll
+an Opposed Willpower test; if the caster succeeds, the Ghost
+has the Bound trait for the duration.</p>
+<p>Level:</p>
+<pre><code> 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>7</p>
+<p>1</p>
+<p>4</p>
+<p>13</p>
+<p>2</p>
+<p>Caster removes the Diseased [Spell Strength] Condition from
+self. [Spell Strength] 1 = Common, [Spell Strength] 2 = Magical.</p>
+<p>Cure Paralysis
+Paradoxically, early versions of this spell were self cast only. Which
+raises the question of how one casts it when its most needed.
+Direct, Instant
+2
+Level:</p>
+<p>Cost:</p>
+<pre><code>9
+</code></pre>
+<p>Removes the Paralyzed condition from target character within
+1 meter.</p>
+<p>Curing Touch
+Some diseases require a more hands-on approach. Purge infections
+and ensure everyone is healthy and pure.
+Direct, Instant
+2
+Level:</p>
+<p>4</p>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>7</p>
+<p>1</p>
+<p>14</p>
+<p>2</p>
+<p>Removes the Diseased [Spell Strength] Condition from target
+character within 1 meter. [Spell Strength] 1 = Common, [Spell
+Strength] 2 = Magical.</p>
+<p>142</p>
+<p>Fortify [Characteristic]
+Magical enhancement is almost as old as the study of magic itself.
+We have since condensed its use to the major attributes.
+Upkeep, [Strength, Endurance, Agility, Intelligence,
+Willpower, Perception, Personality]
+4</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 6
+
+ 3
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 9
+</code></pre>
+<p>[Spell Str.]</p>
+<p>5</p>
+<p>17</p>
+<p>10</p>
+<p>25</p>
+<p>15</p>
+<p>33</p>
+<p>20</p>
+<p>41</p>
+<p>25</p>
+<p>49</p>
+<p>30</p>
+<p>57</p>
+<p>35</p>
+<p>Caster increases their [characteristic] score by [Spell Strength]
+for 1 round. This affects all attributes derived from that score.</p>
+<p>Heal Ally
+For when you want to help someone, but theyre all the way over
+there!
+Direct, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 6
+</code></pre>
+<p>[Spell Str.]</p>
+<p>2</p>
+<p>8</p>
+<p>4</p>
+<p>10</p>
+<p>6</p>
+<p>12</p>
+<p>8</p>
+<p>14</p>
+<p>10</p>
+<p>16</p>
+<p>12</p>
+<p>18</p>
+<p>14</p>
+<p>Target character within 50 meters regains [Spell Strength] HP.</p>
+<p>Healing Touch
+As a rule, reduced range makes for a more efficient spell. Restoration
+is no different.
+Direct, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 3
+</code></pre>
+<p>[Spell Str.]</p>
+<p>2</p>
+<p>5</p>
+<p>4</p>
+<p>7</p>
+<p>6</p>
+<p>9</p>
+<p>8</p>
+<p>11</p>
+<p>10</p>
+<p>13</p>
+<p>12</p>
+<p>15</p>
+<p>14</p>
+<p>Target character within 1 meter regains [Spell Strength] HP.</p>
+<p>Heal
+The iconic spell of the Restoration school.
+Instant</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 3
+</code></pre>
+<p>[Spell Str.]</p>
+<p>2</p>
+<p>5</p>
+<p>4</p>
+<p>7</p>
+<p>6</p>
+<p>9</p>
+<p>8</p>
+<p>11</p>
+<p>10</p>
+<p>13</p>
+<p>12</p>
+<p>15</p>
+<p>14</p>
+<p>Caster regains [Spell Strength] HP.</p>
+<p>Rejuvenate
+Cures the weary aches and pains of a fatigued body.
+Direct, Instant
+3
+Level:</p>
+<p>Cost:</p>
+<p>17</p>
+<p>Target character within 1 meter regains 1 SP or removes 1 level
+of fatigue if they have any.</p>
+<p>Replenish
+No, its not efficient, but sometimes they need it more than you.
+Instant</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 4
+</code></pre>
+<p>[Spell Str.]</p>
+<p>2</p>
+<p>7</p>
+<p>4</p>
+<p>10</p>
+<p>6</p>
+<p>13</p>
+<p>8</p>
+<p>16</p>
+<p>10</p>
+<p>19</p>
+<p>12</p>
+<p>22</p>
+<p>14</p>
+<p>Target character within 1 meter regains [Spell Strength] MP or
+[Casting Cost] MP, whichever is lower.</p>
+<p>Resistance to [Type]
+You would not believe the number of young summoners coming in
+here asking for fire protection.
+Upkeep, Instant, [Fire, Frost, Shock, Poison]</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 2
+
+ 3
+
+ 4
+
+ 5
+
+ 6
+
+ 7
+</code></pre>
+<p>Cost:</p>
+<pre><code> 3
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>5</p>
+<p>2</p>
+<p>7</p>
+<p>3</p>
+<p>9</p>
+<p>4</p>
+<p>11</p>
+<p>5</p>
+<p>13</p>
+<p>6</p>
+<p>15</p>
+<p>7</p>
+<p>Caster gains the Resistance ([type], [Spell Strength]) trait for
+1 round.</p>
+<p>Resistance to Magic
+Generic as opposed to specialized resistance will cost you more
+magicka, but sometimes its better to be prepared for anything.
+Upkeep, Instant
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 5
+</code></pre>
+<p>[Spell Str.]</p>
+<p>1</p>
+<p>9</p>
+<p>2</p>
+<p>13</p>
+<p>3</p>
+<p>17</p>
+<p>4</p>
+<p>21</p>
+<p>5</p>
+<p>25</p>
+<p>6</p>
+<p>29</p>
+<p>7</p>
+<p>Caster gains the Resistance (magic, [Spell Strength]) trait for
+1 round.</p>
+<p>Stabilize
+A spell I hope you never have to use, but will be thankful for.
+Direct, Instant
+1
+Level:</p>
+<p>Cost:</p>
+<pre><code> 2
+</code></pre>
+<p>Stabilizes target dying character within 1m.</p>
+<p>143</p>
+<p>Turn Undead
+Despite what many disappointed would-be liches initially think,
+this spell is for repelling the undead.
+Direct, Upkeep
+1
+Level:</p>
+<pre><code> 7
+
+ 5
+
+ 6
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<pre><code> 7
+</code></pre>
+<p>[Spell Str.]</p>
+<p>+20</p>
+<p>10</p>
+<p>+10</p>
+<p>13</p>
+<p>+0</p>
+<p>16</p>
+<p>-10</p>
+<p>19</p>
+<p>-20</p>
+<p>22</p>
+<p>-30</p>
+<p>25</p>
+<p>-40</p>
+<p>Target character with the Undead trait within 50m must make a
+Willpower test with a [Spell Strength] modifier. On a failure, the
+target must spend any AP, SP, or any other resources necessary
+on their next turn to attempt to flee from the caster until they
+are at least 40m away from them.</p>
+<p>Ward
+Another reliable method to reduce all the hard work an enemy puts
+into killing you to nothing.
+Reinforce, Instant Ward is also an Alteration spell
+6</p>
+<p>Level:</p>
+<pre><code> 1
+
+ 7
+
+ 5
+
+ 3
+
+ 4
+
+ 2
+</code></pre>
+<p>Cost:</p>
+<p>[Spell Str.]</p>
+<p>3</p>
+<p>6</p>
+<p>5</p>
+<p>7</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>9</p>
+<p>11</p>
+<p>10</p>
+<p>13</p>
+<p>11</p>
+<p>15</p>
+<p>12</p>
+<p>May be cast as a reaction to an attack in place of the characters
+normal defense and does not provoke Attacks of Opportunity.
+Caster generates a magical ward that acts as a shield for all
+damage, gaining [Spell Strength] Magical and Physical BR.
+Power Block is incompatible with this shield.</p>
+<p>144</p>
+<p>unConventional SpellS</p>
+<p>Unlike the tried and true conventional spells, unconventional
+spells are the realm of unique, experimental, and potentially
+dangerous magic.</p>
+<p>Unconventional Spells are spells that produce more than a
+single effect, can be classified as belonging to more than one
+school, or are simply a unique variation on a standard effect.
+These spells are considered the realm of over-eager apprentices
+and learned masters: experimental magic that can bring both
+great risks and great rewards.</p>
+<p>In game terms unconventional spells are custom spells. There
+is no list of them, it is the catch all term for the unique
+spells that can be created from the various magical effects
+and forms that exist within the system. This section contains
+rules for creating and using your own unconventional spells.</p>
+<p>Important Note
+The creation and use of Unconventional Spells provides
+casters with a powerful system to customize their spell
+arsenal and is integral to the classic Elder Scrolls expe-
+rience. This system was designed with flexibility and
+customization as priorities, which leaves it vulnerable to
+the creation of over-powered spells and spell effect combi-
+nations. Players should always review Unconventional
+Spells with their GM before they are implemented in
+play.</p>
+<p>Creating a Spell
+Creating an unconventional spell is a matter of putting pieces
+together to make a functioning spell that can be used like any
+of the premade conventional spells.</p>
+<p>The Basics
+The two pieces that players can combine to create spells are
+called effects and forms.</p>
+<p>An Effect is the actual content of a spell: the fire effect causes
+fire damage while the heal effect heals it. A Form is the shape
+of the spell. Some spells are cast across wide areas (like a fireball,
+which uses the ball form) while others are cast only on the
+caster themself (the self  form).</p>
+<p>Creating a spell is a matter of combining effects and forms
+that are allowed to fit together, setting the parameters of each,
+and then writing down the combined result so that you can
+reference it during gameplay.</p>
+<p>Multi Part Spells
+Unconventional spells can also be multi-part spells, which simply
+means that they contain multiple spells in a single spell. For
+example a character might create a spell that when cast allows
+them to both jump further and walk on water, which are two
+separate effects. These distinct parts are referred to as Spell Parts,
+while the spell containing them is referred to as the Parent Spell.</p>
+<p>When a character is casting a multi-part spell, they should resolve
+each part of the spell simultaneously (meaning that none of the
+parts benefit from the effects of any of the other parts).</p>
+<p>Learning Effects &amp; Forms
+A character can use any form when creating an unconventional
+spell, but may only utilize effects from schools of magic in which
+they are trained (meaning the skill is novice rank or higher).
+Spell Attributes
+Spell attributes are tags that modify the rules of a spell or clarify
+how they function in game terms. Effects and forms each have
+spell attributes associated with them that are combined when
+the complete spell profile is created.</p>
+<p>Reference Materials
+A complete list of effects, forms, and spell attributes can be
+found in the Spell Making Reference in the</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>

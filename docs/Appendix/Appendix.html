@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Appendix</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Appendix"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Appendix"/><meta name="twitter:description" content="Appendix Spell MakinG referenCe The reference materials in this section are for players to use to create their own spells."/><meta property="og:description" content="Appendix Spell MakinG referenCe The reference materials in this section are for players to use to create their own spells."/><meta property="og:image:alt" content="Appendix Spell MakinG referenCe The reference materials in this section are for players to use to create their own spells."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Appendix/Appendix"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Appendix/Appendix"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Appendix Spell MakinG referenCe The reference materials in this section are for players to use to create their own spells."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXEdpdGh1YlxcU3RhcmZpc3N1cmUtdWVzcnBnLTNlLXY0XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/Appendix/Appendix-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/Appendix/Appendix-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/Appendix/Appendix-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Appendix/Appendix"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-0" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Appendix/">Appendix</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Appendix</a></div></nav><h1 class="article-title">Appendix</h1><p show-comma="true" class="content-meta"><time datetime="2025-11-11T22:06:36.721Z">Nov 11, 2025</time><span>29 min read</span></p><ul class="tags"><li><a href="../tags/homebrew-channel" class="internal tag-link">homebrew-channel</a></li></ul></div></div><article class="popover-hint"><h1 id="appendix">Appendix<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#appendix" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Spell MakinG referenCe</p>
+<p>The reference materials in this section are for players to use to
+create their own spells. See Unconventional Spells in Chapter
+6 for details.</p>
+<p>Spell Attributes
+Many spells have attributes listed in their profiles that modify
+their rules or clarify how they function in game terms. The rules
+for spell attributes apply to all types of spells but are included
+in this section for convenience:</p>
+<p>Attack: Using this effect is considered an Attack for the
+purposes of determining Attacks per round. Requires a
+Primary Cast Magic Action to cast.</p>
+<p>Instant: This spell can be cast using a Secondary Action,
+permitting the caster to either cast the spell on their turn
+or as a Reaction outside of their turn.
+Potion: A potion can be created with this spell effect.</p>
+<p>Toxin: A toxin can be created with this spell effect.</p>
+<pre><code>  Upkeep: The caster can, as a free action, refresh the effect 
+</code></pre>
+<p>(including any required tests or rolls, not including the
+casting test, using the original target(s)) and duration of
+this spell when it ends by paying the original cost that they
+paid for the spell as long as the requirements for the spell
+(like range) are still met. If the spell has no listed duration,
+then the character cannot upkeep the spell if they have cast
+a different spell since the original cast. If a spell has the
+Attack attribute, then upkeeping the spell counts toward
+the maximum attacks per round limit.
+Overload: The caster benefits from an extra effect (as spec-
+ified) if not restraining this spell.
+Reinforce: By default, spells with this attribute have no
+extra effects. When a character takes the Mage Guard and
+the Arcane Defender talents, they benefit from a bonus to
+the spell effect if not restraining the spell.
+Ranged (range): Spell can affect a target within the listed
+range.
+Melee (range): Spell counts as melee with the listed range.
+Does not provoke attacks of opportunity.
+Direct: This spell has a target or targets. These kinds of
+spells cannot do damage and cannot be defended against
+by normal means.</p>
+<p>Spell Forms
+This page contains a list of spell forms.  A Form is the shape
+of the spell. Some spells are cast across wide areas (like a fireball,
+which uses the ball form) while others are cast only on the
+caster themselves (the self  form). Most spell form have a base
+cost associated with them and a single parameter (which is
+represented by the variable Z) to determine their size. Many
+also have attributes associated with them: these are imparted
+to the final spell.</p>
+<p>Self
+Potion
+Cost: 1
+Affects the caster.</p>
+<pre><code>  AoE (range, form): This spell counts as a ranged area of 
+</code></pre>
+<p>effect of the given form/radius.
+Mindlock (X): Reduces the casters max AP by X to a
+minimum of zero.
+[Variation]: This spell has multiple variations, each cor-
+responding to one of the listed items. Each variation is its
+own spell that must be learned separately.</p>
+<p>Touch
+Ranged (1m)
+Cost: 1
+Affects a single target character within 1m of the caster.</p>
+<p>Bolt
+Ranged (100m)
+Cost: 2</p>
+<p>238</p>
+<p>Affects a single target character within 100m of the caster.</p>
+<p>Target
+Direct
+Cost: 4
+Affects a single target character within 50m of the caster. If this
+spell would alter the Targets mind or harm them in any way,
+this form becomes a Direct Attack.</p>
+<p>Ball
+Ranged, AoE (1 + Zm, sphere)
+Cost: 5 + Z
+Affects all targets within 1 + Z meters of target point within
+100m of the caster.</p>
+<p>Beam
+Ranged, AoE (10 + 10*Zm, beam)
+Cost: 5 + Z
+Affects all targets within a 1m wide line 10 + (10 x Z) meters
+in chosen direction from the caster.</p>
+<p>Chain
+Ranged (50m)
+Cost: 5 + Z
+Affects a single target within 50m of the caster. Then affects up
+to Z additional targets of the caster’s choice, each within 10m
+of the previous target.</p>
+<p>Cloak
+Upkeep
+Cost: 4
+Affects all targets within 1m at the end of each of the casters
+turns. This Form ignores the Attack attribute at GM discretion.</p>
+<p>Cone
+AoE (3 + Zm, cone)
+Cost: 5 + Z
+Affects all targets within a 3 + Z meter cone (a cone with a
+length of 3 + Z meters, and the same width).</p>
+<p>Pulse
+AoE (1 + Zm, sphere)
+Cost: 4 + Z
+Affects all targets within 1 + Z meters of the caster.</p>
+<p>Rune
+Cost: 5 + Z
+Creates a magical rune that takes up 1 square meter on a surface
+within 1 meter. After a 1 round delay the rune becomes barely
+visible (-20 to any vision based tests to spot it). The caster
+chooses one or more conditions upon which the rune detonates.
+The rune persists indefinitely.</p>
+<pre><code>Proximity: The rune detonates whenever a character comes 
+</code></pre>
+<p>within a certain distance (chosen by the caster).
+Time: The rune detonates after a set amount of time.
+Manual: The caster can detonate the rune manually from
+any distance by using the Cast Magic action.</p>
+<p>When the rune detonates it affects all targets within 1 + Z meters.
+This counts as an area of effect attack and can be evaded, but
+only if a character is aware of the rune.</p>
+<p>This Form ignores the Attack attribute at GM discretion.</p>
+<p>Storm
+Upkeep, AoE (1 + (3 x Z), sphere), (loses the Overload
+attribute)
+Cost: 5 + Z
+Affects all targets within 1 + (3 x Z) meters of target point within
+100m. Leaves behind a persistent zone in this area for 1 round
+that causes the same effect to any characters who pass through
+it (or end their turn in it if they started there). Upkeeping the
+spell does not let the caster move the storm, it merely refreshes
+the effect and duration.</p>
+<p>Wall
+Upkeep, AoE (Z, wall)
+Cost: 5 + Z
+Creates a wall 1m wide and 1 + (2 x Z) meters long within 100m,
+with an orientation chosen by the caster. Affects all targets within
+the area of the wall. Leaves behind a persistent zone in this area
+for 1 round that causes the same effect to any characters who
+enter it (or end their turn in it if they started there). Upkeeping
+the spell does not let the caster move the wall, it merely refreshes
+the effect and duration.</p>
+<p>Spell Effects
+The next page contains a list of spell effects.  An Effect is the
+actual content of a spell: the fire effect causes fire damage while
+the heal effect heals it.</p>
+<p>Most spell effects have a cost determined by a static multiplier
+times the chosen spell level (SL). Many also have attributes
+associated with them: these are imparted to the final spell.</p>
+<p>Unless otherwise specified, spell effects do not stack with
+themselves (multiple fortify spells do not stack on top of
+one another, for example).</p>
+<p>If the character is casting a multi-part spell, then resolve each
+part of the spell simultaneously (meaning that none of the parts
+benefit from the effects of any of the other parts).</p>
+<p>239</p>
+<p>Effect</p>
+<p>Rules</p>
+<p>Alteration Spell Effects</p>
+<p>Elemental Armor</p>
+<p>Affected target gains SL AR of the chosen [type] for 1 minute.</p>
+<p>Magic Armor</p>
+<p>Affected target gains SL magic AR for 1 minute.</p>
+<p>Armor</p>
+<p>Affected target gains SL AR for 1 minute.</p>
+<p>Burden</p>
+<p>Feather</p>
+<p>Shield</p>
+<p>Magic Shield</p>
+<p>[Type] Shield</p>
+<p>Affected target must make a Strength test with a 30 - (10 x SL)
+modifier or raise its Encumbrance level by one for 1 round.
+This spell effect can stack and each instance of this spell is
+upkept separately.
+Affected target lowers its Encumbrance level by one for 1 round
+and treats its armor as being one weight class lighter (target
+counts as being trained to wear this type of armor even if they
+normally would not be).</p>
+<p>Note: This effect always counts as being Spell Level 3.</p>
+<p>Target character within 50m of the caster gains a magical barrier
+with SL HP that envelopes them and protects against physical
+damage for 1 round. Any damage the caster takes from this
+damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>Target character within 50m of the caster gains a magical barrier
+with [Spell Strength] HP that envelopes them and protects
+against magical damage for 1 round. Any damage the caster
+takes from this damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>Target character within 50m of the caster gains a magical barrier
+with SL HP that envelopes them and protects against [Type]
+damage for 1 round. Any damage the caster takes from this
+damage type reduces the barriers HP first.</p>
+<p>This barriers HP does not belong to the target, but rather is
+the HP of the barrier before it breaks. If any of the barriers HP
+remains at the end of the duration, then the spell does not cost
+MP to upkeep and the barriers HP refreshes entirely. Otherwise,
+if all the HP of the barrier is lost at the end of the duration, then
+the spell cannot be refreshed via upkeep and must be cast again.</p>
+<p>Attributes</p>
+<p>[Fire, Frost, Shock, Poison],
+Upkeep, Potion, Reinforce,
+Instant</p>
+<p>Upkeep, Potion, Reinforce,
+Instant</p>
+<p>Upkeep, Potion, Reinforce,
+Instant</p>
+<p>Upkeep, Toxin</p>
+<p>Cost</p>
+<p>4 x SL</p>
+<p>6 x SL</p>
+<p>5 x SL</p>
+<p>3 x SL</p>
+<p>Upkeep, Potion, Instant</p>
+<p>10</p>
+<p>Reinforce, Upkeep, Potion,
+Instant</p>
+<p>2 x SL</p>
+<p>Reinforce, Upkeep, Potion,
+Instant</p>
+<p>2 x SL</p>
+<p>Reinforce, [Fire, Frost,
+Shock, Poison],
+Upkeep, Potion, Instant</p>
+<p>1 x SL</p>
+<p>240</p>
+<p>Effect</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Jump</p>
+<p>Levitate</p>
+<p>Lock</p>
+<p>Open</p>
+<p>Repair</p>
+<p>Slowfall</p>
+<p>The next time the affcted target jumps within 1 minute it may
+jump SL meters higher or further.</p>
+<p>Potion, Instant</p>
+<p>Affected target gains the Flyer (3 x SL) trait for 1 minute.</p>
+<p>Upkeep, Potion</p>
+<p>Affected door or container locks itself. Defeating this lock
+requires an extended Subterfuge test with a success threshold
+equal to 2 x SL.</p>
+<p>Affected door or container within 1 meter unlocks itself if the
+extended test threshold to unlock it is 2 x SL or lower.</p>
+<p>Instant</p>
+<p>Instant</p>
+<p>Removes SL levels of the Damaged (X) quality from affected
+piece of armor, shield, or weapon.</p>
+<p>Upkeep, Instant</p>
+<p>The next time affected target falls within 1 minute it may ignore
+up to the first 2 * SL meters when calculating fall damage. May
+be cast as a reaction if a character falls.</p>
+<p>Upkeep, Potion, Instant</p>
+<p>Water Breathing</p>
+<p>Character can breathe water as if it were air for SL minutes.</p>
+<p>Potion, Upkeep, Instant</p>
+<p>Potion, Upkeep, Instant</p>
+<p>Water Walking</p>
+<p>Ward</p>
+<p>Character can walk on water as if it were land for SL minutes.
+May be cast as a reaction to an attack in place of the
+characters normal defense and does not provoke Attacks
+of Opportunity. Caster generates a magical ward that acts
+as a shield for all damage, gaining [5 + SL] Magical and
+Physical BR. Power Block is incompatible with this shield.</p>
+<p>Cost</p>
+<p>SL</p>
+<p>6 x SL</p>
+<p>3 x SL</p>
+<p>3 x SL</p>
+<p>3 x SL</p>
+<p>1 x SL</p>
+<p>1 x SL</p>
+<p>1 x SL</p>
+<p>Instant, Reinforce</p>
+<p>2 x SL</p>
+<p>241</p>
+<p>Conjuration Spell Effects
+When summoning anything in unconventional spellcasting, regardless of spell form only 1 creature/object is summoned per
+every instance of the effect. For example, a Summon Scamp Ball will only summon 1 scamp unless the Summon Scamp Ball has
+2 or more Summon Scamp effects.</p>
+<p>A summoned creature will appear at a target point determined by the form of this spell.</p>
+<p>Any AoE form: creature is summoned anywhere within that area.
+Cloak/Self forms: creature is summoned 5 meters near the caster.
+Target/Bolt/Touch: creature is summoned 5 meters near the target or target area the spell is hit</p>
+<p>A summoned object will appear on a target character determined by the form of this spell.</p>
+<p>Any AoE form: object is summoned on a target of the casters choosing within the area of the AoE.
+Cloak/Self forms: object is summoned on the caster.
+Target/Bolt/Touch: object is summoned on the target of the form.</p>
+<p>Effect</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>Conjure [Armor]</p>
+<p>Conjure [Weapon]</p>
+<p>Summons one of the following sets of Bound Daedric armour (Both Arms;
+Both Legs, Body; or Head;) that follows the profile determined by its SL.
+The armour slots this spell summons must be determined when the spell is
+learned.</p>
+<p>This piece of armor magically replaces whatever armor a willing target is
+currently wearing on that location for one minute. The armor piece counts as
+one weight class lighter for the purpose of armor penalties, and does not need
+to be among the target’s trained armor classes in its combat style. The armour
+has the Bound and Summoned traits.
+SL 2: Inferior Partial Daedric
+SL 3: Inferior Full Daedric
+SL 4: Partial Daedric
+SL 5: Full Daedric
+SL 6: Superior Partial Daedric
+SL 7: Superior Full Daedric</p>
+<p>Notes:</p>
+<p>This effect cannot be used at Spell level 1
+Adding more than 1 instance of this effect causes the cost of all instances
+of this effect after the first to be 2 x SL, but only if used in the self form.</p>
+<p>Summons a Bound Daedric weapon or shield of casters choice that follows
+the profile determined by its [Spell Level]. The weapon type must be deter-
+mined when the spell is learned.
+SL 2: Primitive Quality
+SL 4: Standard
+SL 6: Proven Quality</p>
+<p>This weapon appears in a willing targets hand(s) for the duration of the
+spell or until the weapon leaves the target’s hands. The target gains a [Spell
+Strength] weapon (with ammo) with the Bound and Summoned traits of the
+chosen type for 1 minute. Weapons with the reload quality are not loaded
+when they are summoned; however, the value of the first reload action is
+reduced by 1. If the weapon is not in any of the target’s Combat Styles, they
+count it as being Trained (+0).</p>
+<p>Notes:</p>
+<p>This effect can only be used at Spell Levels 2, 4, and 6.</p>
+<p>Upkeep, Instant</p>
+<p>7 x SL</p>
+<p>Upkeep, Instant</p>
+<p>7 x SL</p>
+<p>242</p>
+<p>Effect</p>
+<p>Sunder Binding</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>The caster picks a target with the Summoned trait that must make an
+opposed Willpower test vs the caster with a 30 - (10 x SL) modifier or be sent
+back to the place from whence it came. This is also a Mysticism effect.</p>
+<ul>
+<li></li>
+</ul>
+<p>1 x SL</p>
+<p>Summon Construct</p>
+<p>Summon Daedra</p>
+<p>Summons a construct with the Summoned trait, which appears within five
+meters of the caster. Immediately after being summoned, the Construct
+must make a Willpower test against the DoS of the Conjuration test. If the
+Conjurer wins the test, the Construct gains the Bound trait and persists for
+1 round, If the Construct wins the Opposed test, it is not Bound and can
+act as it pleases, typically murdering its summoner. The unbound Construct
+can test Willpower at the end of each round to maintain itself in Mundus.
+Keeping the Construct in line imposes [Spell Str] Mindlock on the caster.
+If the spell ends because the caster chooses not to upkeep this spell and the
+summoned creature has the Bound trait, the creature loses the Summoned
+trait and returns to their plane of origin.</p>
+<p>Roll initiative for the Construct when its summoned, as it acts on its own
+turn. If this spell is restrained, the summoned creatures Maximum AP
+is reduced by 1 while they have the Bound trait.</p>
+<p>For each time the spell is bought, pick one spell profile from the table below
+and mark it on your sheet.</p>
+<p>Note: Spell Strength depends on the construct summoned, which can be
+found in its profile on the page below.</p>
+<p>Summons a Daedra with the Summoned trait, which appears within five
+meters of the caster. Immediately after being summoned, the Daedra must
+make a Willpower test against the DoS of the Conjuration test. If the
+Conjurer wins the test, the Daedra gains the Bound trait and persists for 1
+round, If the Daedra wins the Opposed test, it is not Bound and can act as
+it pleases, typically murdering its summoner. The unbound Daedra can test
+Willpower at the end of each round to maintain itself in Mundus. Keeping
+the Daedra in line imposes [Spell Str] Mindlock on the caster. If the spell
+ends because the caster chooses not to upkeep this spell and the summoned
+creature has the Bound trait, the creature loses the Summoned trait and
+returns to their plane of origin.</p>
+<p>Roll initiative for the Daedra when its summoned, as it acts on its own turn.
+If this spell is restrained, the summoned creatures Maximum AP is
+reduced by 1 while they have the Bound trait.</p>
+<p>For each time the spell is bought, pick one spell profile from the table below
+and mark it on your sheet.</p>
+<p>Note: Spell Strength depends on the construct summoned, which can be
+found in its profile on the page below.</p>
+<p>Upkeep,
+Mindlock(Spell
+Strength)</p>
+<p>See Profile
+Table</p>
+<p>Upkeep,
+Mindlock(Spell
+Strength)</p>
+<p>See Profile
+Table</p>
+<p>243</p>
+<p>Summoned Creature Profile Tables
+To find the stats for the Daedra or Construct you want to summon, go to The Scroll of Oblivion.</p>
+<p>Summoned Daedra</p>
+<p>Daedra</p>
+<p>Level</p>
+<p>Cost</p>
+<p>Spell Str.</p>
+<p>Daedrat</p>
+<p>Scamp</p>
+<p>Banekin</p>
+<p>Hell Hound</p>
+<p>Clannfear</p>
+<p>Hunger</p>
+<p>Dremora Churl</p>
+<p>Flame Atronach</p>
+<p>Spider Daedra</p>
+<p>Dremora Caitiff</p>
+<p>Ogrim</p>
+<p>Frost Atronach</p>
+<p>Auroran</p>
+<p>Storm Atronach</p>
+<p>Dremora Kynmarcher</p>
+<p>Winged Twilight</p>
+<p>Aureal (Golden Saint)</p>
+<p>Mazken (Dark Seducer)</p>
+<p>Dremora Lord</p>
+<p>Xivilai</p>
+<p>Daedroth</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>4</p>
+<p>4</p>
+<p>4</p>
+<p>4</p>
+<p>5</p>
+<p>5</p>
+<p>5</p>
+<p>6</p>
+<p>6</p>
+<p>6</p>
+<p>7</p>
+<p>7</p>
+<p>7</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>12</p>
+<p>13</p>
+<p>16</p>
+<p>16</p>
+<p>17</p>
+<p>18</p>
+<p>19</p>
+<p>20</p>
+<p>20</p>
+<p>22</p>
+<p>23</p>
+<p>24</p>
+<p>27</p>
+<p>28</p>
+<p>28</p>
+<p>32</p>
+<p>33</p>
+<p>34</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>3</p>
+<p>2</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>3</p>
+<p>Summoned Daedra</p>
+<p>Construct</p>
+<p>Flesh Atronach</p>
+<p>Hulking Flesh Atronach</p>
+<p>Level</p>
+<p>4</p>
+<p>6</p>
+<p>Cost</p>
+<p>21</p>
+<p>29</p>
+<p>Spell Str.</p>
+<p>2</p>
+<p>3</p>
+<p>244</p>
+<p>Effect</p>
+<p>Destruction Spell Effects</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Disintegrate Armor</p>
+<p>Armor piece on affected hit location gains Damaged (SL)</p>
+<p>Disintegrate Weapon Weapons held by affected character(s) gain Damaged (SL)</p>
+<p>Attack</p>
+<p>Attack</p>
+<p>Drain Magicka</p>
+<p>Fatigue</p>
+<p>Fire</p>
+<p>Frost</p>
+<p>Shock</p>
+<p>Poison</p>
+<p>Sunlight</p>
+<p>Affected target must make a Willpower test or lose 4 x SL MP.
+When included in a Toxin, this spell effect is not considered to have
+the Upkeep Attribute.</p>
+<p>Affected target must make an Endurance test with a 30 - (10 x SL)<br/>
+modifier or lose 1 SP. When included in a Toxin, this spell effect is
+not considered to have the Upkeep Attribute.</p>
+<p>Affected target takes (die) fire damage.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4
+and stepping up one size for each SL beyond the first (1d6, 1d8, 1d10,
+2d6, 2d8, 2d10).</p>
+<p>Affected target takes (die) frost damage.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4
+and stepping up one size for each SL beyond the first (1d6, 1d8, 1d10,
+2d6, 2d8, 2d10).</p>
+<p>Affected target takes (die) shock damage.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4
+and stepping up one size for each SL beyond the first (1d6, 1d8, 1d10,
+2d6, 2d8, 2d10).</p>
+<p>Affected target takes (die) poison damage.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4
+and stepping up one size for each SL beyond the first (1d6, 1d8, 1d10,
+2d6, 2d8, 2d10).</p>
+<p>Affected target takes (die) fire damage. Damage dealt counts as
+sunlight.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4
+and stepping up one size for each SL beyond the first (1d6, 1d8, 1d10,
+2d6, 2d8, 2d10).</p>
+<p>Cost</p>
+<p>4 x SL</p>
+<p>4 x SL</p>
+<p>2 x SL</p>
+<p>Upkeep, Toxin</p>
+<p>Toxin, Attack, Upkeep</p>
+<p>2 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>2 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>2 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>2 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>2 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>3 x SL</p>
+<p>Elemental Weakness</p>
+<p>Affected target gains Weakness ([type], SL) trait for 1 round.</p>
+<p>[Fire, Frost, Shock, Poison],
+Upkeep</p>
+<p>Weakness to Magic</p>
+<p>Affected target gains Weakness (magic, SL) trait for 1 round.</p>
+<p>Upkeep</p>
+<p>1 x SL</p>
+<p>3 x SL</p>
+<p>245</p>
+<p>Effect</p>
+<p>Blind</p>
+<p>Calm</p>
+<p>Illusion Spell Effects</p>
+<p>Rules</p>
+<p>Affected target must make a Willpower test with a 30 - (10 x SL)<br/>
+modifier or be Blinded for 1 round.
+Affected target must make a Willpower test with a 30 - (10 x SL)
+modifier or be calmed for 1 minute.</p>
+<p>Attributes</p>
+<p>Upkeep, Toxin</p>
+<p>Cost</p>
+<p>3 x SL</p>
+<p>A calmed character loses the will to fight. While calmed, they cannot
+willingly attack any character unless that character attacks them first,
+at which point they snap out of the effect.</p>
+<p>Toxin</p>
+<p>3 x SL</p>
+<p>If a character while under this spells effect is struck by a Frenzy effect,
+then this spell effect is immediately nullified</p>
+<p>Chameleon</p>
+<p>Affected target gains the Chameleon (-5 x SL) condition for 1 minute.</p>
+<p>Charm</p>
+<p>Courage</p>
+<p>Panic</p>
+<p>Horror</p>
+<p>Frenzy</p>
+<p>Invisibility</p>
+<p>Light</p>
+<p>Muffle</p>
+<p>Night Eye</p>
+<p>Paralyze</p>
+<p>Sanctuary</p>
+<p>Silence</p>
+<p>Affected target becomes receptive to others, and the next character to
+attempt a Persuade or Deceive test on them within 1 minute receives a
++5 x SL bonus.</p>
+<p>Willing affected target receives a +5 x SL bonus to any Fear tests
+within 1 minute. Targets under the effects of fear can make a
+Willpower test with the same bonus to snap out of the effects.</p>
+<p>Affected target must make a Panic (30 - (10 x SL)) test.</p>
+<p>Affected target must make a Horror (30 - (10 x SL)) test.</p>
+<p>Affected target must make a Willpower test with a 30 - (10 x SL)
+modifier or gain the Frenzied condition.</p>
+<p>If a character while under this spells effect is struck by a Calm effect,
+then this spell effect is immediately nullified.</p>
+<p>Affected target gains the Invisible condition for 1 round. They lose this
+condition if they attack or cast another spell during this time.</p>
+<p>Upkeep, Potion,
+Instant</p>
+<p>Upkeep, Toxin,
+Instant</p>
+<p>3 x SL</p>
+<p>2 x SL</p>
+<p>Upkeep, Instant</p>
+<p>2 x SL</p>
+<ul>
+<li></li>
+</ul>
+<p>Attack</p>
+<p>Toxin</p>
+<p>2 x SL</p>
+<p>8 x SL</p>
+<p>4 x SL</p>
+<p>Upkeep, Potion</p>
+<p>12</p>
+<p>Note: This effect always counts as being Spell Level 5.</p>
+<p>Creates a light orbiting affected target that illuminates an area within
+10 x SL meters for 1 minute.</p>
+<p>Upkeep, Potion,
+Instant</p>
+<p>Affected target gains the Muffled (-5 x SL) condition for 1 minute.</p>
+<p>Upkeep, Potion,
+Instant</p>
+<p>Affected target gains the ability to see in the dark up to 10 x SL meters
+for 1 minute.</p>
+<p>Upkeep, Potion,
+Instant</p>
+<p>1 x SL</p>
+<p>3 x SL</p>
+<p>3 x SL</p>
+<p>Affected target must make a Willpower test with a 30 - (10 x SL)
+modifier or be Paralyzed for 1 round.
+Affected target gains SL additional degrees of success on successful
+defense tests for 1 round. They can also move 1 meter further than
+normal to avoid AoE attacks on successful evade tests.</p>
+<p>Affected target must make a Willpower test with a 30 - (10 x SL)
+modifier or be Silenced for 1 round.</p>
+<p>Upkeep, Toxin</p>
+<p>7 x SL</p>
+<p>Upkeep, Potion,
+Instant</p>
+<p>7 x SL</p>
+<p>Upkeep, Toxin</p>
+<p>3 x SL</p>
+<p>246</p>
+<p>Effect</p>
+<p>Absorb
+[Characteristic]</p>
+<p>Absorb Life</p>
+<p>Mysticism Spell Effects</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>Choose Characteristic at purchase. Affected target takes a 5 x SL penalty
+to all tests that rely on the affected Characteristic for one round, and
+grants the caster a bonus to tests using the same Characteristic for one
+round. If this spell is affected by a Reflect spell or effect, it has no net
+effect.</p>
+<p>Affected target takes (die) magic damage. Caster regenerates HP equal
+to half (round up) of the damage dealt (after reduction). If this spell is
+affected by a Reflect spell or effect, it has no net effect.</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4 and
+stepping up one size for each SL beyond the first (1d6, 1d8, 1d10, 2d6,
+2d8, 2d10).</p>
+<p>Affected target must make a Willpower test or lose (die) magicka. Caster
+regenerates MP equal to the magicka lost. If this spell is affected by a
+Reflect spell or effect, it has no net effect.</p>
+<p>Upkeep</p>
+<p>8 x SL</p>
+<p>Overload (+WB to Dmg),
+Attack</p>
+<p>3 x SL</p>
+<p>Absorb Magicka</p>
+<p>Overload (+WB to MP lost)</p>
+<p>3 x SL</p>
+<p>Note: The SL determines the size of the die used, starting with a 1d4 and
+stepping up one size for each SL beyond the first (1d6, 1d8, 1d10, 2d6,
+2d8, 2d10).</p>
+<p>Affected target gains the ability to see objects/effects of the chosen
+[type] within 10 x SL meters as a faint, shimmering outline even in the
+dark and through objects, even if blind, for 1 minute.</p>
+<p>[Life, Magic, Undead, (other)],
+Upkeep, Potion, Instant</p>
+<p>5 x SL</p>
+<p>Removes all magical effects of SL level (either potion, spell, or enchant
+level) or lower from the affected target. Constant enchantments
+reactivate after 1d4 rounds.</p>
+<p>Potion</p>
+<p>Ethereal Form</p>
+<p>Affected target gains the Incorporeal trait for 1 round.
+Note: This effect always counts as being Spell Level 5.</p>
+<p>Upkeep, Potion</p>
+<p>4 x SL</p>
+<p>10</p>
+<p>5</p>
+<p>15</p>
+<p>Places an invisible, magic mark at the affected targets current location.
+The amount of marks a character can keep track of is equal to their
+Intelligence Bonus.</p>
+<p>Note: This effect always counts as being Spell Level 2, and can only be used
+with the Self form.</p>
+<p>Instantly transports willing affected target to the location of one of the
+casters magic marks placed with the Mark spell. Cannot be used to
+travel between planes.</p>
+<p>Potion, Instant</p>
+<p>Potion, Instant</p>
+<p>Note: This effect always counts as being Spell Level 3.</p>
+<p>Any time affected target would be hit by a spell (after any defense, but
+before resolving effects), roll a d10. If the result is a roll of SL or lower,
+instead resolve the spell against its original caster. Lasts for 1 round.</p>
+<p>Affected target within 50m has their soul magically tethered to
+an appropriate empty soul gem (only black soul gems can hold
+the souls of men, mer, and the beast races) of the casters choice
+within 1m of the caster. If the target dies within 1 minute, then
+their soul is trapped within the gem and it gains soul energy equal
+to the size of their soul.</p>
+<p>Note: This effect always counts as being Spell Level 2.</p>
+<p>Upkeep, Potion, Instant</p>
+<p>3 x SL</p>
+<p>Upkeep</p>
+<p>12</p>
+<p>Detect [type]</p>
+<p>Dispel</p>
+<p>Mark</p>
+<p>Recall</p>
+<p>Reflect</p>
+<p>Soul Trap</p>
+<p>Spell Absorption</p>
+<p>Affected target gains the Spell Absorption (SL) trait for 1 round.</p>
+<p>Upkeep, Potion, Instant</p>
+<p>3 x SL</p>
+<p>247</p>
+<p>Effect</p>
+<p>Rules</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>Sunder Binding</p>
+<p>The caster picks a target with the Summoned trait that must make an
+opposed Willpower test vs the caster with a 30 - (10 x SL) modifier
+or be sent back to the place from whence it came. This is also a
+Conjuration effect.</p>
+<ul>
+<li></li>
+</ul>
+<p>Telekinesis</p>
+<p>Telepathy</p>
+<p>Affected target gains the Telekinesis (SL) trait for 1 minute.</p>
+<p>Affected target gains the Telepathy (SL) trait for 1 minute.</p>
+<p>Upkeep, Potion, Instant</p>
+<p>Upkeep, Potion, Instant</p>
+<p>1 x SL</p>
+<p>3 x SL</p>
+<p>3 x SL</p>
+<p>Effect</p>
+<p>Necromancy Spell Effects
+Rules</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>Target corpse of [Spell Strength] size is reanimated for one minute,
+using the profile it had in life. The target must immediately test an
+Opposed Willpower with the caster. If the caster wins the test, the
+target also has the Bound trait. If the target wins the test, they are
+reanimated but are not Bound to the caster.</p>
+<p>The target is reanimated with full HP, Stamina Points, Action Points,
+Magicka, and any uses of limited use abilities.</p>
+<p>Reanimate</p>
+<p>The spell imbues the body with the spirit of a lesser daedra, and has
+no shred of the characters consciousness, soul, or any knowledge
+of their past life except for skills, talents, traits, and spells. They do
+not retain powers gained from their race.</p>
+<p>Upkeep, Direct, Mindlock(1)</p>
+<p>5 x SL</p>
+<p>After the reanimated creature dies again or if the spell ends (due to
+unpaid upkeep or any other reason), the reanimated creature turns
+to a pile of ash and cannot be reanimated.</p>
+<p>Note: The SL determines the size of the creature that can be reanimated,
+starting with “Puny” and stepping up one size for each SL beyond the first
+(Tiny, Small, Standard, Large, Huge, Massive).</p>
+<p>The caster summons a Ghost (SL 2) or an Ancient Ghost (SL 3) into
+Mundus for one round. The caster and the Ghost must immediately
+roll an Opposed Willpower test; if the caster succeeds, the Ghost
+has the Bound trait for the duration.</p>
+<p>Summon Ghost</p>
+<p>Upkeep, Mindlock(1)</p>
+<p>Summon Wraith</p>
+<p>The caster summons a Wraith (SL 4) or a Gloom Wraith (SL 5) into
+Mundus for one round. The caster and the Wraith must immediately
+roll an Opposed Willpower test; if the caster succeeds, the Wraith
+has the Bound trait for the duration.</p>
+<p>Upkeep, Mindlock(2)</p>
+<p>SL 2 = 12
+SL 3 = 19</p>
+<p>SL 4 = 18
+SL 5 = 22</p>
+<p>248</p>
+<p>Effect</p>
+<p>Cure Disease</p>
+<p>Cure Paralysis</p>
+<p>Fortify
+[Characteristic]</p>
+<p>Heal</p>
+<p>Rejuvenate</p>
+<p>Replenish</p>
+<p>Restoration Spell Effects</p>
+<p>Rules</p>
+<p>Affected target removes the Diseased SL Condition
+Spell Level 2 = Common
+Spell Level 4 = Magical</p>
+<p>Note: This effect always counts as being either Spell Level 2 or Spell Level 4</p>
+<p>Affected target loses the Paralyzed condition.</p>
+<p>Note: This effect always counts as being Spell Level 2.</p>
+<p>Affected target increases their [characteristic] score by 5*SL for 1 round.</p>
+<p>Affected target regains 2 x SL HP.
+Affected target regains 1 SP OR removes 1 level of fatigue if they have any.</p>
+<p>Note: This effect always counts as being Spell Level 3.</p>
+<p>Target character within 1 meter regains [2 x SL] MP or [Casting Cost] MP,
+whichever is lower.</p>
+<p>Note: This effect cannot be used with the self form.</p>
+<p>Elemental Resistance Affected target gains the Resistance ([type], SL) trait for 1 round.</p>
+<p>Attributes</p>
+<p>Cost</p>
+<p>Potion, Instant</p>
+<p>3 x SL</p>
+<p>Potion, Instant</p>
+<p>8</p>
+<p>Upkeep, Potion,
+[Strength, Endurance,
+Agility, Intelligence,
+Willpower, Perception,
+Personality]</p>
+<p>8 x SL</p>
+<p>Potion, Instant</p>
+<p>2 x SL</p>
+<p>Potion, Instant</p>
+<p>16</p>
+<p>Potion, Instant</p>
+<p>3 x SL</p>
+<p>[Fire, Frost, Shock,
+Poison],
+Upkeep, Potion, Instant</p>
+<p>2 x SL</p>
+<p>Resistance to Magic</p>
+<p>Affected target gains the Resistance (magic, SL) trait for 1 round.</p>
+<p>Upkeep, Potion, Instant</p>
+<p>4 x SL</p>
+<p>Stabilize</p>
+<p>Turn Undead</p>
+<p>Ward</p>
+<p>Affected target is stabilized if they were dying.</p>
+<p>Note: This effect always counts as being Spell Level 1.</p>
+<p>Affected target with the Undead trait must make a Willpower test with a
+30 - (10 x SL). On a failure, the target must spend any AP, SP, or any other
+resources necessary on their next turn to attempt to flee from the caster until
+they are at least 40m away from them.
+May be cast as a reaction to an attack in place of the characters
+normal defense and does not provoke Attacks of Opportunity. Caster
+generates a magical ward that acts as a shield for all damage, gaining
+[5 + SL] Magical and Physical BR. Power Block is incompatible with
+this shield.</p>
+<p>phySiCal daMaGe diCe StepS</p>
+<p>1d4 > 1d6 > 1d8 > 1d10 > 1d12 > 2d8 > 2d10 > 2d12</p>
+<p>Potion, Instant</p>
+<p>1</p>
+<p>Upkeep, Toxin</p>
+<p>3 x SL</p>
+<p>Instant, Reinforce</p>
+<p>2 x SL</p>
+<p>249</p>
+<p>SuppleMental reSourCeS</p>
+<p>The UESRPG Discord Community
+It is highly recommended that GMs and players alike join the UESRPG Discord Community. We often refer to the discord as
+a core supplement to this game. There are many active veterans of this system available at all times of day in the chat server’s
+various chat channels who are happy to answer any questions that arise from reading or play. An invite to the server can be found
+at  discord.gg/HWZVw2qTE5.</p>
+<p>The UESRPG Subreddit
+While the UESRPG Subreddit isn’t nearly as active as the Discord Community, it can serve as a suitable alternative to those who
+prefer not to use discord. If the above Discord link is broken, an updated link can usually be found on the subreddit as well. The
+subreddit can be visited at <a href="http://www.reddit.com/r/UESRPG/" class="external">www.reddit.com/r/UESRPG/<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.</p>
+<p>Homebrew Content
+A valued community member and contributor to this book, TutorialTuna, has a veritable treasure trove of homebrew content that can be
+found in the Google Drive found by following this link: drive.google.com/drive/folders/1OEyIGpNO5dL7USX7ASp4-Ls195QDge0l.</p>
+<p>Additional homebrew content can be found pinned and being discussed in the <a href=".././tags/homebrew-channel" class="tag-link internal alias" data-slug="tags/homebrew-channel">homebrew-channel</a> in the discord community.</p>
+<p>Lore and Inspiration
+Outside of resources specific to this system, there are a number of communities who do a lot of work cataloging Elder Scrolls
+lore and materials.</p>
+<p>The Unofficial Elder Scrolls Pages (UESP), a respected lore wiki community dedicated to scribing lore and other in-game
+information, can be found at UESP.net.</p>
+<p>The Imperial Library is a website dedicated to the archival of in-game and out-of-game lore books alike. It also archives non-canon
+lore posts by official and respected unofficial sources alike, great for inspiration when canon lore doesn’t quite do the trick. It can
+be found at imperial-library.info.</p>
+<p>The Elder Scrolls Fandom Wiki, while often admonished for its somewhat imprecise approach to verifying sources and edits to
+its articles, is a rather useful resource similar to UESP. In the context of TTRPGs, it can prove rather useful for inspiring creativity
+for many of the reasons it does not serve as a reliable source for canon lore. It can be found at elderscrolls.fandom.com.</p>
+<p>250</p>
+<p>251</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>

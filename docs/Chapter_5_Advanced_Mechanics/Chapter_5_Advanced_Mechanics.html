@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Chapter_5_Advanced_Mechanics</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Chapter_5_Advanced_Mechanics"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chapter_5_Advanced_Mechanics"/><meta name="twitter:description" content="Chapter 5: Advanced Mechanics We dont have shields in our culture. It seems strange to my boy, I imagine."/><meta property="og:description" content="Chapter 5: Advanced Mechanics We dont have shields in our culture. It seems strange to my boy, I imagine."/><meta property="og:image:alt" content="Chapter 5: Advanced Mechanics We dont have shields in our culture. It seems strange to my boy, I imagine."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Chapter 5: Advanced Mechanics We dont have shields in our culture. It seems strange to my boy, I imagine."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXEdpdGh1YlxcU3RhcmZpc3N1cmUtdWVzcnBnLTNlLXY0XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Chapter_5_Advanced_Mechanics/Chapter_5_Advanced_Mechanics"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-13"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-13" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Chapter_5_Advanced_Mechanics/">Chapter_5_Advanced_Mechanics</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Chapter_5_Advanced_Mechanics</a></div></nav><h1 class="article-title">Chapter_5_Advanced_Mechanics</h1><p show-comma="true" class="content-meta"><time datetime="2025-09-18T18:46:52.273Z">Sep 18, 2025</time><span>78 min read</span></p></div></div><article class="popover-hint"><h1 id="chapter-5-advanced-mechanics">Chapter 5: Advanced Mechanics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-5-advanced-mechanics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>We dont have shields in our culture. It seems strange to my boy, I imagine. In our country, if you dont</p>
+<p>want to get hit, you move out of the way.</p>
+<p>Akaviri Potentate Versidue-Shaie, 2920, The Last Year of the First Era</p>
+<p>In most adventures there is conflict, and this conflict is often</p>
+<p>physical. After all, the world of the Elder Scrolls can be a
+dangerous place. Wars, strange monsters, criminals, mercenaries,
+faction infighting, and any number of other scenarios can all
+force a party to use violence to accomplish their goals, or simply
+force the party into dangerous situations. This chapter contains
+mechanics for resolving combat, as well as other game mechanics
+to handle the variety of situations the players might encounter
+during their adventures.</p>
+<p>A Note on Time
+The UESRPG divides time into two categories: narrative time
+and structured time. Narrative Time is meant to be used in
+any situations that do not demand the time-sensitive resolution
+of tasks. Functionally this means that almost any non-combat
+situation will use narrative time. In game terms, narrative time
+is a period in which the GM can freely advance time at any rate
+based on the needs of the story and the players. This could mean
+briefly describing the partys long journey across a vast desert,
+or playing out an important conversation minute by minute.</p>
+<p>Structured Time is used to handle time-sensitive events in
+which every second counts and the exact order of actions is
+crucial. Combat almost always takes place in structured time,
+which is what the rules of this chapter are intended for; though
+the GM could decide to handle it in narrative time instead.
+CoMbat</p>
+<p>The largest unit of structured time is called an encounter. An
+Encounter represents an entire sequence of dramatic events
+that make up a unified block of structured time that may be
+contained within sections of narrative time, or followed up by
+another encounter. Encounters focused on a particular combat
+scene are known as Combat Encounters.</p>
+<p>Encounters are broken down into Rounds: periods of time in
+which characters take actions, representing roughly six seconds
+of real time. During a round the GM counts down from
+highest to lowest initiative, giving each character a turn to act
+when their initiative step is reached, until every character has
+had a turn. During a Turn, the active character spends at least
+1 AP to perform an action and resolves its effects. Sometimes
+the rules will refer to initiative steps, which simply refer to
+individual initiative values in the order.</p>
+<p>Effect Durations
+Effect durations are measured in rounds and end immediately
+after the initiative step on which they took effect. For example,
+if an Orc is stunned for 2 rounds on their turn, they remains-
+stunned until right after the end of their turn 2 rounds later
+(assuming their turn takes place at the same initiative step as</p>
+<p>it did originally).</p>
+<p>Combat Overview
+Combat encounters can be resolved by following these steps:</p>
+<p>Step 1: Determine Surprise
+If one or more characters arent expecting an attack, or aware of
+their attackers intentions, they have been surprised. The GM
+should determine which characters count as being surprised for
+the first round of combat. Surprised characters do not roll 1d6
+for initiative; they simply use their Initiative Rating. They also
+may only take reactions until after their first turn has passed.</p>
+<p>Step 2: Set the Scene
+Before the characters can begin taking their turns, the GM
+should outline the parts of the scenario that they are aware of,
+including the combatants they face, the positions of everyone
+involved, and the environment theyre fighting in. If the group
+is using a battle map or grid, this would be the time to set it up!</p>
+<p>Step 3: Determine Initiative
+To determine the order in which characters take their turns
+during each round of the combat, all characters involved must
+make an Initiative Roll. An Initiative Roll is made by roll-
+ing 1d6 and adding the characters Initiative Rating. Use the
+characters Initiative Rating and then Luck bonus (meaning
+PCs beat NPCs) to break ties, in that order. Further ties can
+be resolved by contested Luck Rolls or at the GMs discretion.
+The GM rolls initiative for any NPCs involved and should roll
+once for larger groups of similar NPCs. If new combatants
+enter the picture, simply have them roll and take their place in
+the order as appropriate.</p>
+<p>Step 4: Round Start
+Starting with the character with the highest initiative, each
+character takes one turn. At the start of the round, all char-
+acters replenish their AP. Then, during each Turn, the active
+character spends AP to perform combat actions and resolves
+their effects. Once their turn is over, the character with the
+next highest initiative takes their turn. This repeats until all
+characters have taken a turn.</p>
+<p>Optional Rule: Turn-Based AP Refreshing
+For an alternative strategic experience, your group
+can choose to play with this variant AP Refreshing
+ruleset. As combat starts, all characters start the
+first round with their Maximum AP. Then, in all
+subsequent rounds, characters replenish their AP at
+the start of their turn rather than at the start of the
+round.</p>
+<p>96</p>
+<p>Step 5: Round End
+Once all characters have had a turn, the round is over, regardless
+of the amount of AP any characters have remaining. Any effects
+or Conditions that specify a duration of until the end of the
+round end now.</p>
+<p>Step 6: Encounter Ends
+Repeat steps 4 and 5 until the combat is finished or the event
+that triggered the switch into structured time is resolved.</p>
+<p>Mapping Combat
+This chapter assumes players are using some sort of grid or battle
+map to track the positions of characters. For ease of use, each
+grid square in such a system should represent a square meter.<br/>
+More details on using a combat grid, or advice for playing the
+game without one, can be found later in this chapter.</p>
+<p>Action Types
+Actions represent all the things that a character can do during
+an encounter. The maximum number of times that a character
+can act during a round is determined by their max AP. All
+non-free actions cost at least 1 AP unless otherwise stated.</p>
+<p>Primary Actions can only be taken during the characters own
+turn. They are dedicated combat actions where the character
+is the instigator, and a character may take any number. An
+extended action is an action that requires the use of more
+than one AP, which can cause it to require more than one turn.</p>
+<p>Secondary Actions can only be taken during the characters
+own turn or as reactions. They are combat actions that require
+less dedication from the character and can be taken somewhat
+reactively to battlefield circumstances. A character may take
+any number of these.</p>
+<p>Reactions are actions that are taken to counter or resist other
+characters actions or other events that the character is aware of.
+Only one reaction attempt is permitted for each threat or event,
+but any number of reactions may be made per round (provided
+that the character has action points left for that round to spend).</p>
+<p>Special Actions are a unique class of actions that are often
+taken in opposition to another character and can be taken when
+a character has gained Advantage in combat. Special actions
+can be either primary/secondary actions or reactions, and they
+follow all the normal rules for an action of their type.</p>
+<p>Free Actions can be taken at any time during the combat
+round and cost no action points to activate; though the GM
+should keep in mind what is reasonable for a character to achieve
+in six seconds.</p>
+<p>Multiple Action Turns
+Because characters can take multiple primary or secondary
+actions on their turn, it is possible that characters can use up
+all of their AP to create some interesting action combinations
+when their turn arises. When declaring multiple actions on
+their turn, the character must declare them individually,
+resolving other characters reactions first before declaring
+and resolving any more.</p>
+<p>Movement Budget
+A characters Movement Budget is determined by their highest
+speed (usually base speed). During their turn a character can
+move a total number of meters up to their Movement Budget.<br/>
+This movement can take place at any point during a characters
+turn, either before or after any actions they take.</p>
+<p>Example: a characters Base Speed is 13m and their Climb Speed is
+7m, so their Movement Budget is 13m. They make a standard move
+for 8m, so they can only climb for 5 meters with their remaining
+Maximum Movement unless they use a Dash action.</p>
+<p>More details on movement can be found in the Movement &amp;
+Size section.</p>
+<p>Primary Actions
+The following primary actions are all actions that can only be
+taken during a characters own turn. Unless otherwise noted,
+they cost 1 AP.</p>
+<p>Attack
+The character can make an attack with a melee or ranged weapon.
+A character may make no more than two total attacks in
+a single round. When attacking they can use one of three
+optional variations of this action. A player must declare if their
+character is choosing one of these variations before the attack
+test has been made.</p>
+<pre><code>                   All Out Attack (melee only): The character makes a melee 
+</code></pre>
+<p>attack with a +20 bonus by spending an additional AP. This
+is not an extended action.
+Coup de Grce: The character makes a killing blow against
+a helpless target. A helpless target is one who is either
+unconscious, both restrained and prone, or otherwise phys-
+ically incapable of defending themselves. The GM may rule
+that certain characters cannot be killed in this way depend-
+ing on the circumstances. This kills the target outright.
+For unarmed Coup de Grce, refer to the Grappling rules.
+Precision Strike: A character attempting a precision strike
+is aiming to hit a particular part of their opponents body
+and thus suffers a -20 penalty on the attack test. If successful,
+the character may choose the hit location of that attack in
+addition to resolving any other effects the attack would have.</p>
+<p>97</p>
+<p>Disengage
+The character can use this action to retreat from combat with
+an enemy. If they move out of an enemys engagement range
+during this turn then the attack of opportunity reaction or
+other delayed actions/reactions, may not be taken against them.</p>
+<p>Cast Magic
+The character casts a spell that they know using the rules for
+spellcasting found in Chapter 6. This may be used to cast
+spells that count as attacks, but a character may make no
+more than two attacks in a single round.</p>
+<p>Delay Turn
+The character declares a set of circumstances in which they
+will act. The character then skips their turn without spending
+AP and may insert their delayed turn into the order as a free
+reaction if the conditions are met. If the delayed turn is not
+taken before the characters next turn would occur, then the
+action points are lost entirely.</p>
+<p>Defensive Stance
+Using this action grants the character +10 on any defensive
+tests made until their next turn. Taking this action reduces the
+characters Attack limit to 0 until their next turn.</p>
+<p>Secondary Actions
+The following Secondary Actions are actions that can be taken
+during a characters own turn or as reactions for 1 AP.</p>
+<p>Aim
+A character can spend an action aiming in order to gain a
++10 bonus to their next ranged attack, including spells with
+the Bolt form. This bonus can stack if the character takes this
+action multiple consecutive times before the next ranged or
+bolt attack, but only up to three times for a maximum bonus
+of +30. The chain of aim actions can stretch across rounds.
+This chain is broken and the bonus lost if the character makes
+an attack with another weapon or takes any actions or reactions
+other than to continue aiming or fire the aimed weapon or spell.
+Once the aimed weapon is fired, the bonuses from this action
+are reset to +0.f</p>
+<p>Cast Magic (Instant only)
+The character casts a spell that they know using the rules for
+spellcasting found in Chapter 6. This may only be used to cast
+spells that have the Instant Spell Attribute.</p>
+<p>Dash
+The character can use this action in order to move up to their
+speed. If this is done on their turn, this movement is added
+to their base movement for that turn. This action can be used</p>
+<p>to allow a character to move several times their speed during
+a round.</p>
+<p>Hide
+The character can use this action to attempt to hide from foes.
+If anyone might detect them while they do this, they must
+make a Stealth skill test opposed by the Observe of anyone who
+might spot them. On success, they gain the Hidden condition.</p>
+<p>Ready Weapon / Drink Potion
+The character may draw, sheath, withdraw, or reload a weapon.
+This action may also be used to drink a potion, assuming it is
+accessible to the character, but this costs 2 AP instead. Some
+missile weapons may require several AP to reload, in which case
+this action must be extended.</p>
+<p>Reactions
+Reactions can be used at any time during the combat round in
+response to a threat or event that a character is aware of by
+spending an AP. Reactions can be triggered by other reactions:
+if this happens, resolve them however makes the most sense.</p>
+<p>Attack of Opportunity
+This reaction allows a character to take advantage of an opening
+to make a melee attack (max 2 attacks per round) against an
+opponent when they are vulnerable. Attacks of Opportunity
+are resolved before the action they are being made in reaction
+to is resolved. Any character may use a reaction to an Attack
+of Opportunity without interrupting their current action, but
+they must be able to see their target. An Attack of Opportunity
+may be triggered by the following:</p>
+<pre><code>                Retreat: When an opponent voluntarily moves out of the 
+</code></pre>
+<p>characters melee range without taking the disengage action.
+Approach: When an opponent moves closer to the char-
+acter within their melee range (such as from 3 meters away
+to 2 meters away against a 3m range weapon).
+Spellcast: When an opponent casts a spell within their
+melee range (unless the spell counts as a melee attack).
+Standing Up: When a prone character stands up within
+their melee range without using the Arise action.
+Ranged Attack: When an opponent makes a ranged attack
+within the characters engagement range.
+Ready: When an opponent readies a weapon, reloads a
+weapon, or drinks a potion within their melee range. If
+the opponent does so as a free action, it does not allow for
+an attack of opportunity.</p>
+<p>Block, Parry, Evade
+The character tries to defend against an incoming ranged or
+melee attack. See the Attacking &amp; Defending section for details.</p>
+<p>98</p>
+<p>Counter-Attack
+The character attempts to make a standard melee Counter-Attack
+(still subject to the two attack per round limit) in response to
+an attack from an opponent they are aware of through the use
+of their Combat Style skill. See Attacking &amp; Defending.</p>
+<p>Free Actions
+Free actions can be performed at any time during the combat
+round and cost no action points. They include things like talking,
+signaling, observing ones surroundings, dropping items, and so
+forth. Use common sense when deciding what is a free action.</p>
+<p>99</p>
+<p>oppose with their Combat Style or Athletics skill. If they win,
+they may move themself and their opponent up to three meters
+in any direction (they must both move in the same direction
+and the same amount) as the character shifts the location of the
+fight. Target character must be within melee range.</p>
+<p>Resist
+Secondary Action
+Character makes an Athletics or unarmed Combat Style test
+which their opponent may oppose with their Athletics or
+unarmed Combat Style skill. If they win, they may escape being
+restrained, grappled, or blinded.</p>
+<p>Trip
+Secondary Action
+Character makes an Athletics or unarmed Combat Style test
+which their opponent may oppose with their Athletics, unarmed
+Combat Style, or Evade skill. If they win, their opponent falls
+prone. Target character cannot be of larger size and must be
+within 2 meters.</p>
+<p>The best techniques are passed on by the survivors.</p>
+<p>Gaiden Shinji</p>
+<p>Special Actions
+Special actions reflect unique ways that characters can engage
+in combat, and can be taken as actions of their listed type
+during a combat roll. Alternatively, if a character has one of
+these special actions in their list of Special Advantages (page
+69), it can be used as an advantage instead.</p>
+<p>Arise
+Secondary Action
+Allows the character to use a momentary opening to roll back
+up to their feet, removing the prone condition without granting
+opponents the ability to make an attack of opportunity.</p>
+<p>Bash
+Primary Action
+Character makes an Athletics or unarmed Combat Style test
+which their opponent may oppose with their Athletics, unarmed
+Combat Style, or Evade skill. If they win, their opponent is
+knocked back 1 meter, loses an AP, and must make an Acrobatics
+test to avoid falling prone. Target character cannot be of larger
+size and must be within 2 meters.</p>
+<p>Blind Opponent
+Secondary Action
+Character makes a Combat Style test which their opponent
+may oppose with their Evade or Combat Style (if wielding a
+shield). If the target loses, they become blinded for 1 round.
+The character must reasonably have access to some way to blind
+their opponent (thrown sand or rocks, for example).</p>
+<p>Disarm
+Primary Action
+Character makes an Athletics or unarmed Combat Style test
+which their opponent may oppose with their unarmed Combat
+Style or Athletics skill. If the target of the disarm attempt loses,<br/>
+the character may choose to either take the targets weapon if
+they have a free hand or fling the targets weapon 1d4 meters
+in a random direction. Target cannot be of larger size and must
+be within 2 meters. Cannot disarm natural weapons.</p>
+<p>Feint
+Primary Action
+Character attempts a Combat Style or Deceive test against an
+opponents Observe or Combat Style within a 2m range. If
+successful, they treat their next melee attack against the target
+as if they were Hidden. This effect only applies if the attack
+occurs before the end of the characters current turn.</p>
+<p>Force Movement
+Primary Action
+Character makes a Combat Style test which their opponent may</p>
+<p>100</p>
+<p>Attacking &amp; Defending
+Combat is resolved as an exchange of blows between two charac-
+ters. This exchange is simulated by the Combat Roll, in which
+a pair of attack and defense tests are compared.</p>
+<p>Step 1: Attack
+The attacker first chooses their target, weapon, and combat style
+for the attack before making the attack test and applying any
+relevant circumstantial modifiers. Weapons not included in the
+characters combat style are made at the standard untrained
+-20 penalty for all attack and defense tests.</p>
+<pre><code>                 Melee Weapon Attacks: The attacker makes a Combat 
+</code></pre>
+<p>Style test using either Strength or Agility against a target
+within the range of their weapon.
+Ranged Weapon Attacks: The attacker makes a Combat
+Style test using Agility against a target within the range of
+their weapon.
+Cast Magic Attacks: The attacking caster makes a skill
+test with the skill corresponding to the school of the spell.</p>
+<p>Step 2: Defend
+The defender then picks their method of defense and combat
+style before making the defense test. A character must be aware
+of an attack to defend against it, and must choose to defend
+before the attacker has rolled.</p>
+<pre><code>                 Evade: The defender rolls an Evade test (Agility). 
+                 Parry: Melee weapons or shields may be used to parry 
+</code></pre>
+<p>melee attacks. The defender makes the Combat Style test
+using Strength or Agility.
+Block: Shields may be used to block ranged or melee attacks.
+The defender makes a Combat Style test using Strength.
+Counter-Attack: The characters both attempt to strike the
+other while parrying their opponents blows. The defender
+also makes a melee attack, using the rules above. Both
+characters count as attackers in step 3.</p>
+<p>Step 3: Roll Tests &amp; Determine Result
+If one character is able to gain a significant advantage over their
+melee opponent, they are said to have gained an Advantage.
+Note that if a defender does not try to defend, or cannot do so,
+they are treated as having automatically failed.</p>
+<pre><code>                Both characters fail: Neither attack nor defense resolves.
+</code></pre>
+<p>1 character fails: The winner gains an advantage (if melee).
+Attacker wins: The attack is successful, the attacker
+chooses how to utilize their advantage, and resolves it.
+Defender wins: The defense is successful, the defender
+chooses how to utilize their advantage and resolves it.</p>
+<pre><code>    Both characters pass: No characters gain an advantage.
+Attack vs. Block: The defender blocks the attack 
+</code></pre>
+<p>regardless of attacker degrees of success. Resolve the
+block using the rules in Step 4 as if the defender won.</p>
+<pre><code>  Attack vs. Parry or Evade: The defense is negated if the 
+</code></pre>
+<p>attacker has more degrees of success. Resolve the attack.
+Counter-Attack: Whichever character achieves more
+degrees of success hits the other. If both characters
+achieve the same degrees of success, then neither the
+Attack nor the Counter-Attack resolve.</p>
+<p>Critical Success/Failure
+If one character critically succeeded, treat it as if they succeeded
+with more DoS than their opponent (if their opponent suc-
+ceeded at all). They also gain an advantage. If one character rolls
+a critical failure, and their opponent passed, then their opponent
+counts as having critically succeeded. If one character critically
+succeeds and the other fails, or one succeeds and one critically
+fails, then the character who succeeded gains two advantages,
+which can stack if applicable. If both sides roll a critical success
+or failure, then no advantage is gained, and neither attack nor
+defense resolves.</p>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds found in
+Physical Health later in this chapter, then an attack
+resulting in a critical success causes a wound to the hit
+location of the attack.</p>
+<p>Step 4: Resolve Attack &amp; Advantages
+Finally, resolve the attack based on the result.</p>
+<p>Hit Locations</p>
+<p>Result</p>
+<p>Location Hit</p>
+<p>1-5</p>
+<p>Body</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>0</p>
+<p>Right Leg</p>
+<p>Left Leg</p>
+<p>Right Arm</p>
+<p>Left Arm</p>
+<p>Head</p>
+<p>Attacker Won
+The attack hits the target and
+deals damage. If the targets
+armor values differ across hit
+locations, then check to see
+where  it  hit  using  the  ones
+digit of the attack roll or a d10
+(count 10 as 0). (You can often
+skip this step entirely or delay it
+until it is necessary).</p>
+<p>Next, resolve any advantage gained from the combat roll (see
+the next page). Then roll the damage of the attack and subtract
+the Armor Rating (AR) of the hit location struck. Reduce the
+targets HP by the remaining amount. Some types of AR only
+mitigate certain types of damage. If the damage dealt after
+reduction exceeds the targets Wound Threshold, the attack has
+also caused a wound. See Physical Health for details.</p>
+<p>101</p>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds found in
+Physical Health later in this chapter, then the attack
+instead causes a Wound if it brings the target to 0 HP or
+if the attack is a Critical Success and causes the target to
+take Damage.</p>
+<pre><code>          Defender won
+</code></pre>
+<p>If the defender won an advantage, resolve it first:</p>
+<pre><code>                 Evade: If an attack is evaded it is negated entirely. The 
+</code></pre>
+<p>character may move up to 1 meter in any direction for free.
+This movement does not provoke Attacks of Opportunity.
+Parry: If an attack is parried it is negated entirely.
+Block: If an attack is blocked, roll the damage of the attack.
+If the damage exceeds the shields Block Rating against that
+damage type, then the character takes the full damage to
+their shield arm. Otherwise no damage is taken. Magic
+damage treats BR as half (round up) unless there is a
+magic BR.</p>
+<p>Should there be multiple defenders against a single attack, only
+one defender gains a defensive advantage.</p>
+<p>Advantage
+Characters with advantage may utilize it in the following ways:
+Precision Strike (attack only): Choose the hit location
+of the attack.
+Penetrate Armor (attack only): Treat full armor as partial
+and partial as unarmored for the purposes of resolving an
+attack. This does not affect AR.
+Press Advantage (attack only): Character gains a +10 to
+their next melee attack against the opponent within 1 round.
+Forceful Impact (attack only): The character can apply
+the Damaged(1) quality to one armor piece or shield on
+the hit location of the attack.
+Overextend (block/evade/parry only): The opponents
+next attack test within 1 round is made at a -10 penalty.
+Overwhelm: Your attack or defense engages your oppo-
+nents attention completely. The opponent cannot take
+attacks of opportunity until the attacking characters next
+turn.
+Special Advantage: Immediately take a special advantage
+that is listed in the characters Combat Style. Ignore the
+AP cost, or automatically win any opposed roll involved.</p>
+<p>Unusual Combat Scenarios
+There are several odd combat scenarios characters may find
+themselves in.</p>
+<p>Climbing
+A climbing character has all of their combat skill tests limited
+by their Athletics skill rank. Characters are limited to fighting
+with a single limb, unless they have extras.</p>
+<p>Slippery Surfaces
+A character fighting on slippery or wobbling surfaces has all
+combat tests limited by their Acrobatics skill (if they have a
+higher Combat Style rank, they treat it as their Acrobatics rank
+instead). If the character fails a combat roll in these circum-
+stances, they must pass an Acrobatics test or fall prone.</p>
+<p>Swimming
+A swimming character has their combat tests limited by their
+Athletics skill (if they have a higher Combat Style rank, they
+treat it as their Athletics rank instead). Attacks deal half damage.</p>
+<p>Holding your Breath
+A character can hold their breath for 12 seconds (2 rounds in
+combat) per Endurance Bonus they have.
+This duration is doubled if the character does nothing but hold
+their breath (no action or movement allowed).
+For every round beyond the characters Endurance Bonus
+holding their breath, the character gains a temporary level of
+fatigue until they die or regain access to fresh air, after which
+the temporary fatigue is removed at a rate of 1 per round.</p>
+<p>Swinging or Jumping
+A character swinging or jumping into (or out of ) combat has
+their combat tests limited by their Acrobatics skill (if they have a
+higher Combat Style rank, they treat it as their Acrobatics rank
+instead). If the character fails a combat roll they must pass an
+Acrobatics test or fall prone and suffer appropriate fall damage.</p>
+<p>102</p>
+<p>Melee Combat
+Melee combat is any combat that happens within several meters,
+where participants fight either with wielded or natural weapons.
+The melee weapons a character can use are listed as part of their
+Combat Style skills.</p>
+<p>Melee Combat Circumstance Modifiers
+Like all tests, tests made in melee combat should always be
+subject to difficulty based on the environment or circumstances
+in which the combat is happening. Disadvantageous circum-
+stances can be rated in a simple scale by the GM and should
+not usually be worse than -30. The table below provides the
+scale and some examples.</p>
+<p>Melee Combat Circumstance Modifiers</p>
+<p>Modifier</p>
+<p>Common Examples</p>
+<p>Minor Disadvantage (-10)</p>
+<p>Fighting in poor visibility.</p>
+<p>Disadvantage (-20)</p>
+<p>Fighting from lower ground or prone.</p>
+<p>Major Disadvantage (-30)</p>
+<p>Fighting blind.</p>
+<p>Mounted Combat
+Mounted combat functions like normal combat, but with a
+few key differences:</p>
+<pre><code> Mounted characters can evade ranged attacks but only while 
+</code></pre>
+<p>moving. They cannot evade melee attacks (except those
+from other mounted characters), though their mount can.
+Mounted characters may parry or Counter-Attack in</p>
+<p>response to attacks against their mount.
+Mounted characters use their mounts Speed.</p>
+<pre><code>   The GM may rule that ranged attacks that miss the char-
+</code></pre>
+<p>acter or their mount hit the other target instead.</p>
+<p>Multiple Opponents
+Facing multiple opponents can be dangerous. While a character
+suffers no direct penalties for doing so, they can soon become
+swamped and run out of action points with which to defend
+themself. Remember that once all their AP for a round have
+been expended the character is treated as having failed their
+defense roll against any subsequent attacks, meaning they
+quickly becomes vulnerable to the others.</p>
+<p>Dual Wielding
+Some characters fight with two one handed weapons at once as
+a part of their Combat Style and may choose to attack, parry,
+or Counter-Attack with either one.</p>
+<p>Cover
+Cover is used by characters to obstruct attacks against them,
+either in ranged or close combat. This occurs by either physically
+blocking a blow or by obscuring the exact location of the target.</p>
+<p>If the character is incapable of seeing their target, they simply
+cannot attack them unless they have another way of knowing
+that they are there. Otherwise they suffer a circumstance penalty
+to attack targets who are trying to use cover that their attack
+cannot penetrate based on the GMs judgment of the level of
+the cover.</p>
+<p>If the target is protected by cover that the attack can penetrate
+with relative ease, the attacker suffers no penalty to hit but rolls
+twice and chooses the lower value for damage.</p>
+<p>103</p>
+<p>Improvised Weaponry
+In certain cases a character might find themselves forced to fight
+using improvised weaponry. Attacks with improvised weapons
+suffer the usual -20 untrained penalty unless the characters
+Combat Style includes improvised weapons. The table below
+provides a set of guidelines for the GM.</p>
+<p>Improvised Weaponry Guidelines</p>
+<p>Type</p>
+<p>Tiny</p>
+<p>Small</p>
+<p>Medium</p>
+<p>Large</p>
+<p>Huge</p>
+<p>Damage</p>
+<p>Range</p>
+<p>1d4</p>
+<p>1d6</p>
+<p>1d8</p>
+<p>1d10</p>
+<p>1d12</p>
+<p>1m (gain Small quality)</p>
+<p>1m</p>
+<p>2m</p>
+<p>3m</p>
+<p>4m</p>
+<p>The GM should feel free to give certain improvised weapons
+appropriate weapon qualities based on the type of object.</p>
+<p>Unarmed Combat
+Unarmed combat is when a character fights using their natural
+weapons. Characters are always capable of attempting to fight
+in this manner, even if they do not have unarmed combat as
+part of their Combat Style. Characters attempt a Combat Style
+test using Strength or Agility with the standard -20 penalty for
+using an untrained skill, if applicable.</p>
+<p>A characters natural weapons use the profile specified below
+unless the character has the Natural Weapons (*) trait (which
+overrides the default profile). If a character has a Combat Style
+that includes unarmed combat, that skill can be used for attacks
+with the characters natural weapons. Natural weapons ignore
+rules regarding one, two, or hand and a half weapons, and
+cannot be disarmed. Natural Weapons cannot be enchanted.</p>
+<p>Default Natural Weapon Profiles</p>
+<p>Type</p>
+<p>Damage</p>
+<p>Range</p>
+<p>Punches/Kicks</p>
+<p>1d4</p>
+<p>Claws</p>
+<p>1d4; Slashing</p>
+<p>1m</p>
+<p>1m</p>
+<p>Parrying/Counter-Attacking while Unarmed
+If an unarmed combatant is facing an opponent with a weapon
+with a longer range and they are within their own engagement
+range, then they can attempt to parry that weapons attacks or
+Counter-Attack. Otherewise melee attacks cannot be parried<br/>
+or countered by unarmed characters.</p>
+<p>Grappling
+In place of making a normal attack a character can choose to
+attempt to grapple their opponent. This requires a Combat Style
+test (the style must include unarmed combat) opposed against</p>
+<p>either a Combat Style (with unarmed), Athletics, or Evade test.
+On success, the target gains the restrained condition. The target
+may attempt to escape by using the resist action. On success
+they break free.</p>
+<p>Characters suffer a -30 penalty when attempting to grapple
+characters of larger size than them, and they cannot grapple
+characters of two or more sizes larger. While they have an oppo-
+nent restrained, the character may not move but may take the
+following actions (each is a primary action that costs 1 AP):</p>
+<p>Takedown: The character may render their victim, and
+themself, prone. They suffer no prone penalties in relation
+to any tests made against their target.
+Move: The character may move themself and their victim
+a number of meters up to their Strength bonus in any
+direction.</p>
+<pre><code> Attack: The character may make a normal attack against 
+</code></pre>
+<p>their restrained victim, who cannot defend themself. They
+must use a weapon with a 1m range or less. If the target
+is both prone and restrained and the character is armed,
+this can be a coup de grce. If the character is unarmed,
+then they can choose to instead cause the target to lose 1
+Stamina point.</p>
+<p>104</p>
+<p>105</p>
+<p>Ranged Combat
+Ranged combat is any form of combat that happens at a distance
+with weapons which must be shot, thrown, or slung at their
+target. The ranged weapons a character can use are listed as part
+of their Combat Style skills.</p>
+<p>Ranged attacks are resolved similarly to melee attacks, except
+they cannot be parried or Counter-Attacked. Ranged attackers
+cannot gain or utilize advantage. Ranged weapons have  unique
+attributes that distinguish them from melee weapons:</p>
+<p>Range for ranged weapons is defined in terms of three numbers
+instead of just one, representing the maximum close, effective,
+and long ranges of the weapon. Attacking targets in close range
+provides a +10 bonus to attack tests with the weapon, while
+attacking targets at long range imposes a -20 penalty.</p>
+<p>Reload represents the number of AP required to reload a
+weapon which fires ammunition. This requires the use of the
+ready action.</p>
+<p>Ranged Combat Circumstance Modifiers
+Like all tests, tests made in ranged combat should always be
+subject to difficulty based on the environment or circumstances
+in which the combat is happening. Disadvantageous circum-
+stances can be rated in a simple scale by the GM and should
+not usually be worse than -30. The table below provides the
+scale and some examples.</p>
+<p>Ranged Combat Circumstance Modifiers</p>
+<p>Modifier</p>
+<p>Common Examples</p>
+<p>Minor Disadvantage (-10)</p>
+<p>Firing in light wind</p>
+<p>Disadvantage (-20)</p>
+<p>Firing in moderate wind, target prone</p>
+<p>Major Disadvantage (-30) Firing in heavy wind or low visibility</p>
+<p>Firing while Mounted
+A character can use ranged weapons even while mounted, how-
+ever their Combat Style skill is limited by the Ride skill of the
+personal controlling the mount (if their Combat Style rank
+exceeds their Ride skill rank, use their Ride skill rank instead).</p>
+<p>Area of Effect Attacks
+Some ranged attacks, typically spells, affect an area. Area of
+effect attacks that cause damage can only be defended against
+by evading or blocking and only if the character is aware of the
+incoming attack.</p>
+<p>On a successful Block, the character halves the incoming damage
+(round up) before resolving the effects. On a successful evade,
+the character may move a single meter in any direction as normal
+without provoking any Attacks of Opportunity. If this would
+carry them outside the range of the area of effect, they are not
+affected.</p>
+<p>Area of effect attacks are resolved against the body.</p>
+<p>106</p>
+<p>Combat Example
+This page contains an example of a short combat exchange using
+the rules discussed thus far:</p>
+<p>The Scene
+Deep in a frozen cave in the northern reaches of Skyrim, a lone
+hero squares off against a mighty troll. The hero is lightly armored,
+wielding only a simple broadsword and shield.</p>
+<p>Round 1
+Both characters roll initiative. The troll rolls an 8, and the hero
+rolls a 12. Both characters have 3 maximum Action Points.</p>
+<p>The hero has the first turn, and moves forward a few meters so that
+they are within their two meter melee range (determined by their
+broadswords range stat) of the troll. They decide to take the attack
+action (1 AP), against which the Troll reacts by Counter-Attacking
+(1 AP). The hero rolls a Combat Style [Nord Champion] test with
+a +30 bonus (for a TN of 75) due to their rank in the skill. The
+troll also rolls their own attack test.</p>
+<p>The hero passes with 4 degrees of success (roll of 43), and the troll
+passes with 2 degrees of success (roll of 26). No advantage is gained,
+but the hero is able to land a hit as the two exchange blows (due to
+rolling higher DoS). They resolve the effects of the hit against the
+trolls body (due to the 3 in their roll) and rolls damage. The troll
+takes a total of 8 damage from the strike.</p>
+<p>both characters have spent 1 AP. It is still the Heros turn.
+The hero decides to press the attack, and makes another attack, this
+time they go all out (2 AP for an All Out Attack, giving them a +20
+bonus to their attack) and the troll attempts a Counter-Attack (1
+AP). The hero makes a mistake and opens themself up, failing their
+attack test while the troll still manages to roll 6 degrees of success (roll
+of 61) on their attack test. Because the hero failed while the troll
+succeeded, the troll not only lands a blow but gains an advantage.
+The troll utilizes this advantage to knock the hero to the ground,
+taking the trip special action and auto-winning the opposed roll
+to render the hero prone (this costs 1 AP). They then resolve the
+damage from the hit, and the hero takes 9 damage from the blow.</p>
+<p>At this point the hero is prone, is out of AP, and their opponent is
+also out of AP. The round ends, and a new round begins…</p>
+<p>Round 2
+The hero takes the first turn, having higher initiative. They use
+half of their total speed in movement in order to stand up, and
+the troll takes advantage of this opening to make an attack of
+opportunity (1 AP). The hero is injured, and so opts to play
+defensively, raising their shield in an attempt to block the attack
+(1 AP). The troll passes their attack test with 4 degrees of success,
+and the hero passes their defense test with only 3, but this is still
+enough for them to interpose their shield between their body
+and the blow. The troll rolls damage, and the 8 damage is not
+enough to overcome the BR of the heros shield, so the blow slides
+off harmlessly…</p>
+<p>At this point one character has attacked, and the other reacted, so</p>
+<p>The hero, now standing, presses the attack…</p>
+<p>107</p>
+<p>Running Smooth Combats
+This page provides some visual examples to help players under-
+stand how they might utilize battle grids and other tools to
+make combat run as smoothly as possible.</p>
+<p>Using a Grid
+The creators of the UESRPG highly recommend the use of a
+battle map or grid when running combat encounters. A grid
+helps players to understand their own situation, assists the GM
+in keeping track of the big picture, and makes understanding
+the consequences of combat ranges much easier.</p>
+<p>The easiest way to use the UESRPG with a grid is to assume
+that each grid square represents a square meter. Two characters
+cannot share the same grid square, though characters can be
+allowed to pass through another characters square if both parties
+are willing. The system also functions just fine on a hex grid.</p>
+<p>If you are using an online grid or map system that supports
+auras (as displayed in the example pictures) then using auras
+can be a good way to help players visualize their weapon ranges.</p>
+<p>Tracking Initiative &amp; AP
+One of the trickiest parts of running combat can be tracking
+how much AP a given character has remaining for the round. We
+advise GMs track this by simply tallying next to each character
+(PCs and NPCs) name on an initiative ordered list/table each
+time that character takes an action or reaction. This allows the
+GM to easily see who can still react and who has AP left with
+which to take a turn.</p>
+<p>1</p>
+<p>2</p>
+<p>Visuals Examples
+Above, the red mercenary wields a 2m range weapon (yellow
+aura) outside the 2m range (green aura) of the blue mercenary.
+They then move into the edge of their opponents range. Both
+mercenaries can attack the other at this range.</p>
+<p>Below, the red mercenary wields a 1m range weapon at the
+edge of the 3m range of the blue mercenary. Stepping any
+closer triggers an opportunity attack from the blue mercenary,
+but doing so is necessary for them to enter melee range (right).</p>
+<p>1</p>
+<p>2</p>
+<p>108</p>
+<p>phySiCal health</p>
+<p>During the course of the players adventures, it is very likely
+that they will suffer injury of some kind. The following sections
+explain how to handle damage, fatigue, wounds, and death.</p>
+<p>Damage &amp; Hit Locations
+Damage represents the ability of an attack to harm a character.
+Attacks against a character always strike a particular hit location,
+and the damage of that attack is reduced by the Armor Rating
+(AR) of that hit location. The Hit Location of an attack is usually
+determined by the 1s digit of the attack roll, but can also be
+determined by rolling 1d10 (counting 10 as 0). The characters
+Health Points (HP) are then reduced by the remaining amount.</p>
+<p>Hit Locations</p>
+<p>Result</p>
+<p>Location Hit</p>
+<p>1-5</p>
+<p>Body</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>0</p>
+<p>Right Leg</p>
+<p>Left Leg</p>
+<p>Right Arm</p>
+<p>Left Arm</p>
+<p>Head</p>
+<p>Damage Types
+The above rules hold true for all physical attacks and physical
+armor. However, some attacks and effects can deal other types
+of damage that can only be resisted with certain types of armor.
+Broadly, damage can be divided into two overall types:</p>
+<p>Physical Damage
+Physical damage represents physical cuts, jabs, and blows that
+harm a character through force of impact or blood loss (or
+both). All normal weapons deal physical damage, and physical
+damage is reduced by normal AR.</p>
+<p>Magic Damage
+Magic damage represents damage dealt by magical or elemental
+forces, such as burns from a fire ball spell. Poison is included
+in this category, though it is not always magical. There are
+sub-types of magic damage, each reduced by a corresponding
+armor type (and also reduced by generic magic AR).</p>
+<p>Magic Damage Types</p>
+<p>Sub-Type</p>
+<p>Armor Type</p>
+<p>(Any)</p>
+<p>Magic</p>
+<p>Fire</p>
+<p>Frost</p>
+<p>Shock</p>
+<p>Magic AR</p>
+<p>Magic AR</p>
+<p>Fire AR</p>
+<p>Frost AR</p>
+<p>Shock AR</p>
+<p>Sub-Type</p>
+<p>Armor Type</p>
+<p>Poison</p>
+<p>Shadow</p>
+<p>Poison AR</p>
+<ul>
+<li></li>
+</ul>
+<p>Resolving Magic Damage vs Specific Damage
+When resolving specific damage types against resistance or weak-
+ness traits, the more specific value for the trait takes precedence.</p>
+<p>For example: Jefe (pronounced Geoff) of the imperial guard is
+fending off a horde of zombies as they fall upon the city gates.
+Zombies have Resistance (Magic, 1) and Weakness (Fire, 3). Jefe
+successfully casts Fire Bolt and rolls 5 for damage. When the spell
+affects the zombie, the Weakness (Fire, 3) trait is applied to the
+damage without applying the resistance to magic resulting in a
+total of 8 fire damage being applied.</p>
+<p>Death
+If a character is reduced to 0 Health Points remaining, then
+they fall unconscious. A character who is unconscious at 0 HP
+must pass an Endurance test at the end of each of their turns. If
+they fail a number of tests in excess of their Luck bonus while
+unconscious, then they die. Taking damage at least once causes
+the character to fail the next test. If an effect would Stabilize
+them (this can be done with a Survival or Profession [Medicine]
+skill test and a healers kit) or bring them above 0 HP, then
+they stop testing.</p>
+<p>Youre not gonna kill me!</p>
+<p>Lokir of Rorikstead, moments before death</p>
+<p>Wounds
+Wounds represent devestating injuries caused by more damaging
+attacks, and not just simple cuts and bruises. If a character ever
+takes damage from a single attack in excess of their Wound
+Threshold (WT), then they take a wound. Record the amount
+of damage and hit location, then follow these steps:</p>
+<p>Shock Effects
+First, the character must make a special Endurance test known
+as a Shock Test, which represents how well the character fares
+against the initial effects.</p>
+<pre><code>        If the wound is to the body, the character loses an action 
+</code></pre>
+<p>point. If they have none remaining, they begin the next
+round with one less. If they fail the shock test then they
+also suffer the crippled body condition.
+If the wound is to a limb, the character suffers the crippled
+limb condition (blows to the head instead stun for 1 round).
+If they fail the shock test, then they also suffer the lost limb
+condition (lost ear or lost eye for the head).</p>
+<p>If the wound was caused by magic damage, the following applies:</p>
+<p>109</p>
+<p></p>
+<pre><code>       If the wound is from fire damage, the character also must 
+</code></pre>
+<p>pass a Strength or Agility test or gain the Burning (1)
+condition.
+If the wound is from magic, frost, or poison damage, the
+character also loses a Stamina point.
+If the wound is from shock damage, the character also loses
+Magicka points equal to the damage inflicted.</p>
+<p>Optional Rule Note: Turn Based AP Refreshing
+If youre using the alternate ruleset for AP refreshing,
+modify the text in the body Shock Effect from they
+begin the next round with one less to they begin their
+next turn with one less.</p>
+<p>Passive Effects
+After the shock test has been resolved, the character suffers a -20
+to all tests and a -2 to future initiative rolls until the wound is
+fully healed. The character has 30 seconds (5 rounds) before they
+drop to 0 HP through blood loss. These effects can be removed
+by first aid (a Survival or Profession [Medicine] skill test must
+be performed, which takes 1 turn and requires a healers kit or
+other supplies), or delayed with magical healing (see below).</p>
+<p>Optional Rule: Alternate Wounds
+If your group prefers less bookkeeping and a more
+forgiving experience, you can use this rule instead of the
+standard rules for Wounds:
+Instead of a character taking a Wound when they take
+damage in excess of their WT, they take a wound if  they
+ever take damage from a critical success on an attack or if
+an attack reduces them to 0 Health Points.</p>
+<p>Healing
+There are two means by which characters can heal damage and
+wounds which have been dealt to them: natural healing, and
+magic healing.</p>
+<p>Restoring HP
+Both magical and natural healing can restore missing HP.</p>
+<p>Magical Healing
+Magical healing will always specify an amount of missing HP
+that it restores, and this happens instantly unless otherwise noted.</p>
+<p>Natural Healing
+Characters naturally regenerate a number of missing HP equal
+to their Endurance bonus each time they take a long rest as long
+as they have no untreated wounds. This amount is doubled if
+the character is not doing anything strenuous and is focused
+entirely on healing themselves (or if another person is caring
+for them).</p>
+<p>Healing Wounds
+In order for a character to begin to heal wounds, those wounds
+must be treated first. If a wound is not treated within a number
+of days equal to the characters Endurance bonus, the charac-
+ter becomes Maimed: any body parts crippled by the wound
+become crippled permanently and count as being lost.</p>
+<p>Healing Untreated Wounds
+Characters cannot regenerate HP naturally while they have
+untreated wounds. In addition to restoring HP, magical
+healing done while the character is wounded temporarily
+removes the passive effects and forestalls unconsciousness for
+a number of rounds equal to the amount healed. If a charac-
+ter ever heals to full HP while they have an untreated wound,
+they become maimed as the wound has healed improperly.</p>
+<p>Treating Wounds
+A wound can be treated by a successful Profession [Medicine]
+test, which takes approximately an hour. Once a characters
+wound(s) have been treated, they can begin to heal naturally
+again. Treating a wound related to the Crippled Condition can
+only be done once per long rest. If this test results in a dramatic
+failure, the limb immediately becomes Maimed.</p>
+<p>Curing Wounds
+Once a wound has been treated it can be properly healed. After
+treatment if a character regenerates HP (by magical or natural
+means) equal to or in excess of the damage that caused the
+wound, then the wound and all of its effects are removed. The
+one exception is that characters cannot heal lost limbs in this
+fashion.</p>
+<p>Conditions
+Conditions are things that externally affect the character and
+their capabilities instead of features of the characters nature.</p>
+<p>Bleeding (X)
+Reduce Wound Threshold by 1. At the end of the characters
+next turn, they take X damage (bypass AR/resistance); then X
+is reduced by 1. If the character regains HP from any source,
+subtract the total HP regained (including HP that would go
+beyond the characters maximum HP) from X.</p>
+<p>Bleeding can also be reduced by making a Profession[Medicine]<br/>
++0 skill test and using a Healers Kit. Reduce X by the DoS of
+the test. The Healers Kit is not consumed in the process.</p>
+<p>If X ever becomes 0, the Bleeding condition is removed.</p>
+<p>If the Bleeding(X) condition would be inflicted on a character
+that already has a Bleeding condition, the value of each is added
+together and replaces the current Bleeding condition.</p>
+<p>110</p>
+<p>Optional Rule Note: Alternate Wounds
+If your group is using the optional rule for wounds,
+replace the text Reduce Wound Threshold by 1.
+with Characters take a -10 penalty to Shock Tests..</p>
+<p>Deafened
+The character loses the ability to hear. Deafened characters
+cannot hear anything and automatically fail tests that rely on
+hearing.</p>
+<p>Blinded
+The character loses all vision and suffer the following penalties:</p>
+<pre><code>                 Cannot see anything.
+                 Suffers a -30 to tests benefitting from sight.
+
+
+
+                   Automatically fail any tests that rely solely on sight.
+</code></pre>
+<p>Burning (X)
+The target is engulfed in flames, with the intensity of the fire
+determined by a number X.</p>
+<pre><code>                 Start of Turn: At the end of each of their turns, a burning 
+</code></pre>
+<p>character suffers a single hit of X fire damage to the appro-
+priate hit location (body is the default). Then increase X
+by 1.
+Stacking Burning: If a second instance of burning is
+inflicted on a character, simply combine the two X values.
+Taking Action: A burning character must pass a Willpower
+test with a -20 penalty at the beginning of a turn in order
+to attempt any action other than putting out the fire.
+Putting It Out: A burning character can attempt to extin-
+guish the flames on their turn by spending an action point
+and making an Strengrh or Agility test with a +20 bonus
+and a -10 penalty for every point of the X value beyond</p>
+<ol>
+<li>The burning character becomes prone and, if the test
+succeeds, loses the burning condition.</li>
+</ol>
+<p>Chameleon (X)
+A character with this condition blends into their environment.
+Sight based tests to detect this character are made with a -X
+penalty. Only apply the highest value version of this condition
+if a character would receive it more than once.</p>
+<p>Crippled Body Part
+A piece of the characters body has been rendered temporarily
+useless. Multiple instances of this condition can affect a character
+at once as long as each affects a different hit location and/or
+the body parts associated with that hit location. Any body part
+that has been crippled suffers all the same penalties as if it had
+been lost. Use Lost Eye or Lost Ear if the head location has
+been crippled and the Organ Damage condition if the body
+location has been crippled.</p>
+<p>Dazed
+The character gains one less action point at the beginning of
+each round, to a minimum of one.</p>
+<p>Entangled
+The character makes all Combat Style tests with a -20 penalty
+and their movement speed is halved (round up).</p>
+<p>Fatigued
+When a chracter gains a level of fatigue, they acquire the Fatigued
+condition. If they gain additional levels of fatigue, the effects
+worsen. Fatigue is most typically gained when a character falls
+below 0 SP or spends/loses SP when they are at 0.</p>
+<p>Fatigue Effects</p>
+<p>Levels</p>
+<p>Effects</p>
+<p>Fatigued (1)</p>
+<p>-10 penalty to all tests.</p>
+<p>Exhausted (2)</p>
+<p>-20 penalty to all tests.</p>
+<p>Drained (3)</p>
+<p>-30 penalty to all tests</p>
+<p>Unconscious (4) Characters falls unconscious</p>
+<p>5+</p>
+<p>Character dies</p>
+<p>Frenzied
+The character is flung into an uncontrollable rage. Frenzied
+characters gain the following rules:</p>
+<pre><code>                 Must attempt to attack the nearest person or creature in 
+</code></pre>
+<p>melee combat each turn if able, using only All Out Attacks.
+If not within range of a potential target, the character must
+move toward the nearest potential target. They may not
+attempt to flee the fight.
+Increase WT by 3 and SB by 1.</p>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds, disregard
+the WT increase in this bullet point.</p>
+<pre><code>                 Suffer a -20 penalty to all skill tests based on anything 
+</code></pre>
+<p>except Strength, Agility, or Endurance.
+Gain an extra SP, which can exceed their SP maximum.
+Immune to the effects of the stunned condition, fear, and
+passive wound effects.</p>
+<p>Once the encounter has ended, the character snaps out of their
+frenzied state and loses 2 SP (this cannot kill them). The charac-
+ter can also test Willpower at a -20 as an action during combat
+to attempt to snap out of frenzy, which ends the condition.</p>
+<p>Hidden
+The character is hidden from enemies and moving stealthily.
+Characters must spend 2 meters of their movement for the
+round for each 1 meter that they actually move while hidden,</p>
+<p>111</p>
+<p>and they cannot Dash. Enemies cannot attempt to defend
+themselves against the attacks of hidden characters, but attacking
+causes a character to lose this condition immediately afterwards.</p>
+<p>If a hidden character would enter line of sight of at least one
+character from whom they have not previously hidden, they
+must make a Stealth test opposed by that characters Observe.
+On success, or if they achieve more degrees of success, they
+remain hidden. Otherwise that character becomes aware of them.</p>
+<p>Immobilized
+Immobilized characters cannot move. They may still attack and
+take other actions and can defend themselves.</p>
+<p>Invisible
+Invisible characters cannot be seen. Characters fail all sight
+related tests related to spotting the Invisible character and
+attack them at a -30 penalty, assuming they can guess where
+the character might be in the first place.</p>
+<p>Lost Body Part
+The character loses a part of their body. A character can have
+multiple instances of this condition at once, each affecting a
+different body part. If an attack would hit a body part that has
+been entirely lost, the attack hits the body location instead. This
+condition applies additional penalties that vary based on the
+body part. In the case of the head, there is a choice between<br/>
+an ear or an eye (GMs decision).</p>
+<p>Lost Ear
+The character has had their ear removed or destroyed and their
+hearing damaged. They suffer the following penalties:</p>
+<pre><code>                  All tests that rely on hearing are made with a -20 penalty.
+
+                If both ears are lost, the character gains the deafened con-
+</code></pre>
+<p>dition permanently.</p>
+<p>Lost Eye
+The character has had their eye removed or destroyed and suffers
+the following penalties:</p>
+<pre><code>                  All tests that rely on sight are made with a -20 penalty.
+
+
+                If both eyes are lost, the character gains the blinded con-
+</code></pre>
+<p>dition permanently.</p>
+<p>Lost Foot/Leg
+The character has had their leg severed somewhere between the
+ankle and the hip and suffers the following penalties.</p>
+<pre><code>                Gain the slowed condition permanently.
+
+
+                  All tests that rely on the use of two legs are made with a 
+</code></pre>
+<p>-20 penalty.
+If both legs are lost, gain the Immobilized condition per-
+manently and fail any tests that rely entirely on movement.</p>
+<p>Lost Hand/Arm
+The character has had their arm severed somewhere between
+the wrist and the shoulder, and suffers the following penalties:
+Can no longer use two-handed weapons, shields (if the
+whole arm is missing), or one handed weapons in that arm.
+All tests that rely on the use of two hands are made with</p>
+<p>a -20 penalty.
+If both hands are lost, the character cannot wield weapons
+and automatically fails all tests that rely on the use of hands.</p>
+<p>Organ Damage (Lost Body Part: Body)
+The character has had their internal organs damaged. Characters
+with this condition heal damage at half speed and reduce their
+SP maximum and WT by 1.</p>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds; instead of
+reducing WT by 1, increase the passive wound penalty to
+all tests to -30.</p>
+<p>Muffled (X)
+A character with this condition is harder to hear. Hearing based
+tests to detect this character are made with a -X penalty. Only
+apply the highest value version of this condition if a character
+would receive it more than once.</p>
+<p>Prone
+The character is prone, and every 1 meter that they move while
+prone costs 2 meters of their movement for the round. They
+also suffer a -20 penalty to all combat related tests and count
+any full armor they are wearing as partial (to represent that it is
+easier for characters to take advantage of gaps in their defenses
+while they are down).</p>
+<p>Dropping prone costs no movement, but standing up requires
+that a character spend movement equal to half of their base
+Speed. If the character does not have this much movement
+left over to use, then they cannot get up unless they take the
+Arise action.</p>
+<p>Paralyzed
+The character is frozen, unable to move any part of their body.
+They may only cast spells that do not require speech or motion.</p>
+<p>Restrained
+The character is restrained and thus unable to move. They also
+cannot attack or defend themselves. They may only cast spells
+that do not require motion.</p>
+<p>Silenced
+Magically silenced characters believe they are making sound,
+but in reality their words never pass their lips. They suffer the</p>
+<p>112</p>
+<p>usual -20 penalty for being unable to speak when casting spells.
+At the start of each round they can roll a Perception test to see
+if they realize what is happening.</p>
+<p>Slowed
+The characters Speed is reduced by half (round up).</p>
+<p>fear
+When a character is confronted by an excessively frightening
+event or adversary, they must make a Fear Test. There are two
+types of fear tests: panic and horror tests. If the character fails
+the test, they succumb to the effects of fear.</p>
+<p>Stunned
+The character immediately loses all remaining action points
+upon becoming stunned. Stunned characters do not regain
+action points at the start of each round.</p>
+<p>Your GM may call on you to make a Panic Test when you are
+confronted by mundane shock or horror. This is represented
+by the Panic (+/- X) notation, which is simply a Willpower test
+with a +/- X modifier.</p>
+<p>Unconscious
+The character is knocked out and loses consciousness. They fall
+prone if the circumstances allow and may not take actions. If
+a character gains a level of fatigue while unconscious, they die.</p>
+<p>Your GM may call on you to make a Horror Test when you
+are confronted by supernatural terrors. This is represented by
+the Horror (+/- X) notation, which is simply a Willpower test
+with a +/- X modifier. In general, horror tests with any sort of
+penalty should be reserved for the most terrifying monsters and</p>
+<p>mind melting terrors.</p>
+<p>Fear Effects
+If in combat a character fails a fear test, they must immediately
+roll a d100 on the appropriate table on the next page. The effects
+listed are applied immediately to the character.
+If in a non-combat situation the character fails a fear test, the
+character becomes unnerved and suffers a -20 penalty to any
+tests that requires concentration on their part. This penalty
+lasts while the character remains in the vicinity of the object
+of their fear.
+Characters may be able to shake off some of the effects of fear
+after the initial shock has worn off. The table below will specify
+certain cases where a character can make a Willpower test when
+it is their next turn to snap out of their fear. Snapping out
+of the fear always happens at the end of their turn.
+If this succeeds, then they regain their senses, shrug off the
+effects, and may act normally from then on. If they fail this
+test, the effect continues, and they may try again when it is
+their next turn.</p>
+<p>113</p>
+<p>Roll</p>
+<p>Effect</p>
+<p>Combat Panic Test Results</p>
+<p>01-30</p>
+<p>31-60</p>
+<p>61-90</p>
+<p>91-95</p>
+<p>96-100</p>
+<p>Startled: The character is startled by the source of panic. They jump in their boots and pause for a brief moment as
+they struggle to reassess the situation. They may not make any reactions until the beginning of their next turn.
+Spooked: The character gets the shakes from the source of their panic. Fretting, nervous, and full of doubt, they
+suffer a -10 penalty to all tests for the rest of the encounter unless they snap out of it.
+Frightened: The character is taken aback, and their teeth clatter in their skull as they inch back from the source of
+their panic. The character cannot willingly approach the object of their fear, and they suffer a 10 penalty to all tests
+until the end of the encounter.
+Lost Composure: The character loses their nerve and freezes in place. Their will to act is decimated by the stress on
+their mind from the source of their Panic. The character may take no actions until they snap out of it. After snap-
+ping out of it, the character will make all tests at a 10 penalty for the rest of the encounter.
+Running and Screaming: The character breaks down with fear and flees. They must immediately flee directly away
+from the source of their fear as fast as they can, which includes ditching equipment slowing them down. They must
+do everything in their power to accomplish this and is at a -20 penalty to all tests. Once away from the danger, they
+must successfully snap out of it to regain control, or the encounter must end.</p>
+<p>Roll</p>
+<p>Effect</p>
+<p>Combat Horror Test Results</p>
+<p>1-40</p>
+<p>41-60</p>
+<p>61-80</p>
+<p>81-90</p>
+<p>91-95</p>
+<p>96-99</p>
+<p>100</p>
+<p>Momentary Blackout: The character is so overcome with horror that their mind fails them for a few precious
+seconds in the face of this horror. The character drops to the ground unconscious for 1 round and has a -10 penalty
+to all actions afterwards for the rest of the encounter.
+Uncontrollable Vomiting: The characters own body reacts with a gut wrenching sound as the characters innards
+empty themselves, and they start vomiting uncontrollably. The character bends over and vomits for 1 round and is
+considered helpless during this time. Afterwards the character is still nauseous and loses 1 Stamina point immediately.
+Manic Terror: The Characters mind cracks like a fragile glass sculpture, and they begin to laugh maniacally. Turning
+upon the closest nearby friend or foe they start attacking them with whatever weapon they have in their hands at
+the moment. The character can attempt to snap out of it at the start of their first turn each round or be knocked
+unconscious to stop their manic rampage. Afterwards the character loses 1d4 Stamina points immediately.
+Hopeless and Despairing: The character falls to the ground and cries out in despair and terror while shutting out all
+other sounds, babbling and mumbling to themselves for comfort for 1d6 rounds. When they regain their senses they
+immediately lose 1d4 Stamina.
+Blackout: The characters mind snaps like a twig, unable to truly process the horror of the situation and collapsing
+instead. The character goes catatonic for 1d4 hours and cannot be roused by normal means during this time.
+Mind Break: The characters will bends as their mind shatters. They drop to the ground while stuttering and
+mumbling incomprehensibly for 1d6 rounds. The characters mind is irrepressibly damaged, and they lose either 1d8
+Willpower or Personality (players choice) permanently from the harrowing experience. Afterwards for the rest of the
+encounter the character cannot attack or approach the source of horror.
+Scared to Death: The character is so immeasurably overcome with terror and horror that their heart stops beating;
+they must make an Endurance test or die on the spot. Should they succeed, they instead fall catatonic for 1d4 hours
+as with Blackout.</p>
+<p>114</p>
+<p>MoveMent &amp; Size</p>
+<p>This section contains more detailed rules for movement, and
+creatures of larger sizes.</p>
+<p>Movement
+During their turn a character can move before or after taking
+their action (or both), though they may not move further than
+their Speed in meters during a single round unless they take
+the Dash action.</p>
+<p>Difficult Terrain
+Sometimes terrain can be more difficult to traverse than usual,
+like when trudging in water, through a forest, or other similar
+terrain. Moving through Difficult Terrain doubles the cost of
+movement, unless the character passes an Athletics or Acrobatics
+test before moving.</p>
+<p>Swim Speed and Climb Speed
+Moving while climbing or swimming underwater uses a char-
+acters Climb Speed or Swim Speed respectively. Both speeds
+are half of their Base Speed (round down) unless otherwise
+specified by a talent or other ability.</p>
+<p>Jumping
+A character may also make an Acrobatics test to jump over or
+up to an obstacle, either horizontally or vertically. This can
+represent either completely clearing the obstacle or just jumping
+high enough to grab it with both hands, depending on what the
+GM feels is appropriate. If the character does not spend several
+seconds running or otherwise preparing (approximately a round)
+before the jump, then they suffer a -10 penalty to the test.</p>
+<p>When jumping vertically, each meter they wish to jump beyond
+the first imposes a -20 penalty on the test. When jumping
+horizontally, each meter they wish to jump beyond the first
+imposes a -10 penalty on the test. Critical Failure results in the
+character tumbling to the ground.</p>
+<p>Falling
+Falling inflicts 1d10+[meters fallen beyond 2] damage to the
+body. This damage ignores armor.
+If a character falls 2m or less and is in control of their body
+when falling (not tied, paralyzed, unconscious, surprised, etc.),
+they do not take any damage from the fall.</p>
+<p>Size
+Tamriel is home to creatures of many shapes and sizes. A char-
+acters size affects them in a number of critical ways. There are
+seven different size categories.</p>
+<pre><code> Puny: This category is reserved for the smallest of creatures 
+</code></pre>
+<p>like kwama foragers, rats, or mice.</p>
+<pre><code> Tiny: This category includes smaller characters like cats 
+</code></pre>
+<p>or large cave rats.</p>
+<pre><code> Small: This category includes everything ranging from 
+</code></pre>
+<p>quadrupeds like wolves to smaller bipeds like goblins.
+Standard: Standard sized characters fall fairly close to the
+average size for man or mer. There are no effects associated
+with this category.</p>
+<pre><code> Large: This category includes characters that are substan-
+</code></pre>
+<p>tially larger than average, including quadrupeds like horses
+and larger bipeds like trolls.</p>
+<pre><code> Huge: This category includes very large characters such as 
+</code></pre>
+<p>giants or larger dwemer constructs.</p>
+<pre><code> Enormous: This category is reserved for extremely large 
+</code></pre>
+<p>characters, like dragons.</p>
+<p>Size To-Hit Effects</p>
+<p>Combat Effects</p>
+<p>-30 to hit by characters of larger size or at range</p>
+<p>-20 to hit by characters of larger size or at range</p>
+<p>-10 to hit at range</p>
+<p>Size</p>
+<p>Puny</p>
+<p>Tiny</p>
+<p>Small</p>
+<p>Standard</p>
+<ul>
+<li></li>
+</ul>
+<p>Large</p>
+<p>Huge</p>
+<p>+10 to hit at range</p>
+<p>+20 to hit by characters of smaller size or at range</p>
+<p>Enormous</p>
+<p>+30 to hit by characters of smaller size or at range</p>
+<p>115</p>
+<p>diSeaSeS</p>
+<p>Diseases are contracted from contact with diseased people,
+diseased animals, or other creatures which are filthy; such as
+skeevers or mudcrabs. Sometimes diseases can be caught as
+the result of traps, poisons, or environmental effects, such as
+Corprus.</p>
+<p>Considerations When Using Diseases
+Some groups love diseases, as they add opportunity for
+adventure and adversity for their characters, as well as pro-
+vide a level of realism to their games. They are also useful
+to make characters with skill in Profession [Medicine]
+and resistance or immunity to disease really shine. Other
+groups might find diseases to be too much to track and
+only useful to add dramatic effect. Others still might
+decide to ignore them altogether.</p>
+<p>Its up to your group and the GM to discuss and decide
+how much of this ruleset to implement for your game.
+However, keep in mind that some diseases can be
+particularly nasty and might ruin the fun for a player if
+they completely cripple their character with no satisfying
+resolution. For this reason, GMs should take care in how
+they implement this ruleset and make sure to provide
+some realistic or interesting path to a cure when needed.</p>
+<p>Contracting a Disease
+Diseases are contracted after an encounter with a creature with
+the Diseased (+/- X) trait or a magical/environmental effect.</p>
+<p>In an encounter with creatures, a disease has a chance of being
+contracted when an attack from a Diseased creature causes a
+wound. The target of the attack must then successfully test
+Endurance +/- X or contract the creatures disease. In an encoun-
+ter with an effect (magical, environmental, etc), the effect will
+determine when Endurance is tested to contract the disease
+and at what difficulty.</p>
+<p>Common Diseases
+Common Diseases are caught most often from traps, poisons,
+or from fighting Diseased animals or people. Common Diseases
+are often spread through contact or bodily fluids, preventing
+them from breaking out into full blown plagues.</p>
+<p>Common Diseases bear mild social stigma, which can escalate to
+disgust and suspicion in extreme cases. Given the ease of treating
+Common Diseases, only the truly destitute and unfaithful are
+afflicted with what is seen as their just due.</p>
+<p>Shared Effects of Common Diseases
+All Common Diseases cause the following effects in their victims:</p>
+<p>Diseased (+0)</p>
+<p>Gain the Social Stigma (1) Character Trait</p>
+<p>All Common Diseases can be cured by using any spell level Cure
+Disease spell or potion. Any Common Disease can also be cured
+by sincere repentance and piousness at a shrine to one of the
+Eight and One. Infected animals typically ignore the effects of
+the Common Diseases they carry.</p>
+<p>The Diseases include a d100 result in case you want to random-
+ize Disease contraction without regard to which creatures are
+typically carriers.</p>
+<p>After contraction, a common disease takes effect after the charac-
+ter takes a long rest or the next morning, whichever comes first.</p>
+<p>Ataxia
+d100: 1-10
+Ataxia is a common and relatively mild disease found across
+the breadth of Tamriel. Its symptoms include general pain and
+soreness, muscle stiffness, and anemia. Victims of Ataxia are
+often pale, groggy, and irritable because of their symptoms.
+Some particularly devious bandits and trap-makers are known
+to spring vials or lace nails with the bodily fluids of dead animals
+that carry the disease.</p>
+<p>Symptoms:
+Drain Agility 5 pts
+Drain Strength 5 pts
+-10 to Agility-based Subterfuge tests
+-10 to Block tests</p>
+<p>Carriers: Cave Rats, Bears, Alit, Giant Spiders, Slaughterfish,
+Zombies, Traps</p>
+<p>Brain Rot
+d100: 11-15
+Brain Rot is a progressively worsening, mind affecting disease.
+It dampens the intelligence, intuition, and mental acuity of its
+victims. Eventually, Brain Rot destroys any semblance of sanity
+and of the self in its victims, leaving them to shuffle in a broken
+stupor until they are cured or die.</p>
+<p>Symptoms:
+Drain Magicka 15 pts
+Drain Intelligence 15 pts
+Drain Personality 15 pts</p>
+<p>Carriers: Cave Rats, Zombies, Hagravens, Traps</p>
+<p>116</p>
+<p>Bone Break Fever
+d100: 16-20
+Bone Break Fever is a particularly cruel disease. Carried primarily
+by rats and bears, the disease aggressively attacks the victims
+bones until they are vulnerable and prone to breakage. Untreated
+Bone Break Fever often results in crippled or outright severed
+limbs because of the fragility it causes in its victims.</p>
+<p>Symptoms:
+Drain Strength 10 pts
+Drain Endurance 10 pts
+-10 to Shock Tests</p>
+<p>Carriers: Cave Rats, Bears, Wolves</p>
+<p>Blood Lung
+d100: 21-24
+A relatively minor, non life-threatening illness, Blood Lung
+causes bleeding cysts in the victims lungs. They are prone to
+rupture at inconvenient times or times of physical exertion.
+While Blood Lung is not severe, and will not typically worsen, it
+does open the door for other diseases to take root, and can also
+serve as a vector of infection for others via the coughed up blood.</p>
+<p>Symptoms:
+Drain Endurance 5 pts
+Gain 1 level of Fatigue
+Every SP used inflicts the Bleeding(1) condition</p>
+<p>Carriers: Cave Rats, Nix-Hounds</p>
+<p>Black Heart Blight (Common)
+d100: 25-28
+Black Heart Blight, despite being a member of the Blight family
+of diseases created by Dagoth Ur, is a both a blight and a
+common disease and is less severe than its cousins. After the
+ending of the Blight in 3E 427, Black Heart Blight survived
+after making the jump to undead. It is carried by zombies
+exclusively after the destruction of Dagoth Ur, but prior to
+their death it was also carried by the various blighted beasts
+or Corprus monsters of Morrowind. It is an acute disease that
+saps the victims vitality and endurance. This is the Common
+Disease version.</p>
+<p>Symptoms:
+Drain Endurance 10 pts
++1 Encumbrance Level</p>
+<p>Carriers: Zombies</p>
+<p>Chills
+d100: 29-32</p>
+<p>The Chills are a punishing infection caused by contact with the
+undead. Its other symptoms include an overwhelming sensation
+of cold that is not affected by the warmth of any fire nor the
+light of the sun. It has lead to the death of many an unfortunate
+adventurer  lost, alone, and cold in the crypts that dot Tamriel.</p>
+<p>Symptoms:
+Drain Intelligence 20 pts
+Drain Willpower 20 pts
+Drain Agility 20 pts
+All tests suffer a -10 penalty</p>
+<p>Carriers: Zombies, Bonelord, Bonewalker</p>
+<p>Collywobbles
+d100: 33-35
+Collywobbles main symptoms are uncontrollable shaking and
+chronic ache. The constant minor shaking and spasming can
+become debilitating, and the strain of the shakes causes muscle
+soreness.</p>
+<p>Symptoms:
+Drain Agility 10 pts
+Drain Endurance 10 pts
+Reduce Max AP by 1</p>
+<p>Carriers: Zombies, Shalks</p>
+<p>Dampworm
+d100: 36-40
+Dampworm is a parasite that infests the victims musculature,
+slithering in between the tissue. It can be felt occasionally
+moving underneath the skin, which is a revolting and disturbing
+experience to say the least. Its symptoms include minor twitches
+and lapses in gross motor skill, as well as uncontrollable sweating.</p>
+<p>Symptoms: Reduce Speed by 2</p>
+<p>Carriers: Nix-Hounds, Horses, Falmer</p>
+<p>The Droops
+d100: 40-50
+The Droops are a notorious and serious Common Disease that
+result in weakened and exhausted muscles. They result in exces-
+sive fatigue after virtually any physical exertion.</p>
+<p>Symptoms:
+Drain Strength 5 pts
++1 SP cost to all Stamina abilities</p>
+<p>Carriers: Zombies, Sheep, Kwama</p>
+<p>117</p>
+<p>Red Fever
+d100: 66-70
+A notorious and common illness, Red Fever often hits during
+late autumn or through contact with wild wolves or dogs. The
+fever is short lived but intense, causing intense sweating, fever,
+vomiting, and often other unpleasant bodily functions. Red
+Fever is known to put even the mightiest warrior into fits of
+anguish for its brief, but hellish, duration.</p>
+<p>Symptoms:
+Succeed a -40 Encumbrance test or become completely
+disabled (but still conscious) by the violent symptoms of the
+disease for 24 hours</p>
+<p>Carriers: Wolves, Dogs, Cave Rats</p>
+<p>Additional Effects: After three days, this disease is automatically
+cured.</p>
+<p>Rockjoint
+d100: 71-80
+Rockjoint is a pervasive and ubiquitous disease across Tamriel.
+Every adventurer, noble lord, or peasant farmer has either had
+Rockjoint or has personally known someone with Rockjoint.
+Rockjoint swells the knees and elbows with sensitive and painful
+fluids that bloat and then stiffen and can lead to total immobility
+if left unchecked.</p>
+<p>Symptoms:
+Drain Agility 20 pts
+Reduce StrB by 1</p>
+<p>Carriers: Guar, Alit, Wolves, Cave Rats, Bears, Horkers, Foxes,
+Traps, Zombies</p>
+<p>Frostlimb
+d100: 51-52
+A relatively obscure Disease, Frostlimb causes intense sensations
+of coldness within the victims arms and legs, especially their
+fingers. As a result, fine motor skills are punished greatly, and
+the effect of Frost damage is greatly magnified.</p>
+<p>Symptoms:
+-10 to all tests that require fine motor skills
+Gain Weakness (Frost, 3)</p>
+<p>Carriers: Trolls, Mammoths, Falmer</p>
+<p>Greenspore
+d100: 53-55
+Carried primarily by slaughterfish, Greenspore is a mind affect-
+ing fungus that causes irritability and mild dementia. The spores
+take root in the victims mind but are easily treated in the early
+stages. Mature Greenspore can cause permanent brain damage.</p>
+<p>Symptoms:
+Drain Personality 15 pts</p>
+<p>Carriers: Slaughterfish, Zombies</p>
+<p>Helljoint
+d100: 56-60
+Helljoint is a mild inflammatory disease that causes swelling
+of the joints and mild irritating pain. It is extremely common
+in northern climates and is easily contracted. Luckily, it is just
+as easily cured.</p>
+<p>Symptoms:
+Drain Agility 10 pts</p>
+<p>Carriers: Zombies, Cliff Racers, Wolves</p>
+<p>The Rattles
+d100: 61-65
+The Rattles is a mild disease of subtle nervous ticks. The Rattles
+cause light finger ticks and forgetfulness. Victims of the Rattles
+are reported as appearing restless to the point of irritation,
+though the sufferers of the disease arent aware of their ticks
+unless paying deliberate attention.</p>
+<p>Symptoms:
+-10 to Agility tests that require fine motor skills
+Drain Willpower 10 pts</p>
+<p>Carriers: Cave Rats, Nix-Hounds, Chaurus, Zombies, Skeletons</p>
+<p>118</p>
+<p>Rust Chancre
+d100: 81-82
+Rust Chancre is a mild disease that affects the victims skin.
+Blistering, itchy rashes break out in random patches across the
+victims body, often including their face and neck. The crackled
+rashes are quite off-putting to others and irritating to the sufferer,
+but ultimately it is not a threatening disease. Rust Chancre often
+leaves permanent scarring after it is cured.</p>
+<p>Symptoms:
+Drain Willpower 5 pts
+Gains the Ugly Character Trait</p>
+<p>Carriers: Cave Rats, Zombies, Traps</p>
+<p>Additional Effects: After curing Rust Chancre, the affected
+character must pass an Endurance test or add the Ugly Character
+Trait permanently.</p>
+<p>Tunnel Cough
+d100: 91
+Tunnel Cough is a largely benign Disease that affects mostly
+miners and other cave divers and dungeon dwellers. It is char-
+acterized by dry, hiccup-like coughs. The coughs are not painful
+or debilitating but are certainly an inconvenience.</p>
+<p>Symptoms:
+-20 to all stealth tests</p>
+<p>Carriers: Caused by exposure to ore dust</p>
+<p>Witbane
+d100: 92-98
+Witbane is an acute Disease that affects the victims memory
+and magicka. Its symptoms are largely varied in their exact
+execution, but minor memory loss and confusion are common
+across all cases. It is not degenerative.</p>
+<p>Shakes
+d100: 83-85
+The Shakes are a mild disease contracted from rats. It is com-
+parable to a much less severe form of the Rattles that affect the
+entire body rather than just the fingers and face.</p>
+<p>Symptoms:
+Drain Intelligence 10 pts
+Drain Magicka 10 pts
+-10 penalty to Lore tests</p>
+<p>Carriers: Wolves, Dogs, Cave Rats, Sabre Cats, Zombies, Traps</p>
+<p>Yellow Tick
+d100: 99-100
+Yellow Tick is a parasite that burrows deep into the victims
+skin. It is a relatively mild Disease, but its symptoms include
+dark, bruised and painfully sensitive and itchy swellings where
+the ticks bury themselves. The Yellow Tick causes anemia and
+muscle atrophy as they feed on the victims life forces. Yellow
+Tick is notably contagious during skin contact.</p>
+<p>Symptoms:
+Drain Strength 5 pts
+Reduce Speed by 2
+Diseased (-20) [skin contact only]</p>
+<p>Carriers: Bears, Zombies, Kagouti, Wolves, Dogs</p>
+<p>Symptoms:
+Drain Agility 5 pts</p>
+<p>Carriers: Cave Rats</p>
+<p>Swamp Fever
+d100: 86-90
+Swamp Fever is a mild Disease carried typically by mudcrabs and
+other aquatic and amphibious vermin. Swamp Fever causes a
+high body temperature and cold sweats, and is highly contagious,
+but largely non-threatening. The Bitter Coast of Morrowind is
+notorious for extremely high rates of Swamp Fever.</p>
+<p>Symptoms:
+Drain Strength 10 pts
+Drain Endurance 10 pts
+Diseased (-30)</p>
+<p>Carriers: Mudcrabs, Cave Rats, Slaughterfish, Crocodiles,
+Dreugh, Giant Snakes</p>
+<p>Additional Effects: After seven days, Swamp Fever is auto-
+matically cured.</p>
+<p>119</p>
+<p>Magical Diseases
+Magical Diseases are like common diseases in that they can
+be contracted from infected creatures or effects, but they are
+supernatural or magical in origin. Unlike common diseases,
+magical diseases are much harder to cure and can cause lasting
+or even permanent effects on the afflicted character.</p>
+<p>The social reaction to magical diseases is often more extreme
+due to their unusual physical symptoms, which are beyond
+those of common physical illnesses.</p>
+<p>Blight Diseases
+The greatest, and most obscure, threat is the Blight, a mysterious
+weather-like phenomenon emanating from the crater of Dagoth Ur,
+warping and poisoning creatures in its path, and creating diseased
+horrors that attack travelers and outlying settlements.</p>
+<ul>
+<li>Berela Andrano</li>
+</ul>
+<p>Blight diseases are native to Morrowind and originate from
+Dagoth Ur and his Blight storms which he unleashed on
+Morrowind from deep within Red Mountain in the late second era.</p>
+<p>Shared Effects of Magical Diseases
+All Magical Diseases cause the following effects in their victims:</p>
+<p>These diseases come in two forms; those which cause the host
+to waste away, shutting down their internal biology, and those
+which result in grotesque growths on the subjects body.</p>
+<p>Stage One</p>
+<p>Stage Two</p>
+<p>Stage Three</p>
+<ul>
+<li>
+<p>Diseased (+0)</p>
+</li>
+<li>
+<p>Social Stigma (1)</p>
+</li>
+<li>
+<p>Diseased (-15)</p>
+</li>
+<li>
+<p>Social Stigma (2)</p>
+</li>
+<li>
+<p>Diseased (-30)</p>
+</li>
+<li>
+<p>Social Stigma (3)</p>
+</li>
+</ul>
+<p>Magical Diseases can generally be cured by any effect (commonly,
+spells or potions) which specifies that it cures magical diseases,
+unless otherwise stated.</p>
+<p>All magical diseases have a Disease Progression section which
+defines how the disease will progress through its stages.</p>
+<p>Astral Vapors
+Those who suffer from Astral Vapors find themselves weaker
+to the effects of magic and have their magicka reserves sapped.
+The Afflicted are often surrounded by magical fungal spores and
+may suffer from minor hallucinations and a general malaise.</p>
+<p>Symptoms (all 3 stages):
+Weakness (Magic, 3)
+Stunted Magicka
+Drain Magicka 20 pts</p>
+<p>Carriers: Dread Zombies</p>
+<p>Each blight disease is presented with an entry for its gestation,
+which is a combination of a duration and a difficulty modifier.
+After the disease is contracted, the character makes an Endurance
+test after the duration has passed with the listed modifier. If
+they fail this test, the disease progresses to the next stage and
+the duration of the gestation period is reset. On a success, the
+disease does not progress and the character must retest at the
+start of the next day.</p>
+<p>Ash Woe Blight
+Ash Woe Blight is an acute blight disease affecting the victims will
+and thought processes. It may be contracted from corprus beasts or
+other blighted creatures.
+Gestation: 4 days, -10
+Stages:</p>
+<p>Stage 1: Lose 10 Willpower and Intelligence
+Stage 2: Lose 15 Willpower and Intelligence
+Stage 3: Lose 20 Willpower and Intelligence</p>
+<p>Ash Chancre
+Ash-Chancre is an acute blight disease affecting the victims behavior.
+It may be contracted from corprus beasts or other blighted creatures.
+Gestation: 4 days, -10
+Stages:</p>
+<p>Disease Progression:
+The effects of each subsequent disease stage take hold after the
+character takes a long rest or at the next dawn; whichever comes
+first.</p>
+<p>Stage 1: Lose 10 Personality
+Stage 2: Lose 15 Personality
+Stage 3: Lose 20 Personality, Gain the Frenzied condition
+until  cured</p>
+<p>120</p>
+<p>Two. After each success, the next endurance test increases its
+penalty by 5 as the pain of the wound increases and the wound
+begins to fester.</p>
+<p>Once they have progressed to Stage Two, the character continues
+making increasingly difficult Endurance tests, but now starting
+at +0 and increasing in penalty by 10 per success as the festering
+of the wound grows.</p>
+<p>During Stage Three, resisting the diseases progression becomes
+nearly impossible. During Stage Three, resisting the diseases
+progression becomes nearly impossible. The character continues
+to test Endurance each dawn, starting at no penalty; but each
+successful Endurance test now increases in penalty by 15 until
+the test is failed or the disease is cured.</p>
+<p>Once an Endurance test to resist progression is failed during
+stage three, the character has completed their transition into
+becoming a lycanthrope. They also immediately and painfully
+transform into their beast form, which counts as a use of their
+transformation ability.</p>
+<p>Once  the  character  has  completed  their  transition  into
+Lycanthropy, the effects of this disease are no longer active and
+the wound becomes treatable. After this point, the characters
+lycanthropy cannot be cured by any commonly known mundane
+or magical means.</p>
+<p>Black-Heart Blight
+Black-Heart Blight is an acute blight disease affecting the victims
+strength and endurance. It may be contracted from corprus beasts
+or other blighted monsters. The disease has also spread to zombies,
+allowing it to live on despite the ending of the Blight in 3E 427.
+Gestation: 3 days, -10
+Stages:</p>
+<p>Stage 1: Lose 10 Strength and 5 Endurance
+Stage 2: Lose 15 Strength and 10 Endurance
+Stage 3: Lose 20 Strength and 15 Endurance</p>
+<p>Chanthrax Blight
+Chanthrax is an acute blight disease affecting the victims dexterity
+and mobility. It may be contracted from corprus beasts or other
+blighted monsters. The disease has also spread to boars and zombies,
+allowing it to live on despite the ending of the Blight in 3E 427.
+Gestation: 3 days, -15
+Stages:</p>
+<p>Stage 1: Lose 10 Agility and 1 Speed
+Stage 2: Lose 15 Agility and 3 Speed
+Stage 3: Lose 20 Agility and 5 Speed</p>
+<p>Lycanthropic Diseases
+Lycanthropic diseases are contracted from lycanthropes and
+cause the afflicted character to transform into a were-creature.
+Sanies Lupinus is the most common strain and the strain respon-
+sible for werewolves. There are other strains which result in other
+forms of lycanthropes, like werebears and wereboars.</p>
+<p>During the three-stage incubation period of the disease, infected
+characters commonly experience fatigue, muscle and bone pains,
+and vivid nightmares. Additionally, the wound that caused the
+contraction will start to fester and cannot be treated through
+normal or magical means unless the disease is cured, or the
+character completes their transition into lycanthropy.</p>
+<p>Stage One</p>
+<p>Stage Two</p>
+<p>Stage Three</p>
+<ul>
+<li>The source wound
+cannot be treated</li>
+</ul>
+<p>-The source wound
+cannot be treated</p>
+<ul>
+<li>
+<p>Gain 1 lvl of
+Fatigue</p>
+</li>
+<li>
+<p>The source wound
+cannot be treated,
+and its passive
+effects are doubled</p>
+</li>
+<li>
+<p>Gain 2 lvls of
+fatigue</p>
+</li>
+</ul>
+<p>Carriers: Werewolves, Werebears, Wereboars, and any other
+Were-creatures</p>
+<p>Disease Progression:
+The effects of stage one take hold immediately upon contraction.
+Then, each dawn following contraction, the character must
+succeed an Endurance test +0 or the disease progresses to Stage</p>
+<p>121</p>
+<p>Vampiric Diseases
+Vampiric diseases come in many forms, Porphyric Hemophilia
+and Sanguinare Vampiris being the most common. Rarer
+strains of the vampiric disease include Chaotica Vampiris and
+Noxiphilic Sanguivoria.</p>
+<p>No matter the origin, however, these diseases are related in one
+primary aspect in that they progress until the victim transforms
+entirely into a vampire. As they progress, they also share the same
+effects on their victims: starting with fatigue and a sensitivity
+to sunlight and progressing to a full-on sunlight aversion and
+an inability to satiate their hunger through normal means. As
+the transition into vampirism progresses, the victim is often
+plagued by vivid dreams of consuming blood.</p>
+<p>Stage One</p>
+<p>Stage Two</p>
+<p>Stage Three</p>
+<ul>
+<li>
+<p>Weakness (Fire, 3)</p>
+</li>
+<li>
+<p>Sun-Scarred (3)</p>
+</li>
+<li>
+<p>Gain 1 level of
+Fatigue</p>
+</li>
+<li>
+<p>Weakness (Fire, 4)</p>
+</li>
+<li>
+<p>Sun-Scarred (5)</p>
+</li>
+<li>
+<p>Gain 2 levels of
+Fatigue</p>
+</li>
+<li>
+<p>Weakness (Fire, 6)</p>
+</li>
+<li>
+<p>Sun-Scarred (10)</p>
+</li>
+<li>
+<p>Eating does not
+satiate hunger</p>
+</li>
+</ul>
+<p>Carriers: Vampires</p>
+<p>Disease Progression:
+The effects of Stage One take hold after the character takes a
+long rest or at the next dawn; whichever comes first.
+After Stage One takes effect, the character must test Endurance
+-10 each dawn. If they fail, then the disease progresses to stage
+two.</p>
+<p>Similarly, the character must test Endurance each dawn after
+Stage Two takes effect, but this time, at a -20 penalty. On a
+failure, the disease progresses to Stage Three.</p>
+<p>At Stage Three, the character must continue to test Endurance
+each dawn, but now at a -30 penalty. On a failure, the character
+dies painfully as their body succumbs to the illness. Then, after
+1d4 days, they arise again, fully transformed into a vampire.</p>
+<p>At any time during Stage Three, the afflicted character can
+choose to succumb to the transformation by consuming the
+blood of any creature with a Black Soul (generally, sentient
+races) that does not have the undead or undying trait.</p>
+<p>Once the character has completed their transformation, the
+effects of this disease are no longer active. After this point, the
+characters vampirism cannot be cured by any commonly known
+mundane or magical means. See the</p>
+<p>Curses
+Characters whose lycanthropic or vampiric diseases are brought
+to full-term become cursed by their affliction. Sometimes those
+affected by these curses see them as a blessing rather than a curse.
+This, as with many things, is a matter of perspective considering
+that both vampirism and lycanthropy offer those afflicted with
+great boons alongside their considerable drawbacks.</p>
+<p>Lycanthropy
+Lycanthropy comes in many forms on Tamriel, but by far the
+most common are werewolves, werebears, and wereboars. When
+a characters lycanthropic disease is allowed to fully gestate, the
+character becomes a lycanthrope with the strain of the lycan-
+thropy which caused the original disease contraction.</p>
+<p>The Transition
+Once a character has completed the transition into lycanthropy,
+they gain the following:
+Silver-Scarred (2)
+Immunity (Disease)
+Restless: The character is plagued by difficulty with sleep.
+They only restore half the health, magicka, and stamina
+they normally would while resting.</p>
+<p>Additionally, they gain the following according to their lycan-
+thropy strain:</p>
+<p>Werewolf</p>
+<p>+5 Strength
++5 Endurance
++10 Agility
++10 perception
+Natural Toughness (2)</p>
+<p>Wereboar</p>
+<p>+5 Strength
++15 Endurance
++5 Agility
++5 perception
+Natural Toughness (4)</p>
+<p>Werebear</p>
+<p>+10 Strength
++10 Endurance
++5 Agility
++5 perception
+Natural Toughness (3)</p>
+<p>122</p>
+<p>The Beast Form
+When a lycanthrope transforms into their beast form, they drop
+all of their gear. Any worn armor at the time of transformation<br/>
+gains the Damaged (1) quality. Then, they gain the following:
+Restore up to their max SP plus an additional 2 SP over
+their max. SP in excess of their SP max is lost when the
+transformation ends.</p>
+<p>Increase max HP (not current HP) by 10.
+Double the lycanthropes Natural Toughness and Silver-</p>
+<p>Lastly, they gain a new skill at rank 0:</p>
+<p>Bestial Instinct (Str, Ag, Prc)
+This skill represents the lycanthropes instinctual abilities while
+in beast form. Unlike other skills, ranks in this skill can only
+be increased through the purchase of talents and cannot be
+purchased directly. Only while they are in their beast form,
+the lycanthrope can choose to test this skill instead of any of
+the following, using the appropriate governing characteristic:</p>
+<p>Unarmed Combat Style
+Evade
+Survival
+Stealth
+Atheltics
+Acrobatics
+Navigate
+Observe</p>
+<p>Scarred traits
+Dark Sight trait
+Quadruped trait
+Strong Jaws trait
+Penalties from jumping are halved.</p>
+<p>Additionally, they gain the following according to their lycan-
+thropy strain:</p>
+<p>Werewolf</p>
+<p>Natural Weapons (Fangs, 1d8 Splitting)
+Natural Weapons (Claws, 1d10 Slashing)
+Latch On (1 SP):  If the werewolf successfully bites a target
+which results in a grapple, it latches on with all its strength,
+counting the bitten Hit Location as Crippled. This lasts
+until the grapple is broken.</p>
+<p>Wereboar</p>
+<p>Natural Weapons (Tusks, 1d8 Slashing)
+Natural Weapons (Claws, 1d10 Slashing)
+Gore (1 SP): As part of a successfully damaging attack
+with their tusks, the wereboar can spend a Stamina Point
+to immediately deal a bonus SB damage.</p>
+<p>Werebear</p>
+<p>Natural Weapons (Fangs, 1d10 Splitting or Crushing)
+Natural Weapons (Claws, 1d12 Slashing or Crushing)
+Maul (1 AP + 2 SP): The bear performs a melee attack
+as a primary action that deals 2d8 Crushing damage to a
+target creature within 1 meter. Additionally, all creatures
+within reach that are Medium or smaller must succeed on
+an Acrobatics or Athletics test or be knocked prone.</p>
+<p>123</p>
+<p>there. If they end their turn within the ice, they are crushed
+over time, taking 2d8 damage that ignores AR at the end of
+each of their turns.</p>
+<p>The Thirst
+Vampires must feed on a creature with a black soul at least once
+per day. If they go more than a day without feeding, then they
+can no longer gain the benefits of a short or long rest and lose
+the passive benefit from their bloodline until they feed again.</p>
+<p>In order to feed on a target creature, the target must be restrained,
+helpless, enthralled, or otherwise susceptible to the feeding. The
+vampire makes a standard attack against the target with their
+Fangs, regaining HP equal to the damage dealt after mitigation.
+If a point of damage is successfully dealt to the target in this
+way, the targets Endurance Characteristic is reduced by 10 until
+after their next long rest; otherwise, if no damage is successfully
+dealt, this does not count as a proper feeding for the day.</p>
+<p>If the target is helpless or otherwise meets the conditions for a
+Coup de Grce, the vampire can spend 2 AP to exsanguinate
+the target completely, killing them in the process and regaining
+the targets remaining HP. After doing so, the vampire loses
+any remaining AP. This sates the vampires thirst for two days.</p>
+<p>Sanguiphage
+Vampires sometimes feed on their kin to gain their powers. If
+a vampire kills another vampire by feeding on them, they gain
+access to the killed vampires bloodline passive ability for the
+next day.</p>
+<p>Vampirism
+Characters who complete the transition into Vampirism gain
+the following traits:
+Sun-Scarred (2)
+Dawn-Cursed (1)
+Dark Sight
+Weakness (Fire, 2)
+Resist Normal Weapons (2)
+Undead
+Natural Weapons (Fangs, 1d6 Splitting, Magic)
+Diseased (0, [Strain + Bloodline])</p>
+<p>Additionally, the characters existing Natural Weapons profile
+gains the Slashing Weapon Quality.</p>
+<p>Bloodlines
+All vampires are members of a specific bloodline, the most
+common being the Aundae, the Quarra, the Berne, Cyrodilic
+bloodline, and the Volkihar. A vampires bloodline is passed
+on to the vampires they sire through the transmission of their
+vampiric strain.
+Vampires gain a set of permanent characteristic increases based
+on their bloodline as defined in the table below:</p>
+<p>Bloodline</p>
+<p>Str End</p>
+<p>Ag Wp</p>
+<p>Prc</p>
+<p>Aundae</p>
+<p>Berne</p>
+<p>Cyrodilic</p>
+<p>Quarra</p>
+<p>Volkihar</p>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>+10</p>
+<p>+5</p>
+<ul>
+<li></li>
+</ul>
+<p>+10</p>
+<ul>
+<li></li>
+</ul>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<ul>
+<li></li>
+</ul>
+<p>+10</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<p>+5</p>
+<p>Prs</p>
+<p>+10</p>
+<p>+5</p>
+<p>+5</p>
+<ul>
+<li></li>
+</ul>
+<p>+5</p>
+<p>They also  gain one of the following  passive benefits based on
+their vampiric bloodline:</p>
+<p>Aundae: Arcane Blood
+The character gains the Power Well (10) trait.</p>
+<p>Berne: Unseen, Unheard, Unknown
+The character gains the Chameleon (-10) trait while in dim light,
+darkness, or, at GM discretion,  a crowded area.</p>
+<p>Cyrodilic: Mortal Mask
+The character ignores damage from their Dawn-Cursed trait.
+Additionally, while in direct sunlight and not sufficiently covered,
+their max AP is reduced by 1. Observe or Investigate tests to
+discern their vampiric nature suffer a -50 penalty.</p>
+<p>Quarra: Vigor of the Grave
+The character gains +1 Max SP.</p>
+<p>Volkihar: Ice Walker
+The character can freely walk through solid ice as if it werent</p>
+<p>124</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>

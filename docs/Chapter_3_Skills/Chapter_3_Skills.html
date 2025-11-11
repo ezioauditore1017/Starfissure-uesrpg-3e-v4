@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Chapter_3_Skills</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Chapter_3_Skills"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chapter_3_Skills"/><meta name="twitter:description" content="Chapter 3: Skills To achieve true mastery, you must understand what it is youre doing."/><meta property="og:description" content="Chapter 3: Skills To achieve true mastery, you must understand what it is youre doing."/><meta property="og:image:alt" content="Chapter 3: Skills To achieve true mastery, you must understand what it is youre doing."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Chapter_3_Skills/Chapter_3_Skills"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Chapter_3_Skills/Chapter_3_Skills"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Chapter 3: Skills To achieve true mastery, you must understand what it is youre doing."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXEdpdGh1YlxcU3RhcmZpc3N1cmUtdWVzcnBnLTNlLXY0XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/Chapter_3_Skills/Chapter_3_Skills-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/Chapter_3_Skills/Chapter_3_Skills-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/Chapter_3_Skills/Chapter_3_Skills-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Chapter_3_Skills/Chapter_3_Skills"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-9"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-9" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Chapter_3_Skills/">Chapter_3_Skills</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Chapter_3_Skills</a></div></nav><h1 class="article-title">Chapter_3_Skills</h1><p show-comma="true" class="content-meta"><time datetime="2025-09-18T18:46:52.228Z">Sep 18, 2025</time><span>20 min read</span></p></div></div><article class="popover-hint"><h1 id="chapter-3-skills">Chapter 3: Skills<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-3-skills" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>To achieve true mastery, you must understand what it is youre doing. It aint simply enough to perform a</p>
+<p>perfect thrust of a blade — you must also know what you are doing and why.</p>
+<p>Seryne Relas, Breathing Water</p>
+<p>Most tasks that a character can perform are measured by</p>
+<p>their skills. Skill ranks reflect the characters experience,
+training, and overall ability to perform these actions. Skills
+are either trained or untrained. Each trained skill has a corre-
+sponding Skill Rank, which has an associated value from 0
+to 5. This reflects how capable the character is at utilizing that
+skill. Each skill has one or more Governing Characteristics: a
+set of characteristics that reflect the many ways that a character
+can utilize a single skill.</p>
+<p>Skill Ranks</p>
+<p>Skill Rank (Value)
+(Bonus)</p>
+<p>Total XP
+Required</p>
+<p>XP (total) Equivalence</p>
+<p>(Untrained) (-20)</p>
+<p>Novice (0) (+0)</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>100</p>
+<p>Apprentice (1) (+10)</p>
+<p>1000</p>
+<p>200 (300)</p>
+<p>No knowledge.</p>
+<p>Rudimentary
+knowledge.</p>
+<p>Basic
+proficiency.</p>
+<p>Journeyman (2) (+20)</p>
+<p>2500</p>
+<p>300 (600) Competent.</p>
+<p>When a character makes a skill test, they apply a bonus equal
+to +10 times the value of their skill rank (starting at +0 for
+novice [rank 0], and up to +50 at master [rank 5]) to the chosen
+characteristic. Typically the player chooses which characteristic
+to use, but the GM may require that they must use a particular
+one if they feel the circumstances dictate such. If a character
+uses an untrained skill, the test suffers a -20 penalty.</p>
+<p>Specializations
+Trained skills can also have accompanying Specializations,
+which represent areas of concentration and focus in a characters
+training and experience with that skill. A character may take as
+many specializations as their rank in a given skill for 100 Xp
+each. When making a skill test in the listed area of specializa-
+tion, the character gains an additional +10 bonus to the test. A
+character may not benefit from more than one specialization
+at once. Example specializations are provided for each skill, but
+players should feel free to create their own with GM permission.</p>
+<p>Skill Types
+There are two types of skills, Standard Skills and Field Skills.
+Standard skills function as described above, but field skills are
+different and can be identified by the [Field] in their name.</p>
+<p>Field skills are collections of related skills that all function inde-
+pendently as standard skills. For example: Profession [Smithing]
+and Profession [Medicine] function as separate skills that must
+be trained and ranked up independently. Both skills have their
+own separate skill rank, though they function similarly because
+they share the same parent skill. Sometimes the fields will share
+governing characteristics, but sometimes each will have its own.</p>
+<p>Learning and Advancing Skills
+The XP cost to learn a skill (upgrade it to trained, novice rank)
+is 100 XP. From then on, the cost to advance to the desired
+rank varies. Skill ranks are advanced in order.</p>
+<p>Favored Skills
+A characters favored skills are those skills that are governed by
+at least one of the characters Favored Characteristics. Favored
+skills cost 75% of the usual XP to advance in rank or gain a
+specialization in (round down to the nearest multiple of 5).</p>
+<p>Adept (3) (+30)</p>
+<p>4000</p>
+<p>400 (1000)</p>
+<p>Expert (4) (+40)</p>
+<p>5500</p>
+<p>500 (1500)</p>
+<p>Master (5) (+50)</p>
+<p>7000</p>
+<p>800 (2300)</p>
+<p>Extensive
+experience or
+training.</p>
+<p>Professional
+level ability.</p>
+<p>Complete
+mastery.</p>
+<p>Skill</p>
+<p>Acrobatics</p>
+<p>Alchemy</p>
+<p>Alteration</p>
+<p>Athletics</p>
+<p>Skills</p>
+<p>Governing Characteristics</p>
+<p>Strength, Agility</p>
+<p>Intelligence</p>
+<p>Willpower</p>
+<p>Strength, Endurance</p>
+<p>Combat Style [Field] Strength, Agility</p>
+<p>Command</p>
+<p>Commerce</p>
+<p>Conjuration</p>
+<p>Deceive</p>
+<p>Destruction</p>
+<p>Enchant</p>
+<p>Evade</p>
+<p>Illusion</p>
+<p>Investigate</p>
+<p>Logic</p>
+<p>Lore</p>
+<p>Mysticism</p>
+<p>Navigate</p>
+<p>Necromancy</p>
+<p>Observe</p>
+<p>Persuade</p>
+<p>Strength, Intelligence,
+Personality</p>
+<p>Intelligence, Personality</p>
+<p>Willpower</p>
+<p>Intelligence, Personality</p>
+<p>Willpower</p>
+<p>Intelligence</p>
+<p>Agility</p>
+<p>Willpower</p>
+<p>Intelligence, Perception</p>
+<p>Intelligence, Perception</p>
+<p>Intelligence</p>
+<p>Willpower</p>
+<p>Intelligence, Perception</p>
+<p>Intelligence</p>
+<p>Perception</p>
+<p>Strength, Personality</p>
+<p>Profession [Field]</p>
+<p>(Varies)</p>
+<p>Restoration</p>
+<p>Ride</p>
+<p>Stealth</p>
+<p>Subterfuge</p>
+<p>Survival</p>
+<p>Willpower</p>
+<p>Agility</p>
+<p>Agility, Perception</p>
+<p>Agility, Intelligence</p>
+<p>Intelligence, Perception</p>
+<p>63</p>
+<p>Skill deSCriptionS</p>
+<p>This section gives an overview of each skill, what it represents,
+its governing characteristics (listed in parentheses), and some
+common applications.</p>
+<p>Acrobatics (Str, Ag)
+Example Specializations: Contortion, Balance, Jumping</p>
+<p>Identify the effects of Alteration magic</p>
+<p>For detailed rules regarding the use of this skill, see Chapter 6.</p>
+<p>Athletics (Str, End)
+Example Specializations: Running, Swimming, Climbing</p>
+<p>Athletics represents a characters ability to perform physically
+taxing activities, often under stress or with little to no prepara-
+tion. Your GM may ask you to test Athletics when you try to
+accomplish tasks like the following…</p>
+<p>Acrobatics covers the spectrum of physical activities involving
+explosive body movements and feats of flexibility and balance.
+Your GM may ask you to test Acrobatics when you try to accom-
+plish tasks like the following…</p>
+<p>Jumping a particularly long distance through brute strength
+Walking a long distance without stopping</p>
+<p>Lifting a heavy object
+Climbing up the side of a cliff</p>
+<p>Leaping deftly between rooftops or over an enemy
+Escaping from bonds
+Squeezing into a small space
+Balancing on the edge of a cliff</p>
+<p>For rules regarding jumping, see Movement &amp; Encumbrance
+in Chapter 5.</p>
+<p>Alchemy (Int)
+Example Specializations: Healing, Fortifying, Poisons</p>
+<p>Alchemy is the arcane art of brewing potions and poisons by
+combining ingredients in order to exploit their magical effects.
+This skill can be used to create a variety of concoctions with
+dramatic effects ranging from potions of levitation or healing to
+magical poisons. Your GM may ask you to test Alchemy when
+you try to accomplish tasks like the following…</p>
+<p>Brewing a potion or poison
+Identifying magical ingredients
+Identifying the effects of an unknown potion
+Creating alchemical explosives</p>
+<p>The rules for potions are found under Alchemy in Chapter 6.</p>
+<p>Alteration (Wp)
+Example Specializations: Shields, Flight, Weight Manipulation,
+Spell Creation</p>
+<p>This skill influences the use of spells from the school of Alteration.
+As a school, Alteration focuses on altering the physical and
+magical properties of things. Your GM may ask you to test
+Alteration when you try to accomplish tasks like the following…</p>
+<p>Cast an Alteration spell</p>
+<p>For more information, see Movement &amp; Size in Chapter 5.</p>
+<p>Combat Style [Field] (Str, Ag)
+Example Specializations: Dueling, Mounted Combat, Formation
+Fighting</p>
+<p>For the purposes of game balance, players should get GM
+permission before specializing in the use of specific weapons.</p>
+<p>Fighting skills are packaged into Combat Styles, which represent
+the complete package of training, tactics, and experience that
+constitutes a specific style of combat. Combat Styles can be
+associated with culture, careers, or even schools of combat.</p>
+<p>Specifically, individual Combat Styles are represented by the
+Combat Style [Field] skill, where the field represents the name
+of the combat style. This skill is used to make melee or ranged
+attack and defense tests in combat when using the equipment
+associated with the style.</p>
+<p>For full information on Combat Styles, see Combat Styles later
+in this chapter.</p>
+<p>Command (Str, Int, Prs)
+Example Specializations: Battlefield Commander, Inspiration</p>
+<p>Command measures a characters skill at coordinating allies,
+inspiring them and, if necessary, instilling fear in order to moti-
+vate them. Your GM may ask you to test Command when you
+try to accomplish tasks like the following…</p>
+<p>Giving effective orders during a battle
+Organizing civilians to defend their homes
+Riling up a crowd with an inspiring speech
+Convincing cowards to stand and fight</p>
+<p>64</p>
+<p>Commerce (Int, Prs)
+Example Specializations: Haggling, Acquisition, Sales</p>
+<p>Commerce reflects a characters ability to engage in business
+related activities and covers anything involving the practi-
+cal application of economics. Your GM may ask you to test
+Commerce when you try to accomplish tasks like the following…</p>
+<p>Haggling for a better price on an item</p>
+<p>Locating an item for sale</p>
+<p>Running a business
+Appraising an item</p>
+<p>The rules for using the Commerce skill to buy and sell items</p>
+<p>are handled in Pricing &amp; Acquisition in Chapter 7.</p>
+<p>Conjuration (Wp)
+Example Specializations: Atronach Summoning, Spirit Summoning</p>
+<p>This skill influences the use of spells from the school of
+Conjuration. As a school, Conjuration focuses on calling upon
+and interacting with various otherworldly entities. Your GM
+may ask you to test Conjuration when you try to accomplish
+tasks like the following…</p>
+<p>Cast a Conjuration spell
+Identify a summoned entity</p>
+<p>For detailed rules regarding the use of this skill, see Chapter 6.</p>
+<p>Deceive (Int, Prs)
+Example Specializations: Blathering, Impersonation</p>
+<p>Deceive measures a characters aptitude for fooling others into
+believing something that is not true. A Deceive test should only
+be required if the character believes that they are lying. This test
+can be opposed by a Logic test or an Observe test, depending
+on the nature of the deception. Your GM may ask you to test
+Deceive when you try to accomplish tasks like the following…</p>
+<p>Pretend to be someone you are not</p>
+<p>Talk your way out of trouble</p>
+<p>Lie about something
+Pretend to be an expert on a subject</p>
+<p>Destruction (Wp)
+Example Specializations: Pyromancy, Electromancy, Spell Creation</p>
+<p>This skill influences the use of spells from the school of
+Destruction. As a school, Destruction focuses on harming
+targeted objects and beings through the use of various kinds
+of elemental and magical attacks. Your GM may ask you to
+test Destruction when you try to accomplish tasks like the
+following…</p>
+<p>Cast a Destruction spell
+Identify the effects of Destruction magic</p>
+<p>For detailed rules regarding the use of this skill, see Chapter 6.</p>
+<p>Enchant (Int)
+Example Specializations: Destruction Enchantments, Enchanting
+Weapons, Creating Scrolls</p>
+<p>Enchanting is the arcane art of creating enchanted items by
+binding the energy contained within soul gems to another
+physical object. Your GM may ask you to test Enchant when
+you try to accomplish tasks like the following…</p>
+<p>Create an enchanted item
+Identify the effects of an enchantment
+Learn how to use a mysterious enchanted item
+Repair an enchanted item</p>
+<p>The specific uses of the Enchanting skill for creating enchanted
+items are handled under Enchanting in Chapter 6.</p>
+<p>65</p>
+<p>Evade (Ag)
+Characters may not acquire specializations for this skill.</p>
+<p>Logic (Int, Prc)
+Example Specializations: Puzzles, Gambling, Riddles</p>
+<p>Evade measures a characters ability to escape from observed,
+impending danger through the use of fluid movement and quick
+reaction times. This skill is most often used to defend against
+attacks in combat, or to avoid other physical dangers. Your GM
+may ask you to test Evade when you try to accomplish tasks
+like the following…</p>
+<p>Duck beneath an incoming spell
+Dodge a sword swing</p>
+<p>Avoid falling debris</p>
+<p>Stay out of reach of multiple attackers</p>
+<p>For rules regarding its use in combat, see Combat in Chapter 5.</p>
+<p>Illusion (Wp)
+Example Specializations: Visual Illusions, Auditory Illusions, Mental
+Manipulation, Spell Creation</p>
+<p>This skill influences the use of spells from the school of Illusion.
+As a school, Illusion focuses on manipulation and deception
+to affect the minds of targets and the light around them. Your
+GM may ask you to test Illusion when you try to accomplish
+tasks like the following…</p>
+<p>Cast an Illusion spell
+Identify the effects of Illusion magic</p>
+<p>For detailed rules regarding the use of this skill, see Chapter 6.</p>
+<p>Investigate (Int, Prc)
+Example Specializations: Canvassing, Research</p>
+<p>Investigate reflects the characters skill at conducting an inves-
+tigation. This encompasses everything from simple inquiries to
+coordinating a complex investigation and searching through
+piles of clues to find an answer. Your GM may ask you to test
+Investigate when you try to accomplish tasks like the following…</p>
+<p>Gather information from a crowd
+Sift through an archive searching for information
+Locate a person or place in a large city</p>
+<p>Use clues to solve a mystery</p>
+<p>The Logic skill represents a characters ability to think logically,
+solve puzzles, and dissect information rationally and quickly.
+Your GM may ask you to test Logic when you try to accomplish
+tasks like the following…</p>
+<p>Solve a puzzle or riddle</p>
+<p>Perform mathematical calculations</p>
+<p>Make sense of a confusing situation</p>
+<p>Realize something simple you may have overlooked</p>
+<p>Improve your odds in a game of chance</p>
+<p>Lore (Int)
+Example Specializations: Art, Daedra, History, Magic, Legends,
+The Black Marsh, Warfare, Altmer</p>
+<p>Lore represents a characters ability to recall information of all
+types. This includes any knowledge that they would possess
+due to their education or experience and is meant to represent
+a characters general knowledge.</p>
+<p>Specializations in this skill reflect a characters focus on one
+particular subject. Remember that general knowledge and
+education is a relative term: no matter how smart a character
+is, they shouldnt be able to roll to recall an obscure fact unless
+they would have reasonably encountered the fact before. Your
+GM may ask you to test Lore when you try to accomplish tasks
+like the following…</p>
+<p>Remember specific details about something you learned
+Identify a creature that you have only read about
+Reconcile new information with what you already know
+Find similarities between two ancient legends</p>
+<p>Mysticism (Wp)
+Example Specializations: Telekinesis, Detection, Spell Creation</p>
+<p>This skill influences the use of spells from the school of Mysticism.
+As a school, Mysticism is a rather obscure discipline focused
+on manipulating magicka itself to produce a number of exotic
+effects. Your GM may ask you to test Mysticism when you try
+to accomplish tasks like the following…</p>
+<p>Cast a Mysticism spell
+Identify the effects of Mysticism magic</p>
+<p>For detailed rules regarding the use of this skill, see Chapter 6</p>
+<p>66</p>
+<p>Navigate (Int, Prc)
+Example Specializations: Cartography, Marine Navigation,
+Direction Sense</p>
+<p>The Navigate skill reflects a characters ability to plot and follow a
+course from one point to another, as well as the ability to provide
+directions and lead others along the plotted course. Your GM
+may ask you to test Navigation when you try to accomplish
+tasks like the following…</p>
+<p>Intimidate someone into doing what you want
+Making a new friend, or seducing a person of interest
+Convincing others to agree with you</p>
+<p>Profession [Field] (Varies)
+Profession [Field] represents the characters formal or informal
+training and experience in a specific profession. It is used to
+perform work related tasks, or to reference specialized knowledge
+that someone trained in that profession might have. The follow-
+ing table contains a list of common fields and their governing
+characteristics. Feel free to invent your own with GM permission.</p>
+<p>Find your way out of a dungeon
+Plot a course for a ship
+Create a map of a mountain range
+Lead your party through a forest</p>
+<p>Necromancy (Int)
+Necromancy is the study and art of raising the dead. While
+it is not traditionally recognized as a school of magic, it func-
+tions similarly and thus is treated as one for all rules purposes,
+including talents found in the Core Rulebook. Your GM may
+call upon you to test Necromancy when:
+Casting Necromancy Spells.
+Performing Necromancy Rituals</p>
+<p>Using Black Soul Gems while Enchanting</p>
+<p>Identifying undead and reciting undead lore.</p>
+<p>Observe (Prc)
+Example Specializations: Awareness, Scrutiny, Searching, Hearing,
+Smell, Sight</p>
+<p>Observe represents a characters general awareness of their sur-
+roundings and their ability to notice things that others might
+dismiss. Your GM may ask you to test Observe when you try
+to accomplish tasks like the following…</p>
+<p>Spot an ambush before it happens
+Identify when someone is acting strangely
+Locate a hidden switch or trap in a room
+Notice a strange creature in the distance</p>
+<p>Persuade (Str, Prs)
+Example Specializations: Charm, Intimidation, Seduction</p>
+<p>Persuade is a measure of the characters knack for influencing
+people through strength of personality or threat of intimidation.
+Persuade tests are most often opposed by Willpower tests if the
+target wishes to resist. Your GM may ask you to test Persuade
+when you try to accomplish tasks like the following…</p>
+<p>Impressing others with tales of ones accomplishments</p>
+<p>Profession Fields</p>
+<p>Field</p>
+<p>Acting</p>
+<p>Governing
+Characteristic</p>
+<p>Personality</p>
+<p>Animal Training</p>
+<p>Intelligence</p>
+<p>Art</p>
+<p>Personality</p>
+<p>Bureaucracy</p>
+<p>Intelligence</p>
+<p>(Physical Crafts) Agility</p>
+<p>Engineering</p>
+<p>Linguistics</p>
+<p>Medicine</p>
+<p>Intelligence</p>
+<p>Intelligence</p>
+<p>Intelligence</p>
+<p>Musicianship</p>
+<p>Agility</p>
+<p>Seamanship</p>
+<p>Intelligence</p>
+<p>Smithing</p>
+<p>Strength</p>
+<p>For information regarding the use of the Profession [Medicine]
+skill to care for injured characters, see Physical Health in Chapter
+5. For information regarding the various crafting oriented pro-
+fessions, see Crafting in Chapter 7.</p>
+<p>Restoration (Wp)
+Example Specializations: Healing, Wards, Fortification, Spell
+Creation</p>
+<p>This skill influences the use of spells from the school of
+Restoration. Restoration is focused on healing and restoring
+targets and harming the undead. Your GM may ask you to test
+Restoration when you try to accomplish tasks like the following…</p>
+<p>Cast a Restoration spell
+Identify the effects of Restoration magic</p>
+<p>For rules regarding the use of this skill, see Chapter 6.</p>
+<p>Ride (Ag)
+Example Specializations: Horse Racing, Mounted Fighter</p>
+<p>67</p>
+<p>The Ride skill is a measure of your characters ability to control
+various mounts. The difficulty is associated with the demands
+being placed upon the creature and its level of familiarity to
+the rider. Your GM may ask you to test Ride when you try to
+accomplish tasks like the following…</p>
+<p>The Subterfuge skill is a measure of the characters ability to
+use artifice, guile, and manual dexterity to circumvent normal
+limits and restrictions. Your GM may ask you to test Subterfuge
+when you try to accomplish tasks like the following…</p>
+<p>Push a horse to ride faster.
+Leap over an obstacle on a mount.</p>
+<p>Attempt to ride a strange beast.</p>
+<p>Disguising yourself as someone else
+Picking a lock on a door
+Palming a small object unnoticed
+Disarming a trap</p>
+<p>Stealth (Ag, Prc)
+Example Specializations: Camouflage, Shadowing, Infiltration</p>
+<p>Survival (Int, Prc)
+Example Specializations: Desert Survival, Foraging, Tracking</p>
+<p>Stealth is a measure of a characters ability to remain unnoticed
+in a variety of settings and environments through the employ-
+ment of specific techniques. This test can be opposed by an
+Observe test when appropriate. Your GM may ask you to test
+Stealth when you try to accomplish tasks like the following…</p>
+<p>The Survival skill is a measure of a characters ability to subsist
+away from civilization. The difficulty is associated with the
+local environmental constraints. Your GM may ask you to test
+Survival when you try to accomplish tasks like the following…</p>
+<p>Gathering food and water from the environment</p>
+<p>Tracking a person or animal through the woods</p>
+<p>Applying first aid to a character in order to stabilize them.</p>
+<p>Identifying dangerous plants</p>
+<p>Shadowing someone through a marketplace
+Sneaking up on an enemy camp
+Camouflaging yourself in the undergrowth
+Sneaking past a sleeping monster</p>
+<p>For rules regarding the use of Stealth in combat, see Combat
+in Chapter 5.</p>
+<p>Subterfuge (Ag, Int)
+Example Specializations: Lockpicking, Sleight of Hand, Traps</p>
+<p>68</p>
+<p>Combat Styles
+Fighting skills are packaged into Combat Styles, which repre-
+sent the complete package of training, tactics, and experience
+that constitutes a specific style of combat. Combat Styles can
+be associated with culture, careers, or even schools of combat.</p>
+<p>Specifically, individual Combat Styles are represented by the
+Combat Style [Field] skill, where the field is the name of the
+combat style. This skill is used to make melee (or ranged) attack
+and defense tests in combat when using the equipment associ-
+ated with the style. The character may use either their Strength
+or Agility as a base for the skill test when making melee attacks
+and most defense tests but must use their Agility when making
+ranged attacks.</p>
+<p>Rather than creating preset combat styles we have allowed play-
+ers and GMs to invent their own to more accurately reflect the
+characters they wish to portray. Each combat style should be
+accompanied by a list of equipment it incorporates (see below),
+and a description of the style of fighting that it represents (see
+examples to the bottom right).</p>
+<p>Trained Equipment
+Each Combat Style has an associated set of weapon, armor, and
+shield types. A character with that Combat Style is capable of
+using that equipment effectively in the situations the style is
+designed for. Combat Styles may include up to five different
+types of equipment when the skill is purchased for the first
+time. Unarmed combat is included in this category as well,
+reflecting that the character is trained to fight without weapons.
+Armor is divided into types using the associated weight class
+quality: light, medium, heavy, or super heavy. Armor without
+a quality requires no training.</p>
+<p>Each styles associated trained equipment is chosen when the
+character learns the style, and it can be expanded to a maximum
+of ten different types of equipment. Expanding a combat style
+by adding a weapon, armor, or shield type to the list of a
+styles trained equipment costs 25 XP.</p>
+<p>Special Advantages
+In addition to equipment, each Combat Style also has an associ-
+ated set of Special Advantages. This list is a set of Special Actions
+(page 100) that the character is able to use as an advantage
+instead of the listed action type. A Combat Style starts with a
+single chosen Special Action in this list of Special Advantages.
+Expanding this list of Special Advantages costs 25 XP per
+Special Action. There is no limit to the number of Special
+Advantages that can be included in a Combat Style.</p>
+<p>When the character uses this special action as an advantgage,
+they ignore the AP cost, or automatically win any opposed
+roll involved.</p>
+<p>Fighting in Unfamiliar Circumstances
+Occasionally characters may be forced to fight with familiar
+weapons, but in strange circumstances. For example, a noble
+who is used to fighting honorable one-on-one duels might be
+forced into a chaotic bar-brawl. Or perhaps a battlefield soldier
+used to fighting on horseback finds themself face to face with
+an assassin at home.</p>
+<p>Generally most characters are trained to use the weapons in
+their style in widely applicable circumstances, but in certain
+cases like these the GM shouldnt be afraid to impose a -10
+penalty (or more, if appropriate) on Combat Style tests made
+by a character who is out of their element.</p>
+<p>The Princes longblade slashed across the Akavirs chest and
+the sudden, intense pain cuased him to drop his weapons. In
+a moment, it was over. Savirien-Chorak was prostrate in the
+dust with the Princes longsword at this throat. The games
+over! shouted the Emperor, barely heard over the applause
+from the stadium.</p>
+<p>2920, The Last Year of the First Era</p>
+<p>Utilizing Untrained Weapons/Armor
+Characters who use weapons, armor, or other equipment that
+they are not trained to use suffer the usual -20 penalty for using
+an untrained skill on any associated combat tests, movement
+tests in the case of armor, or any other tests that the GM deems
+appropriate. The GM may choose to alter or ignore this penalty
+if they feel the circumstances do not apply.</p>
+<p>69</p>
+<p>Combat Style Examples
+Below are some example Combat Styles to use for inspiration
+in your campaigns.</p>
+<p>Combat Style [Cloak and Dagger]
+The character is trained to use small, concealable weapons in close
+quarters against single, typically unarmored, opponents.</p>
+<pre><code>      Equipment:  Dagger, Shortsword, Throwing Dagger, 
+</code></pre>
+<p>Unarmed Combat, Light Armor.</p>
+<p>Special Advantages: Feint</p>
+<p>Combat Style [Imperial Legionnaire]
+Legionnaires are trained to fight in battlefield formations with sword,
+spear, and shield, using javelins to soften up the enemy.</p>
+<pre><code>      Equipment: Spear, Shortsword, Javelin, Tower Shield, 
+</code></pre>
+<p>Medium Armor.
+Special Advantages:</p>
+<p>Combat Style [Knight]
+Knights are masters of chivalrous combat, preferring to engage their
+opponents in duels of honor and skill. In open battle they wear
+heavy armor and fight primarily from horseback.</p>
+<pre><code>      Equipment: Lance, Shield, Longsword, Mace, Heavy 
+</code></pre>
+<p>Armor.</p>
+<p>Combat Style [Argonian Guerrilla Fighter]
+The Black Marsh is known across Tamriel for its guerrilla fighters.
+Argonian warriors fight in light armor with short blades, spears,
+and at range, engaging their enemies in small skirmishes.</p>
+<pre><code>      Equipment: Shortsword, Spear, Short Bow, Javelin, 
+</code></pre>
+<p>Unarmed Combat.</p>
+<p>70</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>

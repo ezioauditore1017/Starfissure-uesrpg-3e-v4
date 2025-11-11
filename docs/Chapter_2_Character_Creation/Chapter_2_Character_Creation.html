@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Chapter_2_Character_Creation</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="Chapter_2_Character_Creation"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Chapter_2_Character_Creation"/><meta name="twitter:description" content="Chapter 2: Character Creation Ah yes, weve been expecting you! Youll have to be recorded before youre officially released."/><meta property="og:description" content="Chapter 2: Character Creation Ah yes, weve been expecting you! Youll have to be recorded before youre officially released."/><meta property="og:image:alt" content="Chapter 2: Character Creation Ah yes, weve been expecting you! Youll have to be recorded before youre officially released."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/Chapter_2_Character_Creation/Chapter_2_Character_Creation"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/Chapter_2_Character_Creation/Chapter_2_Character_Creation"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Chapter 2: Character Creation Ah yes, weve been expecting you! Youll have to be recorded before youre officially released."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXEdpdGh1YlxcU3RhcmZpc3N1cmUtdWVzcnBnLTNlLXY0XFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/Chapter_2_Character_Creation/Chapter_2_Character_Creation-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/Chapter_2_Character_Creation/Chapter_2_Character_Creation-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/Chapter_2_Character_Creation/Chapter_2_Character_Creation-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="Chapter_2_Character_Creation/Chapter_2_Character_Creation"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-7"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-7" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../Chapter_2_Character_Creation/">Chapter_2_Character_Creation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Chapter_2_Character_Creation</a></div></nav><h1 class="article-title">Chapter_2_Character_Creation</h1><p show-comma="true" class="content-meta"><time datetime="2025-09-18T18:46:52.206Z">Sep 18, 2025</time><span>93 min read</span></p></div></div><article class="popover-hint"><h1 id="chapter-2-character-creation">Chapter 2: Character Creation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#chapter-2-character-creation" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Ah yes, weve been expecting you! Youll have to be recorded before youre officially released. There are a few</p>
+<p>ways we can do this, and the choice is yours.</p>
+<p>Socucius Ergalla, The Elder Scrolls III: Morrowind</p>
+<p>Legendary heroes fill the history of the Elder Scrolls setting,</p>
+<p>but even the greatest heroes need to start somewhere. The
+world of Tamriel is a vast and diverse one, and there are an
+enormous number of potential characters a player may want to
+create. However there are some things that all characters have
+in common, and it is on this common ground that we can start
+to build up a new character.</p>
+<p>Step 5: Finishing Touches
+Finally, calculate your characters attributes and finalize any
+remaining aspects of the character sheet. Characters also start
+with a budget of drakes which can be used in this step to pur-
+chase equipment and other items that the character will begin
+the game with. Once youve fleshed out your character and
+chosen your characters bonds, youre good to go!</p>
+<p>Character creation and advancement is accomplished through
+the use of experience points, or XP.</p>
+<p>Standard character creation is a five step process. It is neces-
+sary to go through these steps in the correct order, and it is
+recommended you read through this list before moving on in
+order to inform your future decisions. When you actually start
+building the character, write down the details from each step on
+a character sheet as you go along so you dont lose track of things.</p>
+<p>Step 1: Race
+During this step you will choose your characters race. In addi-
+tion to  the core playable races from the video games, we have
+also provided various races from the lore in this book. You
+should ask your GM which era the game is taking place in and
+which races are allowed for the campaign before you choose one
+for your character. Each race comes with their own characteristic
+baseline used to generate characteristics for members of that
+race, and many races have bonus powers, starting skills, or traits.</p>
+<p>Step 2: Generate Characteristics
+During this step you will get to choose your characters favored
+characteristics and generate your characteristic scores using dice
+and the characteristic baseline appropriate to your choice of
+race in the previous step.</p>
+<p>Step 3: Determine Birthsign
+Next, you determine your characters Birthsign, choosing the
+charge of the Warrior, Mage, or Thief and then rolling on the
+appropriate table. There is a chance during this step that the
+character will receive the Star-Cursed version of a sign instead,
+reflecting the threatening presence of the Serpent sign at the
+time of their birth.</p>
+<p>Step 4: Spend XP &amp; Purchase Items
+Next, you spend your remaining XP on any character advance-
+ments that you desire. Any XP remaining after this process is
+over is kept after character creation.</p>
+<p>Step 6: (Optional) Choose Character Traits
+Your GM may instruct you to choose Character Traits from
+the section in this chapter of the same name. Here, you will
+choose positive and/or negative traits using a budget defined
+by the book/your GM.
+optiMizinG CharaCterS</p>
+<p>As you create your character, you may have questions about how
+you can make your character function well in the context of
+the game. This section will act as a guide during the character
+creation process to answer those questions.</p>
+<p>One of the most important parts of this process is to gather as
+much information as possible, both from your GM and the other
+players. Even if your GM cant give away particular details of the
+campaign, they should be able to give you a sense of the overall
+tone, as well as what kinds of skills will be important to have.
+Its also important to talk to your fellow players, particularly
+while building your characters, so that you can make sure your
+party as a whole is capable of taking on a variety of challenges
+and that each member has an important job to do.</p>
+<p>Priorities
+When building your character its important to determine what
+your priorities are: what are your characters most important
+traits, and how are you going to represent them within the
+system? Youre working with a limited budget of XP, and while
+you might have an idea of where you want the character to go in
+the future youll likely find that you have to focus on purchasing
+only the essentials at first.</p>
+<p>Magically oriented characters should ensure that they have
+enough Magicka Points to support the types of spells they want
+to cast, and a high enough Willpower to reliably cast them.
+The best way to increase ones Magicka Points is through the
+use of the Power Well trait, a trait that increases the amount
+of ones Magicka Points and that can be attained as both a
+racial bonus or through the use of certain Birthsigns. Though
+for some characters there may be no need for lots of magicka:
+a high Intelligence will suffice for an Alchemist or Enchanter.</p>
+<p>25</p>
+<p>Surviving Combat
+Even characters who shine off the battlefield can expect to find
+themselves in combat at least once during a campaign. It is
+important for every character to have a plan when things get
+violent. Perhaps the most important thing to remember when
+approaching combat is to not bite off more than you can chew:
+fighting outnumbered is a very dangerous prospect, even for
+skilled warriors. There are ways to prepare for this situation,
+however: clever use of flanking and long Reach weapons, or
+proficiency in the Evade skill can allow a character to survive in
+combat against many enemies, while heavy armor and healing
+magic can allow characters to last longer under pressure.</p>
+<p>Characters who have neither the ability to effectively fight in
+heavy armor, or the speed to dance around their foes, will benefit
+most from simply not getting caught in a direct engagement.
+Characters wielding ranged weapons or using ranged magic can
+have a profound impact on the fight from a safe distance, where
+there is a much lower risk of having an axe buried in ones skull.
+Core raCeS</p>
+<p>The races provided in this section encompass the core races
+portrayed in the Elder Scrolls games. Additional races can be
+found in Expanded Races on page 42. Each race comes with
+their own characteristic baseline used to generate characteristics
+for members of that race, and many races have bonus powers,
+starting skills, or traits. You should ask your GM which races
+are allowed in the campaign before you pick one.</p>
+<p>Some races have unique racial traits that are defined in their
+sections. Racial powers can be found in the Powers section later
+in this Chapter.</p>
+<p>Combat oriented characters should think about how their
+character fights. This means considering both how they plan
+to engage and defeat their enemies in combat, as well as how
+they plan to survive combat.</p>
+<p>Characters that arent naturally tough will need another way to
+mitigate damage, either through magical means, the use of armor,
+or evasion. When it comes to winning the fight, its important
+to consider how your character will position themselves relative
+to the rest of the party: having a front line can be veryuseful
+if certain characters intend to engage at range, though these
+front-liners will often find themselves fighting outnumbered.</p>
+<p>There are also a wide variety of non-combat oriented characters
+that one might wish to create. There are too many to cover
+here, but in general it is still important to consider how these
+characters will handle themselves if the party gets into a fight.</p>
+<p>Skill and Talents
+The UESRPG 3e has a large number of skills and talents that
+players can choose from when creating their characters, which
+can lead to some difficult choices. Fortunately there are a few
+general guidelines that players can follow when navigating
+character creation.</p>
+<p>When it comes to skills, its important to decide how specialized
+your character needs to be. Mages dedicated to one particular
+school of magic, or warriors devoted to a specific way of combat,
+would both benefit from having a high rank in the relevant skill.
+Rogue type characters, on the other hand, can adopt a more
+jack of all trades approach as they need to be able to navigate
+a wide variety of situations.</p>
+<p>There are also a number of non-combat skills that every char-
+acter should consider learning, even if only at a very low level.
+Skills like Observe, Survival, Lore, Ride, Navigate, Profession:
+Medicine and Athletics are extremely useful for all types of
+traveling adventurers.</p>
+<p>Talents are a little more difficult to choose: there are a variety
+of talents that have very powerful effects, but its easy to go
+overboard. Some talents unlock the ability to do things that
+other characters cannot, while others function to augment a
+particular skill (such as by providing rerolls or replacing degrees
+of success).</p>
+<p>The critical decision is which of these abilities are necessary
+to the character, and which are just nice to have. The former
+are worth investing in early, while it is often better to replace
+the latter with additional skill ranks that will prove critical at
+lower XP values.</p>
+<p>26</p>
+<p>Altmer
+The Altmer (or High Elves, as they are also known) are a race
+of Mer that make their home on the Summerset Isles, a set of
+islands off the south western coast of Tamriel. Many races of
+Tamriel consider the Altmer to be quite beautiful due to their
+fair, golden skinned complexion and the dazzling gem like colors
+of their eyes; as such, the Altmer are welcome guests in most
+parts of Tamriel, save for the Black Marsh and Vvardenfell.<br/>
+However, the combination of their fair appearance, long lives,
+propensity for magic, and resemblance to the Old Elves of
+Tamriel tends to give Altmer an elevated sense of their own
+importance. This can sometimes impact diplomatic relations
+with the other races.</p>
+<p>The use of magic is heavily emphasized in Altmer society,  given
+the latent magical gifts of the Altmer race. Those Altmer that
+rarely or never leave the Summerset Isles are used to a culture in
+which Magic permeates every level of society. Unfortunately, the
+natural affinity of the Altmer race also leaves them vulnerable
+to magical attack; however, most choose to pay little heed to
+this drawback. Aside from their dependence on magic, Altmer
+also tend to place a high cultural value on living for as long as
+possible, often using magic to extend their longevity. Altmer
+born and raised on Summerset Isle tend to be haughty and
+more out of touch than those raised in other areas of Tamriel.</p>
+<p>Altmer Characteristic Baseline</p>
+<p>Str</p>
+<p>20</p>
+<p>End</p>
+<p>23</p>
+<p>Ag</p>
+<p>23</p>
+<p>Int Wp</p>
+<p>30</p>
+<p>28</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>25</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           Disease Resistance (50%): Characters with this trait have a 
+</code></pre>
+<p>chance to resist diseases. Whenever the character would be
+infected by a common disease, roll a d100. If the roll is less
+than or equal to 50, the character doesnt get the disease.
+Power Well (20): Characters with this trait have more
+magicka than usual. Increase their MP max by 20. This
+trait can stack.</p>
+<pre><code>           Weakness (Magic, 2): This character increases all incoming 
+</code></pre>
+<p>magic damage by 2 after mitigation and suffers a -20 penalty
+tests made to resist non-damaging magical effects.</p>
+<pre><code>        (Racial) Mental Strength: Altmer ignore penalties to 
+</code></pre>
+<p>Willpower tests made to resist paralysis.</p>
+<p>Other</p>
+<pre><code>       During character creation, Altmer characters may pick 
+</code></pre>
+<p>one of the traditional magic skills (Alchemy, Alteration,
+Conjuration, Destruction, Enchanting, Illusion, Mysticism,
+or Restoration) to begin trained at Novice rank for free.</p>
+<p>27</p>
+<p>Argonian
+Argonians are a race of reptilian humanoids native to the land of
+Black Marsh in south-eastern Tamriel. In Jel, their native tongue,
+Argonians refer to themselves as Saxhleel (meaning People
+of the Root) to show their absolute reverence towards and
+dependence on a the Hist, a species of sentient trees that share
+a singular and extremely intelligent mind. The Argonian people
+owe the entirety of their life, culture, and shape to the Hist, as
+the sap of the trees is a necessary catalyst for the metamorphosis
+of young Argonians into their humanoid form. Traditionally
+minded Argonians also believe the Hist is a repository for their
+souls, reincarnating them after death.</p>
+<p>Argonians are naturally suited to the dangerous environment
+of Black Marsh and are resistant to most diseases and poison.
+Additionally, Argonians have the ability to breathe indefinitely
+while underwater, as well as formidable resistance to many kinds
+of damage, courtesy of the Hist. In their homeland, Argonians
+tend to live in either desolate, scattered villages or within the
+ruins of great cities of stone, remnants of the Elves and other
+extinct denizens of the Black Marsh. Given the necessity of
+the Hist to their lifestyle, most Argonians rarely leave Black
+Marsh by choice; however, some have been known to aban-
+don Argonian society and venture out into the wider world
+as adventurers and hired workers. Unfortunately, others are
+sometimes forcibly removed from Black Marsh by slavers and
+sold as chattel across Tamriel.</p>
+<p>Argonian Characteristic Baseline</p>
+<p>Str</p>
+<p>25</p>
+<p>End</p>
+<p>24</p>
+<p>Ag</p>
+<p>28</p>
+<p>Int Wp</p>
+<p>27</p>
+<p>24</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           Disease Resistance (75%): Characters with this trait have a 
+</code></pre>
+<p>chance to resist diseases. Whenever the character would be
+infected by a common disease, roll a d100. If the roll is less
+than or equal to 75, the character doesnt get the disease.
+Immunity (Poison): The character is immune to the effects</p>
+<p>of poison.</p>
+<pre><code>           Amphibious: The character can breathe water and ignores 
+</code></pre>
+<p>the skill cap placed on their combat rolls by their Athletics
+skill when fighting in water.</p>
+<pre><code>          (Racial) Inscrutable: Argonians receive a -10 penalty 
+</code></pre>
+<p>to Persuade tests made to interact with non-Argonians.
+However, Observe tests made to try to distinguish their
+motives are made with a -10 penalty.</p>
+<p>28</p>
+<p>Bosmer
+The Bosmer (or Wood Elves, as they are also known) are a race
+of forest-dwelling Mer native to the province of Valenwood.  In
+their own tongue, the Bosmer refer to themselves as the Boiche,
+or Tree-Sap People, a reference to their pact with the Aedra
+Yffre. Like other elves, the Bosmer were originally from the
+Summerset Isles; however, the Wood Elves scorned strict and
+formal lifestyle of their Aldmeri ancestors, choosing to travel
+to mainland Tamriel and live more carefree and simple lives.
+Chronologically, the First Era is officially marked as starting
+when the Bosmer united under the rule of the King Eplear, the
+first of the Camoran Dynasty. Bosmer are known across Tamriel
+as competent and deadly bow users; some rumors even claim
+that the Wood Elves were the first to have invented and used
+the bow as a weapon.</p>
+<p>Despite the high status granted to Auri-El by most of the
+Merish pantheons, the Bosmer hold Yffre in the highest regard.
+As the first of the Aedra to help stabilize Nirn by becoming
+an earthbone, Yffre helped the Wood Elves maintain their
+shape during the Dawn Era. The grateful Bosmer accepted
+his patronage, making an oath known as the Green Pact and
+vowing to never eat nor harm any vegetation that grew within
+Valenwood (though other plants outside the province have no
+such protection). Because of their oath, those Bosmer native
+to Valenwood (and even some who leave) are carnivorous, even
+engaging in cannibalism on occasion.</p>
+<p>Bosmer Characteristic Baseline</p>
+<p>Str</p>
+<p>21</p>
+<p>End</p>
+<p>21</p>
+<p>Ag</p>
+<p>31</p>
+<p>Int Wp</p>
+<p>25</p>
+<p>23</p>
+<p>Prc</p>
+<p>26</p>
+<p>Prs</p>
+<p>24</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           Disease Resistance (50%): Characters with this trait have a 
+</code></pre>
+<p>chance to resist diseases. Whenever the character would be
+infected by a common disease, roll a d100. If the roll is less
+than or equal to 50, the character doesnt get the disease.
+Resistance (Poison, 1): This character reduces all incoming
+poison damage by 1 and gains a +10 bonus to tests made
+to resist non-damaging poison effects.</p>
+<pre><code>      (Racial) Natural Archers: Bosmer add shortbows to any 
+</code></pre>
+<p>combat style they use, and this does not count towards that
+combat styles five trained equipment types.</p>
+<p>(Racial) Beast Tongue: Bosmer can speak to, and under-
+stand the speech of, animals. How exactly this functions is
+left to the GMs discretion, though it is recommended the
+GM call for a Perception test when the Bosmer encounters
+the speech of an unfamiliar animal to determine if they can
+understand it and communicate back. Additionally, the
+character receives a +20 bonus to any Profession [Animal
+Training] skill tests they make.</p>
+<p>29</p>
+<p>Breton
+The Bretons are a race of men native to the north western
+province of High Rock. Bretons as a whole are generally dark-
+haired, tall and gifted with a rare amount of intelligence and
+willpower compared to the other races of men across Tamriel.
+Despite their height, Bretons tend to have a slighter build, being
+less muscular than Redguards or Nords. Bretons are descended
+from both Aldmeri and Nedic bloodlines, giving them a unique
+combination of abilities that both enhances their innate Aldmeri
+talent for magic and suppresses their vulnerability to magic,
+thanks to their Nedic heritage.</p>
+<p>Culturally, Bretons possess a great love of art and philosophy,
+as well as an innate connection with magic; this leads many
+to scholarly pursuits, becoming great wizards and sorcerers.
+Bretons are also prone to engaging in knightly pursuits, driven
+on by a quest-obsession to do good deeds prevalent throught
+Breton society.</p>
+<p>Also worthy of mention are the Reachmen, a splinter group
+of Bretons inhabiting the western reach that joins High Rock
+and Skyrim. Violently opposed to the Breton kingdoms and
+infighting of High Rock, the Reachmen have formed a tribal
+society based on hedge magic learned from Orcs and bird-
+witches known as Hagravens. Though far more ferocious than
+their cultured cousins, the Reachmen live far more primitive
+lives, trading the steel blades of High Rock for stone and bone,
+the castles and towers for natural caverns.</p>
+<p>Breton Characteristic Baseline</p>
+<p>Str</p>
+<p>23</p>
+<p>End</p>
+<p>21</p>
+<p>Ag</p>
+<p>22</p>
+<p>Int Wp</p>
+<p>28</p>
+<p>30</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>25</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>          Resistance (Magic, 2): This character reduces all incoming 
+</code></pre>
+<p>magic damage by 2 and gains a +20 bonus to tests made
+to resist non-damaging magical effects.</p>
+<pre><code>           Power Well (10): Characters with this trait have more 
+</code></pre>
+<p>magicka than usual. Increase their MP max by 10. This
+trait can stack.</p>
+<p>Other</p>
+<pre><code>      During character creation, Breton characters may pick 
+</code></pre>
+<p>one of the traditional magic skills (Alchemy, Alteration,
+Conjuration, Destruction, Enchanting, Illusion, Mysticism,
+or Restoration) to begin trained at Novice rank for free.</p>
+<p>30</p>
+<p>Dunmer
+The Dunmer (or Dark Elves, as they are also known) are a race
+of xenophobic Mer native to the province of Morrowind,  a land
+dominated by a wasteland of dust and fire. Like other elves, the
+Dunmer were originally from the Summerset Isles; however, they
+are descended from the Chimer, a tribe of Aldmeri exiles who
+fled Summerset to worship the Daedra, whom they title Our
+Stronger, Better Ancestors. An agile and graceful people, the
+Dunmer use their natural magical and physical abilities to their
+advantage in combat. Physically their swordsmanship rivals that
+of the Redguards of Hammerfell, while their natural affinity
+for Destruction magic is rivaled only by their distant cousins
+in the Summerset Isles.</p>
+<p>Dunmer society is divided into two distinct areas: the more
+civilized Great Houses and the nomadic Ashlanders. The Great
+Houses of Morrowind behave more like nations than states,
+divided as they are by both culture and politics. The only things
+which unite the Great Houses are the temple and an almost
+universal distaste for outlanders.</p>
+<p>By contrast to the more civilized and political Great Houses,
+Ashlander society is more tribal-oriented and nomadic. The
+Ashlanders split from the society of the Great Houses over the
+validity of the Temples doctrine, a conflict which has divided
+the two sectors of Dunmer society ever since. Those who have
+met the Ashlanders describe them as ferocious, chitin-armored
+savages who are wary of strangers; however, beneath the xeno-
+phobic surface of Ashlander society lies a deeply spiritual and
+disciplined lifestyle, a vital key to the survival of the nomads
+in the harsh land of Morrowind.</p>
+<p>Dunmer Characteristic Baseline</p>
+<p>Str</p>
+<p>25</p>
+<p>End</p>
+<p>24</p>
+<p>Ag</p>
+<p>29</p>
+<p>Int Wp</p>
+<p>25</p>
+<p>24</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>23</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>          Resistance (Fire, 3): This character reduces all incoming 
+</code></pre>
+<p>fire damage by 3 and gains a +30 bonus to tests made to
+resist non-damaging fire effects.</p>
+<p>Powers (see the Powers section later in the Chapter)</p>
+<pre><code>           Ancestor Guardian
+</code></pre>
+<p>Other</p>
+<pre><code>       During character creation, Dunmer characters may choose 
+</code></pre>
+<p>to begin with the Destruction skill trained to Novice rank
+for free.</p>
+<p>31</p>
+<p>Imperial
+Imperials (also known as Cyrods) are a race of men descended
+from Nedics who settled in the province of Cyrodiil, most nota-
+bly Nibenese and Colovians. From the time of the Merethic Era
+the Imperials were held in slavery by the Ayleids (also known as
+the Heartland High Elves) until a Nedic woman by the name
+of Alessia organized a successful slave revolt with the help of
+her champion Pelinal Whitestrake and demigod Morihaus.</p>
+<p>Following the revolt, the Cyrods set up three different empires
+under three different factions: Alessia and her followers, the
+Reman Dynasty and the Septim Dynasty. Though the empires
+had internal differences, more stark differences arose between the
+more mercantile Nibenese and the rougher Colovians. Where
+the Nibenese Imperials were skilled at trading the creation of
+wealth, the Colovian Imperials were influenced by their northern
+Nordic neighbors, turning to more physical pursuits such as
+farming and war. In fact, such differences kept the Imperials
+from becoming a unified people until the arrival of Reman
+Cyrodiil in the First Era and Zero Cuhlecain at the end of the
+Second Era.</p>
+<p>Due to the central position of Cyrodiil in Tamriel, Cyrods have
+learned to become shrewd traders and diplomats.</p>
+<p>The more Nordic Imperials, Colovians, are rougher and more
+physical than their Nibenese counterparts. The Nibenese are
+more cosmopolitan than their Colovian bretheren and have
+excelled in trade and other such pursuits.</p>
+<p>Colovian Characteristic Baseline</p>
+<p>End</p>
+<p>27</p>
+<p>Ag</p>
+<p>24</p>
+<p>Int Wp</p>
+<p>24</p>
+<p>25</p>
+<p>Prc</p>
+<p>25</p>
+<p>Nibenese Characteristic Baseline</p>
+<p>End</p>
+<p>23</p>
+<p>Ag</p>
+<p>23</p>
+<p>Int Wp</p>
+<p>27</p>
+<p>23</p>
+<p>Prc</p>
+<p>25</p>
+<p>Str</p>
+<p>26</p>
+<p>Str</p>
+<p>24</p>
+<p>Prs</p>
+<p>25</p>
+<p>Prs</p>
+<p>28</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           (Racial) Star of the West: Imperials increase their Stamina 
+</code></pre>
+<p>Point maximum by 1.</p>
+<pre><code>(Racial) Voice of the Emperor: Imperials speak with a 
+</code></pre>
+<p>small bit of the power and majesty of the Emperors. They
+may choose to use Willpower in place of the base charac-
+teristic for a Persuade, Command, or Deceive skill test.</p>
+<p>Other</p>
+<pre><code>      During character creation, Nibenese characters may pick 
+</code></pre>
+<p>one of either the Commerce, Persuade, or Deceive skills
+to begin trained at Novice rank for free.</p>
+<p>32</p>
+<p>Khajiit
+Khajiit are a race of feline humanoids native to the province of
+Elsweyr in southern Tamriel. In their native tongue of Taagra,
+the word Khajiit means desert walkers, a fitting epithet for
+the nomadic race. Unlike the other races of Tamriel, there are
+a variety of different breeds of Khajiit, ranging from bipedal
+to quadrupedal, the size of tigers to the size of house cats,
+and many in between. Some are even unable to speak, while
+others are hard to distinguish from elves. All of these things and
+more are determined by the moons, cementing their place at
+the center of Khajiit society. Aside from determining a given
+Khajiits form and abilities, the moons also form the basis of
+the Khajiits governmental system.</p>
+<p>Most Khajiit value agility and cunning above brute force, as
+these traits are valuable assets for survival in the harsh deserts and
+tropical jungles the Khajiit call home. Their natural acrobatic
+ability, intelligence and unmatched agility make the Khajiit
+excellent guerrilla fighters, adventurers and thieves.</p>
+<p>Each Khajiit breed counts as its own unique race, but only the
+Suthay-Raht are presented here. Additional furstocks can be
+found later in this chapter.</p>
+<p>Suthay-Raht
+Similar in height and build to the races of men, the Suthay-raht
+are one of the most common breeds of Khajiit. Their coloring
+ranges from dark brown and orange to light yellow, both with
+and without stripes and spots. Suthay-raht are often referred to
+as JaKhajiit (meaning kitten) by those of other races; this
+appellation often strikes the Khajiit as odd, said title being one
+of their names for Mehrunes Dagon.</p>
+<p>Suthay-Raht Characteristic Baseline</p>
+<p>Str</p>
+<p>22</p>
+<p>End</p>
+<p>22</p>
+<p>Ag</p>
+<p>29</p>
+<p>Int Wp</p>
+<p>25</p>
+<p>21</p>
+<p>Prc</p>
+<p>28</p>
+<p>Prs</p>
+<p>24</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           Dark Sight: A character with this trait can see normally 
+</code></pre>
+<p>even in areas with total darkness and never takes penalties
+for acting in areas with dim or no lighting.
+Natural Weapons (Claws; 1d4; Slashing)</p>
+<p>33</p>
+<p>Nord
+The Nords are a race of tall, fair haired men hailing from Skyrim
+but found all along the coasts of Tamriel. Originating from the
+continent of Atmora, the Nords are a fierce and proud people,
+known for their natural aptitude as both warriors and seafar-
+ers. Possessing great physical strength and endurance, Nords
+also enjoy impressive resistance to magical frost and lightning.
+Natural conquerors, the warlike and enterprising spirit of the
+Nords has greatly influenced the history of Tamriel since their
+arrival from Atmora in the late Merethic Era, with their armies
+driving the Snow Elves into ruin and providing the strength
+and impetus to forge the first empires of man.</p>
+<p>The Nords consider themselves the sons and daughters of Kyne,
+formed when the great Northern Winds broke upon the ground
+at the Throat of the World. As such, they consider their breath
+their very essence and some are able to channel their strength
+and power into their voices in magical shouts known as the
+Thuum.</p>
+<p>Honor and heroism are important virtues to a Nord, for they
+believe that an honorable life or a valiant death will grant them
+access to Sovngarde, Shors Hall. This belief makes Nords all but
+fearless in battle, making war with an energy and enthusiasm
+that terrifies their enemies. This leads many down the path of
+the warrior; consequently, most Nords encountered outside
+Skyrim pursue some martial enterprise, be it sellsword, brigand,
+or wandering adventurer.</p>
+<p>Nord Characteristic Baseline</p>
+<p>Str</p>
+<p>30</p>
+<p>End</p>
+<p>28</p>
+<p>Ag</p>
+<p>23</p>
+<p>Int Wp</p>
+<p>21</p>
+<p>24</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>23</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Tough (1): Increase the characters Wound Threshold by 1.
+Resistance (Frost, 2): This character reduces all incoming
+frost damage by 2 and gains a +20 bonus to tests made to
+resist non-damaging frost/cold effects.
+Resistance (Shock, 1): This character reduces all incoming
+shock damage by 1 and gains a +10 bonus to tests made
+to resist non-damaging shock effects.</p>
+<p>Powers (see the Powers section later in the Chapter)</p>
+<pre><code>  War Cry
+</code></pre>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds, replace the
+text for the Nords Tough trait with Character gains a
++10 bonus to Shock Tests.</p>
+<p>34</p>
+<p>Orsimer
+The Orcs, sometimes known as Orsimer, are barbaric tribes
+found in the north of Tamriel, concentrated in High Rocks
+Wrothgarian mountain range and with settlements in High
+Rock, Skyrim, and Hammerfell. Known for their ugly appear-
+ance (including but not limited to green or red skin, prominent
+tusks, and unusual facial bone structure), propensity for violence,
+and skill in metalcraft, the Orcs are commonly held to be the
+least of the races. Although officially accepted as citizens by
+the Cyrodiilic Empire after the events of the Warp in the West,
+Tamriels populace still holds them in low regard, especially in
+the northwest. With the few exceptions of those living in cities
+or camps, most Orcs hail from Orsinium or a Stronghold, where
+they are raised from birth to defend their clan and family.</p>
+<p>Orcs have been bred for centuries to survive harsh conditions
+and constant assault, and as such have a natural proficiency in
+hand-to-hand combat. Their sheer physical strength makes them
+formidable opponents when wearing heavy armor and wielding
+two-handed weapons, especially when using products of their
+own design. Most Orcs learn to work metal from a young age,
+and even those who do not choose the smithing profession have
+better skill to maintain their equipment. Orcs hailing from
+wilderness Strongholds are generally more ferocious than their
+Orsinium cousins, who tend to have more skill as craftsmen.</p>
+<p>Orsimer Characteristic Baseline</p>
+<p>Str</p>
+<p>28</p>
+<p>End</p>
+<p>30</p>
+<p>Ag</p>
+<p>22</p>
+<p>Int Wp</p>
+<p>23</p>
+<p>26</p>
+<p>Prc</p>
+<p>24</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Tough (1): Increase the characters Wound Threshold by 1.
+Resilient (3): Increase the characters HP maximum by 3.
+Resistance (Magic, 1): This character reduces all incoming
+magic damage by 1 and gains a +10 bonus to tests made
+to resist non-damaging magic effects.</p>
+<p>Other</p>
+<pre><code>       During character creation, Orsimer characters may choose 
+</code></pre>
+<p>to begin with the Profession [Smithing] skill trained to
+Novice rank for free.</p>
+<p>Optional Rule Note: Alternate Wounds
+If youre using the rules for Alternate Wounds, replace the
+text for the Orsimers Tough trait with Character gains a
++10 bonus to Shock Tests.</p>
+<p>35</p>
+<p>Redguard
+The Redguards originated from the continent of Yokuda, far to
+Tamriels west. They are renowned sword masters and forged an
+empire on Yokuda to rival Tamriels own. Following a disaster
+which destroyed most of their homeland, the emigrated east to
+Tamriel, where they landed on Hammerfell. In Hammerfell,
+Redguard society split into two main camps: Forebears, those
+who had come in the Warrior Wave to purge Hammerfell of
+inhabitants, and Crowns, the upper-class who had followed.</p>
+<p>The Redguards maintain a strong tradition of sword-mastery
+and honor to this day, though the significant Redguard piracy
+presence suggests interesting definitions of honor. Redguard
+warriors are at their best when using their famed scimitars,
+typically singly with a shield (though there are those who fight
+with two scimitars, known as dervishes). They prefer lighter
+armors and cloth to heavy metal, allowing for freedom and
+rapidity of movement. Redguards make for strong individual
+warriors, though only rarely does one find a Redguard who is
+not part of a society or band. They are known for their strict
+code of battlefield ethics, preferring to fight honorably even
+against creatures they see as below them.</p>
+<p>Redguard Characteristic Baseline</p>
+<p>Str</p>
+<p>27</p>
+<p>End</p>
+<p>28</p>
+<p>Ag</p>
+<p>26</p>
+<p>Int Wp</p>
+<p>22</p>
+<p>23</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>24</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>           Disease Resistance (75%): Characters with this trait have a 
+</code></pre>
+<p>chance to resist diseases. Whenever the character would be
+infected by a common disease, roll a d100. If the roll is less
+than or equal to 75, the character doesnt get the disease.
+Resistance (Poison, 3): This character reduces all incoming
+poison damage by 3 and gains a +30 bonus to tests made
+to resist non-damaging poison effects.</p>
+<p>Powers (see the Powers section later in the Chapter)</p>
+<pre><code>           Adrenaline Rush
+</code></pre>
+<p>Other</p>
+<pre><code>       During character creation, Redguard characters may choose 
+</code></pre>
+<p>to begin with a Combat Style [Field] skill trained to Novice
+rank for free.</p>
+<p>36</p>
+<p>Core raCial variantS</p>
+<p>Some exceptional members of certain races deviate from the
+norm due to extraordinary circumstances, which may be cultural,
+societal, or based on their place of origin.</p>
+<p>Listed below are several Racial Variants that can be incorpo-
+rated into a campaign with the GMs permission. However,
+its essential to carefully consider them, as most of these may
+require the GM to pay extra attention to the cultural changes
+associated with these variants.</p>
+<p>Bosmer: The Unglamoured
+In the days before the Green Pact, the Bosmer constantly shifted
+between numerous bestial forms, unable to control or maintain
+any single shape. With the assistance of Yffre, they eventually
+acquired the ability to adopt a consistent form, evolving into
+the Bosmer known today. Yet, their original wild nature remains,
+concealed but ever-present.</p>
+<p>Most Bosmer show no visible traces of this primal state, their
+true forms obscured by the wild magic of Glamour. This
+Glamour, however, is unpredictable. Some Bosmer lack this
+protective magic, and it remains uncertain whether this absence
+is due to divine retribution from Yffre or merely misfortune.</p>
+<p>These particular Bosmer manifest in various formspart mer,
+part beast, satyrs, redcaps, boggles, and other creatures of folk-
+loreall marked by entirely black eyes. Within Bosmer society,
+they are regarded with suspicion and caution. Theyre seldom
+found beyond Valenwoods borders, but those who venture
+out quickly realize the broader world is as wary of them as
+their own kin.</p>
+<p>Creating an Unglamoured Bosmer follows the basic profile of
+standard Bosmer characters. However, they gain additional
+rules to depict their unique status as shape-shifting outliers:</p>
+<p>(Racial) One With the Wild: Being more in touch with
+the world than their brethren, the Unglamoured have no
+trouble surviving in the wilderness. They receive a +10
+bonus on all Survival tests and gain a +20 on all Survival
+tests relating to the traits chosen on their Wild Shape racial
+trait.</p>
+<p>(Racial) The Beast Within: The Unglamoured are on the
+verge of the Wild Hunt, which can be seen and felt by
+others in their presence. As a result of this uncanny aura,
+Unglamoured receive a -10 penalty on all social skill tests
+and a -20 on all social skill tests involving other Bosmer.</p>
+<p>(Racial) Wild Shape: During character creation, the
+Unglamoured must pick one trait associated with their
+wild shape:</p>
+<p>Amphibious
+Climber (AB x 2)
+Crawler
+Dark Sight
+Natural Toughness (1)
+Natural Weapons (Horns or Claws, 1d6 Slashing or</p>
+<p>Crushing, 1m)</p>
+<p>Natural Weapons (Fangs, 1d4 Slashing, 1m) and</p>
+<p>Strong Jaws.
+Quadruped
+Regeneration (1)
+Swimmer</p>
+<p>However, their altered form is also a curse. They must also
+select one weakness:</p>
+<p>Silver-Scarred (2)
+Sun-Scarred (2)
+Weakness (Fire, 2)
+Weak Bones(1)</p>
+<p>Breton or Nord: The Reachmen
+Before the Nords conquest of The Reach, it was the home of
+a tribal people known as the Reachmen, men and women of
+mixed Breton and Nordic descent. Both Nords and Bretons
+perceive the Reachmen as Mongrels and bloody savages.</p>
+<p>Worshipping what they call the Old Gods, taking part in
+blasphemous rituals, utilizing dark magicks and their general
+xenophobic nature makes them feared amongst those that
+oppose them. Their most ill-famed ritual is the rite of the ven-
+geance, in which a Reachman has their heart replaced by a Briar
+seed, and infused with a spirit of vengeance to deliver terrible
+retribution upon those that stole away their ancestral lands as
+an undead avenger.</p>
+<p>They revere and glorify the Hagravens as their cultural leaders,
+a practice that most of Tamriel considers to be foul, or simply
+plain wrong. For these reasons, the Reachmen are regarded
+by most to be a savage people, full of madmen and Daedra
+worshippers.</p>
+<p>The Reachmen persistently and unrelentingly battle the Nords
+that rule over them, raiding their settlements when they can, and
+pillaging for the sake of causing chaos. Using the land to their
+advantage, and even the very spirits on their side, they battle
+to take back the Reach. Driven by revenge for the conquering
+of their lands, these men utilize whatever means necessary to
+drive out those that claim the Reach to be theirs.</p>
+<p>37</p>
+<p>Making a Reachman follows the base profile of making any
+Breton or Nord character, representing the mixed blood that
+makes up their numbers, but replaces their usual Racial Traits,
+Powers, and any benefits listed as Other with the traits below:</p>
+<p>Making an Ashlander follows the base profile of
+making a Dunmer character, but gain the following
+Traits and bonuses to represent their harsher lifestyle:</p>
+<p>(Racial) Fury of the Old Gods: The witch-men of the
+reach are blessed by the Old Gods with a righteous fury
+towards any and all invaders, and will not helm until every
+last one of them are dead at their feet. Any social interaction
+test except Intimidation with people not sympathetic with
+the Reachmen suffers a -10 penalty as their native language
+and culture is difficult for outsiders to interpret. However,
+the Reachmen gain a +10 bonus to all Combat Style tests
+made while Frenzied or using the All Out Attack action
+as they fight with the fervor of the Old Gods themselves.
+(Racial) Accustomed to the Profane: The men and women
+of the reach are raised in tribal societies, surrounded by
+profane practices and dark rites, which has tempered their
+wills against the petty horrors of the world. They gain a
++30 bonus to resist Panic Tests, and a +20 bonus to resist
+Horror Tests.</p>
+<p>Other Benefits</p>
+<p>During character creation, a Reachman may choose to
+being with the Survival skill, or one of the traditional hedge
+magics (Alteration, Destruction, or Mysticism) trained to
+Novice rank for free.</p>
+<p>Reachmen do not count as their parent race for the purpose
+of Elite Advances (example: Tongue advance for Nords), but
+can still take the Racial Talents of their parent race found
+later in this book.</p>
+<p>Dunmer: Ashlanders
+The Ashlanders of Morrowind isolate themselves from most
+of modern Dunmer society, and have become nomads that
+travel the wastes. They are very distrusting of outsiders, and are
+traditionalist in their way of life.</p>
+<p>After the Tribunal rose to power directly following the Battle
+of Red Mountain, these Dunmer refused to accept the new
+Tribunal, believing that they betrayed and killed Lord Nerevar
+at the Battle of Red Mountain. They follow the traditional
+old ways of ancestor worship as well as worshipping Daedra,
+specifically Boethiah, Azura, and Mephala.</p>
+<p>The Ashlanders were slowly forced into the most
+dangerous and inhospitable parts of Morrowind by the
+Great Houses. This, their nomadic lifestyle, and their
+clan based culture caused them to become more hardy
+and adaptable in the hot wilderness around the slopes
+of Red Mountain.</p>
+<p>(Racial) Life in the Wasteland: Ashlanders are adapted
+to life in the volcanic grasslands and deserts around Red
+Mountain, and as a result gain a +10 bonus on all Survival
+tests made in hot climates, and count their Resistance (Fire)
+trait as being one point higher while in these environments.
+(Racial) Pride and Prejudice: Any social test except
+Intimidation made by or towards an Ashlander suffers
+a -10 penalty unless the other character is familiar with
+Ashlander customs and traditions. Additionally, Ashlander
+characters should keep in mind that most slights are resolved
+in their society by ritualized duels, often to first blood,
+but sometimes to the death if the perceived insult is grave
+enough to warrant it.</p>
+<p>Other Benefits</p>
+<p>During character creation, Ashlanders may choose to
+begin with the Survival skill trained to Novice rank for
+free, instead of Destruction.</p>
+<p>Redguard: Crowns and Forebears
+While Redguard society as a whole consists of a single race with
+no great bodily variation, a cultural divide between the Crowns
+and the Forebears split their people down the middle.</p>
+<p>The people of the Crowns, the old nobility of Yokuda are a more
+aristocratic people, focusing on trade and positive relations,
+while the Forebears, also known as the Warrior Wave or RaGada,
+were the common folk of Yokuda who invaded Hammerfell
+and made it theirs by the sword. In most games, the difference
+will not matter as most people arent affiliated with the politics
+between the two factions, but for the games where the difference
+matters, you can choose one of the following profile changes
+and apply it to the Redguard base profile.</p>
+<p>Crowns</p>
+<p>The character gains +1 Personality, and -2 Endurance.
+The character replace Combat Style with Commerce or</p>
+<p>Persuade as their free starting skill.</p>
+<p>Forebears
+The character gains +1 Willpower, and -2 Personality.
+The character picks one additional weapon for their Combat
+Style at character creation, but it must be a Sword or variant
+of a Sword such as a Sabre or Dagger.</p>
+<p>38</p>
+<p>and total HP are halved.</p>
+<pre><code>       The Alfiq cannot speak normally, and must communicate 
+</code></pre>
+<p>telepathically. Additionally, the Alfiq does not have oppos-
+able thumbs, and will suffer penalties to any tasks requiring
+fine motor skills or grip, such as using a weapon. This is
+left to GM arbitration.</p>
+<p>Cathay
+The Cathay are similar to the Suthay-Raht in appearance and
+bi-pedalism, however possess greater stature and strength, and
+are often described by non-khajiit races as jaguar-men.</p>
+<p>Cathay Characteristic Baseline</p>
+<p>Str</p>
+<p>27</p>
+<p>End</p>
+<p>26</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>20</p>
+<p>21</p>
+<p>Prc</p>
+<p>27</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Cathay can see normally even in areas 
+</code></pre>
+<p>with total darkness, and never takes penalties for acting in
+areas with dim or no lighting.</p>
+<p>Natural Weapons (Claws; 1d6 Slashing)</p>
+<p>Ohmes
+Similar in many ways to the Bosmer, although generally of lesser
+stature. In order to avoid being mistaken as one of the Bosmer
+many Ohmes tattoo their faces to resemble a feline-aspect. The
+Ohmes is the most common form seen outside of the province
+of Elsweyr, taking advantage of other races preference to their
+appearance to serve in positions of ambassadorship and trade.</p>
+<p>Ohmes Characteristic Baseline</p>
+<p>Str</p>
+<p>20</p>
+<p>End</p>
+<p>20</p>
+<p>Ag</p>
+<p>27</p>
+<p>Int Wp</p>
+<p>27</p>
+<p>24</p>
+<p>Prc</p>
+<p>26</p>
+<p>Prs</p>
+<p>27</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Ohmes can see normally even in areas 
+</code></pre>
+<p>with total darkness, and never takes penalties for acting in
+areas with dim or no lighting.</p>
+<p>Natural Weapons (Claws; 1d4 Slashing)</p>
+<p>khajiit furStoCkS</p>
+<p>Khajiit are each subtly bound to the Lunar Lattice, a mysterious
+force entitled the Ja-Khajay in their native tongue. The Lunar
+Lattice determines the form a Khajiit assumes in life, according
+to the phases of Masser and Secunda at the time of their birth;
+while Khajiiti newborns appear incredibly similar to one another
+at birth, their future form becomes clear in a matter of weeks.
+This is due in part to the fact that, although born smaller than
+the children of either man or mer, the Khajiiti mature at a
+significantly faster rate.</p>
+<p>Rules for playing Suthay-Raht characters can be found in the
+Core Races section on page 33. Below are the rules for cre-
+ating Khajiit characters of the major remaining types. Some
+of the redundant variations have been left out, as well as a few
+types that would otherwise be incapable of communicating with
+others or about which we know nothing. Assuming you have the
+permission of your GM, treat these Khajiit just as you would
+any other race and follow the usual steps for character creation.</p>
+<p>Alfiq
+A quadrupedal form of Khajiit, the Alfiq is, in many respects,
+similar to a common housecat. Although diminutive in form,
+the Alfiq retain the keen intelligence of the Khajiiti, having
+the ability to understand the spoken word of others, although
+unable to respond.</p>
+<p>Alfiq Characteristic Baseline</p>
+<p>Str</p>
+<p>10</p>
+<p>End</p>
+<p>15</p>
+<p>Ag</p>
+<p>30</p>
+<p>Int Wp</p>
+<p>28</p>
+<p>27</p>
+<p>Prc</p>
+<p>30</p>
+<p>Prs</p>
+<p>20</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Alfiq can see normally even in areas with 
+</code></pre>
+<p>total darkness, and never takes penalties for acting in areas
+with dim or no lighting.
+Quadruped: The Alfiq moves up to twice their speed when
+they use the Dash action and three times their speed when
+they use the Sprint stamina ability.</p>
+<p>Telepathy (3): The Alfiq can broadcast a complex sen-
+tence each round as a free action to all characters within
+WB*100m.</p>
+<p>Other</p>
+<pre><code>     During character creation, the Alfiq may learn the Catfall 
+</code></pre>
+<p>talent for free.</p>
+<pre><code>       Alfiq can purchase the Thought Caster talent without 
+</code></pre>
+<p>meeting any talent or characteristic prerequisites.</p>
+<pre><code>   Alfiq are Tiny sized characters. Attempts to hit the Alfiq 
+</code></pre>
+<p>suffer a -20 penalty. However, the characters Carry Rating</p>
+<p>39</p>
+<p>Ohmes-Raht
+Similar to the race of men, save for their short, light-colored fur,
+the Ohmes-raht may easily be mistaken as men at a distance.
+Unlike the many other species of Khajiit who walk like cats
+upon the balls of their feet, the Ohmes-raht walk upon their
+heels. They often serve in positions of ambassadorship and trade.</p>
+<p>Ohmes-Raht Characteristic Baseline</p>
+<p>Str</p>
+<p>22</p>
+<p>End</p>
+<p>22</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>26</p>
+<p>21</p>
+<p>Prc</p>
+<p>28</p>
+<p>Prs</p>
+<p>27</p>
+<p>Pahmar
+The Pahmer are similar in appearance and size to tigers. It is
+unknown exactly how they communicate, but most believe it
+is by means of a more primal form of Taagra.</p>
+<p>Pahmar Characteristic Baseline</p>
+<p>Str</p>
+<p>30</p>
+<p>End</p>
+<p>28</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>15</p>
+<p>20</p>
+<p>Prc</p>
+<p>30</p>
+<p>Prs</p>
+<p>15</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Ohmes-Raht can see normally even in 
+</code></pre>
+<p>areas with total darkness, and never takes penalties for
+acting in areas with dim or no lighting.
+Natural Weapons (Claws; 1d4 Slashing)</p>
+<p>Dagi-Raht
+Similar in all respects to the Dagi, while somewhat larger,
+however not overly so as they are able to dwell in higher tree
+branches of the Tenmar forest, like the Dagi. It can be assumed
+that, like their smaller cousins, they are naturally skilled in the
+use of magic.</p>
+<p>Dagi-Raht Characteristic Baseline</p>
+<p>Str</p>
+<p>20</p>
+<p>End</p>
+<p>20</p>
+<p>Ag</p>
+<p>28</p>
+<p>Int Wp</p>
+<p>26</p>
+<p>26</p>
+<p>Prc</p>
+<p>27</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Dagi-Raht can see normally even in areas 
+</code></pre>
+<p>with total darkness, and never takes penalties for acting in
+areas with dim or no lighting.</p>
+<p>Natural Weapons (Claws; 1d4 Slashing)</p>
+<pre><code>         Power Well (20): Increase the Dagi-Rahts MP max by 20. 
+</code></pre>
+<p>This trait can stack.</p>
+<p>Other</p>
+<pre><code>     During character creation, the Dagi-Raht may start with 
+</code></pre>
+<p>the Acrobatics skill trained to Novice, thay can take the
+Catfall talent for free, or both together for 100 XP.</p>
+<pre><code>         Dark Sight: The Pahmar can see normally even in areas 
+</code></pre>
+<p>with total darkness, and never takes penalties for acting in
+areas with dim or no lighting.
+Quadruped: The Pahmar moves up to twice their speed
+when they use the Dash action and three times their speed
+when they use the Sprint stamina ability.
+Natural Weapons (Claws; 1d10 Slashing)
+Natural Weapons (Fangs; 1d8 Splitting): Attacks made
+using this natural weapon do not require a free hand
+Strong Jaws: Automatically start grapple with fangs. Target
+tests against the original Attack test to resolve the grapple.
+Counter-Attacks with fang attacks bypasses AR.</p>
+<p>Other</p>
+<pre><code>     During character creation, the Pahmar may learn the Catfall 
+</code></pre>
+<p>talent for free.</p>
+<pre><code> Looted armor must be modified by a smith before the 
+</code></pre>
+<p>Pahmar can equip it.</p>
+<pre><code>       The Pahmar does not have opposable thumbs, and will 
+</code></pre>
+<p>suffer penalties to any tasks requiring fine motor skills or
+grip, such as using a weapon. This is left to GM arbitration.</p>
+<p>Senche
+The Senche are the size of horses, and often used as steeds by
+smaller breeds. It is unknown exactly how they communicate,
+but most believe it is by means of a more primal form of Taagra.</p>
+<p>Senche Characteristic Baseline</p>
+<p>Str</p>
+<p>30</p>
+<p>End</p>
+<p>28</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>15</p>
+<p>20</p>
+<p>Prc</p>
+<p>30</p>
+<p>Prs</p>
+<p>15</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Senche can see normally even in areas 
+</code></pre>
+<p>with total darkness, and never takes penalties for acting in
+areas with dim or no lighting.
+Quadruped: The Senche moves up to twice their speed
+when they use the Dash action and three times their speed
+when they use the Sprint stamina ability.
+Natural Weapons (Claws; 1d10 Slashing)</p>
+<p>40</p>
+<p>  Natural Weapons (Fangs; 1d8 Splitting): Attacks made
+using this natural weapon do not require a free hand.
+Vicious (SB + 1): The Senche treats their Strength Bonus</p>
+<p>as 1 point higher for resolving damage.</p>
+<p>Strong Jaws: Automatically start grapple with fangs. Target
+tests against the original Attack test to resolve the grapple.
+Counter-Attacks with fang attacks bypasses AR.</p>
+<p>Other</p>
+<pre><code>     During character creation, the Senche may learn the Catfall 
+</code></pre>
+<p>talent for free.</p>
+<pre><code> Looted armor must be modified by a smith before the 
+</code></pre>
+<p>Senche can equip it.</p>
+<pre><code>       The Senche does not have opposable thumbs, and will 
+</code></pre>
+<p>suffer penalties to any tasks requiring fine motor skills or
+grip, such as using a weapon. This is left to GM arbitration.
+Senche are Large sized creatures. Attempts to hit the char-
+acter with ranged attacks gain a +10 bonus.</p>
+<p>Tojay
+Tojay live in the marshes and jungle regions of southern Elsweyr.</p>
+<p>Tojay Characteristic Baseline</p>
+<p>Str</p>
+<p>25</p>
+<p>End</p>
+<p>24</p>
+<p>Ag</p>
+<p>28</p>
+<p>Int Wp</p>
+<p>27</p>
+<p>24</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<pre><code>         Dark Sight: The Tojay can see normally even in areas with 
+</code></pre>
+<p>total darkness, and never takes penalties for acting in areas
+with dim or no lighting.</p>
+<p>Natural Weapons (Fangs; 1d4 Splitting): Attacks made
+using this natural weapon do not require a free hand.
+Disease Resistance (50%): Whenever the Tojay would be
+infected by a common disease, roll a d100. On a roll of 50
+or less, the character resists the disease.</p>
+<p>Resistance (Poison, 2): The Tojay reduces all incoming
+Poison damage by 2 points, and gains a +20 to resist any
+non-damaging Poison effects.</p>
+<p>41</p>
+<p>expanded raCeS</p>
+<p>This section contains a set of rules for additional playable races.
+Some of these can be used in any campaign, while others only
+have a place in certain adventures. When choosing a race from
+this section, always consult your GM first. Depending on
+when and where your campaign is set, your GM may choose
+to prohibit the use of some or all of these races when you
+are creating a character. The relevant section for each race will
+provide some advice in this matter to help you and your GM
+decide if a certain type of character is appropriate.</p>
+<p>The Proto-Races
+Between the Aldmer, Atmorans, Nedes, Chimer, and others,
+there are a variety of races that can be classified as proto-races:
+ancestors of one or more of the modern peoples of Tamriel.
+Much of what we know about these races tends to come from
+myths and legends maintained by their descendants, and thus
+cannot be taken entirely at face value. On the other hand, the
+Elder Scrolls setting is a strange place, and more often than not
+myths have truth to them. Thus we have decided to leave it to
+individual groups to decide which of these interpretations is
+more appropriate to their campaign. Our general recommen-
+dation is to utilize the appropriate modern race as a template
+for their predecessors (Nords for Atmorans, Altmer for Aldmer,
+etc), making tweaks as appropriate. Groups that favor a more
+powerful vision of the ancestral races of Tamriel should feel free
+to tack on points and traits as they see fit, while groups looking
+for a more down to earth game should be able to get by just
+fine with the races found in the Core Rulebook.</p>
+<p>The Ayleids
+The Ayleids were the descendants of the Aldmer that emigrated
+to Cyrodiil (from Summerset Isle). At one point they controlled
+the entirety of what is now the Imperial Province of Cyrodiil,
+and enslaved the indigenous Cyrodilic and Nordic populations.
+These slaves were used in various ways- to build and maintain
+roads and temples and to drain fields. Some Ayleids are even
+said to have tortured slaves for amusement. During the Slave
+Rebellion of 1E 242 the nearby human kingdom of Skyrim
+lent help to their enslaved relatives in the Ayleid Empire, which
+played a part in the Ayleids being overthrown by the Slave
+Queen Alessia and her supporters, and the subsequent shift in
+power from Mer to Men on Tamriel.</p>
+<p>It also appears that Alessias rebellion coincided with a civil
+war within the Ayleid Empire which led to many rebel Ayleid
+lords joining forces with Alessia, and aiding her in her rebel-
+lion. Though the Ayleids would continue to have a presence
+in Cyrodiil for several hundred years more, they were never
+again a major military or political power. This event signaled</p>
+<p>the beginning of the Late Ayleid Period. Their greatest fortress,
+White Gold Tower, was turned into the Imperial Palace by
+Alessia and her descendants, and it remains so to this day. The
+last of the Ayleids who opposed Alessia held out at a village in
+the vicinity of modern day Bravil and it took Alessias forces,
+led by Bravillius Tasus, four attempts to finally defeat them.</p>
+<p>In 1E 393 the Alessian Order sacked the ancient Ayleid temple
+of Malada in their attempts to eradicate all Elven presence in
+Cyrodiil.</p>
+<p>Ayleid culture lingered in the city-states that survived as client
+kingdoms of Alessian Cyrodiil, but most of the Elven population
+was finally driven into exile (largely to Valenwood) by the intol-
+erance of the Alessian Order, though some Ayleids remained in
+Cyrodiil, serving as mentors and tutors for the new human
+nobility. The last remaining kingdom of the Ayleids, Nenalata,
+was last heard of in 1E 482 at the Battle of Glenumbria Moors;
+whether the Kings people made it through the next few centuries
+is unknown, but this was a significant event: the Late Ayleid
+Period was ended, and the Ayleids would never again be seen
+as a military or political power.</p>
+<p>It is possible that some tribes of Ayleids may continue to live
+deep within the forests of Cyrodiil even today. Yet the most
+recent reported sightings are more than 1000 years old. These
+Ayleids, or Wild Elves, are at best a rarity and may not have
+actually survived into the Third Era. The Ayleid Sage Tjurhane
+Fyrre talked and wrote extensively of the state of the Ayleid
+culture in the late First Era and early Second Era. According to
+Fyrre, the Ayleids of this time lived in a tribal society, with each
+tribe being substantially different from the next.</p>
+<p>42</p>
+<p>dotted Tamriel outside Morrowind were mere outposts and
+that there were few significant Dwemer settlements elsewhere
+until 1E 420. The presentation of the Dwemer in fictitious
+but popular novels like the Ancient Tales of the Dwemer has
+also lodged an inaccurate impression of them in the popular
+consciousness, painting them as familiar, comfortable characters
+very similar to humans. In reality, they are better described as
+having been fearsome, unfathomable, and even cruel, though
+also careful, intelligent, and industrious. Their society consisted
+of free-thinking yet reclusive clans devoted to the secrets of
+science, engineering, and the arcane until they mysteriously
+disappeared around 1E 700.</p>
+<p>Dwemer Player Characters
+Below are the rules for creating Dwemer characters. Assuming
+you have the permission of your GM, treat the Dwemer just
+as you would any other race and follow the usual steps for
+character creation.</p>
+<p>Dwemer Characteristic Baseline</p>
+<p>Str</p>
+<p>24</p>
+<p>End</p>
+<p>24</p>
+<p>Ag</p>
+<p>22</p>
+<p>Int Wp</p>
+<p>30</p>
+<p>28</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>21</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Power Well (5)
+Weakness (Frost, 1): The character increases all incoming
+frost damage by 1 after mitigation, and suffers a -10 penalty
+tests made to resist non-damaging frost effects. This trait
+can stack.</p>
+<p>Powers (see the Powers section later in the Chapter)</p>
+<p>The Calling</p>
+<p>Other</p>
+<p>Dwemer characters suffer a -10 penalty to Survival skill</p>
+<p>tests made while above ground.</p>
+<p>During character creation, Dwemer characters may choose
+to begin with the Logic skill trained to Novice rank for free.</p>
+<p>Ayleid Player Characters
+Below are the rules for creating Ayleid characters. Assuming you
+have the permission of your GM, treat the Ayleid just as you
+would any other race and follow the usual steps for character
+creation.</p>
+<p>Ayleid Characteristic Baseline</p>
+<p>Str</p>
+<p>20</p>
+<p>End</p>
+<p>23</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>28</p>
+<p>27</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>26</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Weakness (Magic, 1): The character increases all incoming
+Magic damage by 1 point, and suffers a -10 penalty to all
+tests to resist non-damaging magical effects.</p>
+<p>Power Well (5): The character increases their maximum</p>
+<p>Magicka Points by 5.</p>
+<p>(Racial) Empowered by Starlight: Ayleid characters treat
+their Willpower Bonus as being 2 higher for the purpose of
+spell restraint while under direct starlight. The Ayleid can
+choose to forfeit this bonus as a free action for the rest of
+the night in order to absorb some of the radiating magicka,
+regaining 15 Magicka Points instantly.</p>
+<p>(Racial) Flesh Shaper: When an Ayleid uses any Restoration
+spell that regenerates a targets health, they can choose to
+inflict the specified amount as Magic damage instead. Any
+spells used in this way count as if they had the Attack
+attribute instead of the Instant attribute. Additionally, an
+Ayleid can use the Stabilize spell to Treat wounds.</p>
+<p>Other</p>
+<p>During character creation, Ayleid characters can choose to
+begin with the Restoration or Enchanting skill trained to
+Novice rank for free.</p>
+<p>The Dwemer
+The Dwemer, the people of the deep, are a fabled Lost
+Race of Mer from Dwemereth, which mostly consisted of
+modern-day Morrowind, where they are believed to have been
+the most prolific, though they also had a strong presence in
+Hammerfell, High Rock, and Skyrim. Meric races use the term
+Dwemer, which translates to Deep-Elves or Deep Folk.
+Men commonly refer to them as Dwarves. The early history
+of the Dwemer is still clouded in mystery. There is no known
+story of their dissociation from the Aldmer, which must have
+occurred very early in Tamrielic history, as their society bore few
+correlations with that of the Altmer besides some similar legal
+principles. The Dwemer built elaborate underground cities near
+and beneath mountain ranges, including the Velothi Mountains
+and Red Mountain, and in the mountains of the isle Stros
+MKai.</p>
+<p>Many misconceptions about them have abounded for cen-
+turies: scholars long thought that most Dwemer ruins which</p>
+<p>43</p>
+<p>Falmer
+The Falmer (or Snow Elves) were once a proud people with an
+unusually great aptitude for magic. They had a strong resistance
+to frost, as their skin was coated with a thin layer of blue-white
+ice. They inhabited Skyrim before the Nords returned from
+Atmora, and were responsible for the Night of Tears. They had a
+civilization which rivaled even the Altmer of the Summerset Isles.
+They had their own language, which was written in a complex
+and nearly indecipherable alphabet. They were purported to
+use spears and archery in Combat.</p>
+<p>After the Night of Tears in the late Merethic Era, Ysgramor and
+his Five Hundred Companions launched a campaign to drive
+the elves from Skyrim. Ysgramor and his heirs succeeded, and
+by the second century of the First Era, during the reign of the
+Nordic king Harald, the last of the Falmer were driven from
+Skyrim to the island of Solstheim. The Falmers civilization
+was obliterated at the Battle of the Moesring with the death of
+their leader, the Snow Prince. The remaining snow elves were
+scattered or slain, and were never heard from again.</p>
+<p>Unknown to the Nords, many Falmer sought sanctuary with
+the Dwemer of Skyrim. The Dwemer agreed to protect the
+Falmer, but did not trust them. The Dwemer forced their Falmer
+guests to consume a type of toxic fungus found growing deep<br/>
+underground which rendered them blind. The Falmer became<br/>
+ervants of the Dwemer, and then their slaves. The Dwemer made
+the fungus an essential part of their diet, ensuring that all future
+generations would be as powerless as their current slaves. The
+Falmer were embittered by this betrayal, and rebelled against
+their dwarven masters. They constructed the Great Statue of
+Irkngthand, which contained the Eyes of the Falmer, two
+massive gems embedded in the eye sockets. The Falmer fled deep
+into Blackreach, a gigantic cavern inhabited by the Dwemer.
+Thus began the War of the Crag, a bloody war between the
+Falmer and the Dwemer which took place far below the surface
+of Skyrim. Sai, the god of luck, attempted to help the Falmer,
+likely around this time, but they were very hard to find and
+unfriendly towards him. Mara later condemned the ice elves, and
+considered them gone altogether and forever. In 1E 700, when
+the Dwemer disappeared, the Falmer were left to spread freely
+throughout Blackreach. However, centuries of subterranean
+slavery, combined with their permanent blindness, had left the
+Falmer crippled, and years of fighting the Dwemer had left the
+race bloodthirsty and brutal.</p>
+<p>A small handful of Falmer managed to avoid becoming slaves
+to the Dwemer, instead retreating to hidden shrines such as
+the Chantry of Auri-El. These few remaining Snow Elves (as
+they prefer to call themselves) look upon their twisted kindred
+(which they refer to as the Betrayed) with pity. However, these</p>
+<p>sentiments were not shared by the Falmer, as they attacked their
+untainted cousins with the same ferocity that they displayed
+towards the other surface races.</p>
+<p>Falmer Player Characters
+Below are the rules for creating Falmer characters. Assuming
+you have the permission of your GM, treat the Falmer just
+as you would any other race and follow the usual steps for
+character creation.</p>
+<p>Falmer Characteristic Baseline</p>
+<p>Str</p>
+<p>20</p>
+<p>End</p>
+<p>23</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>28</p>
+<p>27</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>26</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Weakness (Fire, 2): The Falmer increases all incoming
+Fire damage by 2 points, and suffers a -20 to resist any
+non-damaging Fire effects.</p>
+<p>Resistance (Frost, 3): The Falmer reduces all incoming
+Frost damage by 3 points, and gains a +30 to resist any
+non-damaging Frost effects.</p>
+<p>Power Well (10): The Falmer increases their maximum</p>
+<p>Magicka Points by 10.</p>
+<p>(Racial) Chillhearted Fury: Frost damage dealt by the
+Falmer using spells or enchantments is increased by 1.</p>
+<p>44</p>
+<p>The Maormer
+The Maormer, also known as Sea Elves or Tropical Elves, are
+a race of mer that reside on the island of Pyandonea, south of
+the continent of Tamriel. They have blank eyes and colorless,
+chameleon-like skin, which is capable of blending in with the
+environment. It was originally believed that they had lived in the
+Altmer home of Summerset Isle and were exiled, but tapestries
+found in the Crystal Tower of Alinor reveal an enmity going
+back so far as to make that theory impossible.</p>
+<p>Their leader is an immortal wizard named Orgnum. The
+Maormer practice a snake-like magic which they use to tame
+sea-serpents.</p>
+<p>Maormer Player Characters
+Below are the rules for creating Maormer characters. Assuming
+you have the permission of your GM, treat the Maormer just
+as you would any other race and follow the usual steps for
+character creation.</p>
+<p>Maormer Characteristic Baseline</p>
+<p>Str</p>
+<p>23</p>
+<p>End</p>
+<p>20</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>29</p>
+<p>28</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Weakness (Shock, 1): The Maormer increases all incoming
+Shock damage by 1, and suffers a -10 penalty to all tests
+made to resist non-damaging Shock effects.</p>
+<p>Power Well (5): The Maormer increases their maximum</p>
+<p>Magicka Points by 5.</p>
+<p>Swimmer: The Maormers Swim Speed is doubled.
+(Racial) Chameleon Skin: The Maormer receives a +10
+bonus to any Stealth skills made to blend into their envi-
+ronment visually.</p>
+<p>(Racial) Sorcerous Serpent Speech: Maormer can speak to,
+and understand, the speech of serpents, both land and sea.
+How exactly this functions is left to the GMs discretion.</p>
+<p>Other
+During character creation, Maormer characters may choose to
+begin with the Athletics skill trained to Novice for free.</p>
+<p>The Sload
+The Sload are a race of slug-like beastfolk (hence the name, a
+portmanteau of slug and toad) living in the Coral Kingdoms
+of Thras, southwest of Tamriel.</p>
+<p>Sload are innately cautious and careful. In their mythic tra-
+ditions, all heroes spend years planning, considering and
+consulting with wise Sload before taking the correct action
+and achieving their goal. By contrast their villains all act quickly
+or rashly and always fail. The Sload language has no word for
+adventure, and
+the closest equivalent more accurately means tragic disaster.</p>
+<p>Sload apparently do not experience emotions as the Tamrielic
+races do, but are often skilled at acting and may exaggeratedly
+simulate them for the benefit of more emotive beings.</p>
+<p>They will honor laws, loyalties and friendships only as long as
+they calculate it to be in their best interests to do so. They also
+have no compunctions against blasphemy, theft, kidnapping,
+murder, genocide or anything else that may help them reach
+their goals. Sload are highly intelligent and have perfect recall of
+practically anything they have ever seen or heard. They are quite
+skilled at magic, particularly necromancy and teleportation
+magics.</p>
+<p>Sload are apparently not religious in any recognizable sense, but
+will willingly serve Daedra if they benefit from it. Some, in par-
+ticular the famed Second Era necromancer NGasta, also follow
+the King of Worms. It is unknown exactly how Sload reproduce.
+They are believed to be hermaphrodites in their youths, though
+the sexual organs seem to be absorbed by the time they are old
+enough to survive on land. Sload parents seemingly have no
+interest in the fate of the young. Upon reaching adulthood the
+Sload becomes amphibious and has an appearance similar to a
+large, vaguely humanoid slug.</p>
+<p>While young, adults generally lack many of the skills to survive
+on land. As they age, Sload tend to grow in size and corpulence,
+and many older Sload would collapse under their own weight
+if not buoyed up by water or by magical means. There is no
+known limit to either the age or the size of an adult Sload.
+Understandably, this limits their activities on land.</p>
+<p>45</p>
+<p>Sload Player Characters
+Below are the rules for creating Sload characters. Assuming you
+have the permission of your GM, treat the Sload just as you
+would any other race and follow the usual steps for character
+creation.</p>
+<p>Sload Characteristic Baseline</p>
+<p>Str</p>
+<p>23</p>
+<p>End</p>
+<p>20</p>
+<p>Ag</p>
+<p>25</p>
+<p>Int Wp</p>
+<p>29</p>
+<p>28</p>
+<p>Prc</p>
+<p>25</p>
+<p>Prs</p>
+<p>22</p>
+<p>Traits (simplified: full rules can be found in Chapter 4)</p>
+<p>Power Well (10): The Sload increases their maximum</p>
+<p>Magicka Points by 10.</p>
+<p>(Racial) Abominable: Sload receive a -20 penalty on all
+social skill based tests with non-Sload. Additionally, they
+gain a +20 bonus to Persuade tests made to intimidate.</p>
+<p>Other</p>
+<p>During character creation, the Sload may choose to begin
+Necromancy, Mysticism, or Alteration skill trained to
+Novice for free, or have all three trained to Novice for
+100 XP.</p>
+<p>Sload characters are blessed with flawless memory, and never
+need any kind of roll to remember anything they have seen
+or heard, and gain +1 bonus DoS on any successful Lore
+tests they make.</p>
+<p>46</p>
+<p>Generate CharaCteriStiCS</p>
+<p>During this step you will choose your characters favored char-
+acteristics and then roll for your characteristic scores, using
+the characteristic baseline appropriate to your choice of race.</p>
+<p>Choose Favored Characteristics
+Not all characteristics are created equal! Some characters excel
+in certain areas over others, beyond a simple difference in raw
+characteristic score. Favored Characteristics are those char-
+acteristics a character is naturally gifted in; improving those
+characteristics, or skills and abilities associated with them, is
+easier than usual. Each player can choose their characters two
+favored characteristics  (they must be different characteristics).
+before they generate their characteristic scores. Learning and
+ranking skills (including specializations) or talents governed
+by a favored characteristic, or advancing that characteristic,
+costs 75% of the usual XP cost (round down to the nearest
+multiple of 5).</p>
+<p>Rolling Characteristic Scores
+Once you have chosen your two favored characteristics and
+have a characteristic baseline from your race, you can generate
+characteristics:</p>
+<pre><code>           Roll 2d10 seven times, and assign each roll to one of your 
+</code></pre>
+<p>Characteristics (excluding Luck). Add each roll to the
+assigned Characteristic score listed in your Characteristic
+baseline.</p>
+<pre><code>          Roll 2d10, add 30 to the result, and assign the resulting 
+</code></pre>
+<p>two digit value to your Luck score. Luck cannot exceed
+50 and cannot be advanced.</p>
+<pre><code>           If the GM allows it, you may reroll up to three of the sets 
+</code></pre>
+<p>of 2d10 from amongst the pool of rolls (but not the one
+for Luck) after all rolls are completed but before you assign
+the results. The new values are final.</p>
+<p>Optional Rule - Point Buy Characteristics
+Instead of rolling for characteristics, with GM permission
+players can instead choose to distribute 80 points amongst
+their various characteristic scores (not including luck,
+which is rolled using the standard rule). No more than 20
+points may go to one characteristic.</p>
+<p>For convenience, all of the characteristics are reprinted here. For
+more information see Defining a Character on page 14.
+Additionally, from this point onward throughout the process
+a player may choose to permanently reduce their characters
+starting Luck score for certain benefits. These will be explained<br/>
+when they come up.</p>
+<p>Strength (Str / SB) measures a characters physical prowess
+and their ability to employ that prowess and push themselves
+to their physical limits.</p>
+<p>Endurance (End / EB) measures a characters physical health,
+stamina and toughness, and their resistance to damage.</p>
+<p>Agility (Ag / AB) measures a characters physical speed, reflexes,
+and coordination, reflecting their overall ability to move quickly
+and gracefully.</p>
+<p>Intelligence (Int / IB) measures a characters mental prowess,
+problem solving, reasoning, ability to recall information, and
+understanding of the mysteries of magicka.</p>
+<p>Willpower (Wp / WB) measures a characters mental control,
+resilience, and their ability to control and shape magicka.</p>
+<p>Perception (Prc / PcB) measures a characters physical aware-
+ness, as well as the accuracy of their gut instincts and intuition.</p>
+<p>Personality (Prs / PsB) measures a characters natural charisma,
+presence, expressiveness, and social abilities.</p>
+<p>Luck (Lck / LkB) measures a characters good fortune and how
+often events tend to go their way. See Luck in Chapter 1.</p>
+<p>47</p>
+<p>deterMine birthSiGn</p>
+<p>Next you roll for your characters Birthsign, choosing the charge
+of the Warrior, Mage, or Thief and then rolling a d5 on the
+appropriate table. There is a chance during this step that the
+character will receive the Star-Cursed version of a sign instead,
+reflecting the threatening presence of the Serpent sign at the
+time of their birth. Powers granted by Birthsigns can be found
+in the Powers section later in this Chapter.</p>
+<p>Luck
+A player may choose to permanently reduce their
+characters Luck score by 5 in order to choose a Birthsign
+of their choice (10 for the star-cursed version) either
+before or after rolling on the table. Alternatively, if the
+player decides to roll on the table and rolls a non-star-
+cursed sign, they can choose to permanently reduce their
+characters Luck score by 5 to take the star-cursed version.</p>
+<p>Warrior Birthsign Table</p>
+<p>Roll Result</p>
+<p>1 The Warrior</p>
+<p>2 The Lady</p>
+<p>3 The Steed</p>
+<p>4 The Lord</p>
+<p>5</p>
+<p>Reroll, take the Star-Cursed version of the result</p>
+<p>Mage Birthsign Table</p>
+<p>Roll Result</p>
+<p>1 The Mage</p>
+<p>2 The Apprentice</p>
+<p>3 The Atronach</p>
+<p>4 The Ritual</p>
+<p>5</p>
+<p>Reroll, take the Star-Cursed version of the result</p>
+<p>Thief Birthsign Table</p>
+<p>Roll Result</p>
+<p>1 The Thief</p>
+<p>2 The Lover</p>
+<p>3 The Shadow</p>
+<p>4 The Tower</p>
+<p>5</p>
+<p>Reroll, take the Star-Cursed version of the result</p>
+<p>Optional Rule - Player Chosen Birthsigns
+Some groups may not like the random element intro-
+duced by rolling for birthsigns. It is acceptable to simply
+pick birthsigns without any Luck cost if the whole group
+agrees to do so.</p>
+<p>The Warrior
+The Warrior is the first Guardian Constellation and he protects
+his charges during their Seasons. The Warriors own season is Last
+Seed when his Strength is needed for the harvest. His Charges are
+the Lady, the Steed, and the Lord. Those born under the sign of
+the Warrior are skilled with weapons of all kinds, but prone to
+short tempers.</p>
+<pre><code>           Those born under the sign of the Warrior increase their 
+</code></pre>
+<p>SP maximum by 1.</p>
+<pre><code>  Star-Cursed Warrior: As above, but also gain 5 Strength 
+</code></pre>
+<p>and lose 5 Willpower.</p>
+<p>The Lady
+The Lady is one of the Warriors Charges and her Season is
+Heartfire. Those born under the sign of the Lady are kind and
+tolerant.</p>
+<pre><code>           Those born under the sign of the Lady gain 5 Personality.
+  Star-Cursed Lady: As above, but also gain 5 Endurance 
+</code></pre>
+<p>and lose 5 Strength.</p>
+<p>The Steed
+The Steed is one of the Warriors Charges, and her Season is Mid
+Year. Those born under the sign of the Steed are impatient and
+always hurrying from one place to another.</p>
+<pre><code>           Those born under the sign of the Steed increase Speed by 2.
+  Star-Cursed Steed: As above, but also gain 5 Agility and 
+</code></pre>
+<p>lose 5 Willpower or Perception (pick one).</p>
+<p>The Lord
+The Lords Season is First Seed and he oversees all of Tamriel during
+the planting. Those born under the sign of the Lord are stronger
+and healthier than those born under other signs.</p>
+<pre><code>           Those born under the sign of the Lord double their natural 
+</code></pre>
+<p>healing rate.</p>
+<pre><code>           Star-Cursed Lord: As above, but also gain 5 Endurance 
+</code></pre>
+<p>and the Weakness (fire, 2) trait.</p>
+<p>48</p>
+<p>The Stars of Tamriel are divided into thirteen constellations.
+Three of them are the major constellations, known as the
+Guardians. These are the Warrior, the Mage, and the Thief.
+Each of the Guardians protects its three Charges from the
+thirteenth constellation, the Serpent.</p>
+<p>The Firmanent</p>
+<p>The Mage
+The Mage is a Guardian Constellation whose Season is Rains
+Hand when magicka was first used by men. His Charges are the
+Apprentice, the Golem, and the Ritual. Those born under the Mage
+have more magicka and talent for all kinds of spellcasting, but are
+often arrogant and absent-minded.</p>
+<pre><code>           Those born under the sign of the Mage gain the Power 
+</code></pre>
+<p>Well (10) trait.</p>
+<pre><code>           Star-Cursed Mage: Gain Power Well (25) instead, but lose 
+</code></pre>
+<p>5 Perception, Strength, or Personality (pick one).</p>
+<p>another choice if they wish.</p>
+<pre><code>           Star-Cursed Ritual: Instead gain all the powers perma-
+</code></pre>
+<p>nently, but lose 5 luck.</p>
+<p>The Thief
+The Thief is the last Guardian Constellation, and her Season is
+the darkest month of Evening Star. Her Charges are the Lover, the
+Shadow, and the Tower. Those born under the sign of the Thief are
+not typically thieves, though they take risks more often and only
+rarely come to harm. They will run out of luck eventually, however,
+and rarely live as long as those born under other signs.</p>
+<pre><code>           Those born under the sign of the Thief roll an extra lucky 
+</code></pre>
+<p>number that they never lose regardless of their Luck score.
+Star-Cursed Thief: As above, but the character replaces
+their rolled Luck score with 50, gains the Akaviri Danger-
+Sense power, and the Running Out of Luck trait. Characters
+cannot spend Luck to choose this birth-sign. Instead, it is
+available as a choice for any character who naturally rolled
+the Thief sign.</p>
+<p>The Apprentice
+The Apprentices Season is Suns Height. Those born under the sign
+of the apprentice have a special affinity for magick of all kinds, but
+are more vulnerable to magick as well.</p>
+<p>The Lover
+The Lover is one of the Thief s Charges and her season is Suns
+Dawn. Those born under the sign of the Lover are graceful and
+passionate.</p>
+<pre><code>           Those born under the sign of the Apprentice gain the 
+</code></pre>
+<p>Power Well (25) trait and the Weakness (magic, 2) trait.
+Star-Cursed Apprentice:  Gain Power Well (50) and</p>
+<pre><code>           Those born under the sign of the Lover gain 5 Agility.
+           Star-Cursed Lover: As above, but also gain 5 Personality 
+</code></pre>
+<p>and lose 5 Willpower or Strength (choose one).</p>
+<p>Weakness (magic, 3) instead.</p>
+<p>The Atronach
+The Atronach (often called the Golem) is one of the Mages Charges.
+Its season is Suns Dusk. Those born under this sign are natural
+sorcerers with deep reserves of magicka, but they cannot generate
+magicka of their own.</p>
+<pre><code>           Those born under the sign of the Atronach gain the Power 
+</code></pre>
+<p>Well (50) trait, the Spell Absorption (5) trait, and the
+Stunted Magicka trait.</p>
+<pre><code>           Star-Cursed Atronach: As above, but gain Power Well 
+</code></pre>
+<p>(75) instead and lose 5 Agility or Endurance (pick one).</p>
+<p>The Ritual
+The Ritual is one of the Mages Charges and its Season is Morning
+Star. Those born under this sign have a variety of abilities depending
+on the aspects of the moons and the Divines.</p>
+<pre><code>           Those born under the sign of the Ritual may choose to 
+</code></pre>
+<p>gain one of the following powers at the beginning of each
+day: Blessed Touch, Blessed Word, Maras Gift. They have
+this power until their next long rest, when they can make</p>
+<p>The Shadow
+The Shadows Season is Second Seed. The Shadow grants those
+born under her sign the ability to hide in shadows.</p>
+<pre><code>           Those born under the sign of the Shadow gain the 
+</code></pre>
+<p>Moonshadow power.</p>
+<pre><code>           Star-Cursed Shadow: As above, but also gain 5 Perception 
+</code></pre>
+<p>and lose 5 Personality or Strength (pick one).</p>
+<p>The Tower
+The Tower is one of the Thief s Charges and its Season is Frostfall.
+Those born under the sign of the Tower have a knack for finding
+gold and can open locks of all kinds.</p>
+<pre><code>           Those born under the sign of the Tower gain the Treasure 
+</code></pre>
+<p>Seeker power and 5 Perception.</p>
+<pre><code>           Star-Cursed Tower: As above, but also gain 5 Agility and 
+</code></pre>
+<p>lose 5 Willpower or Strength (pick one).</p>
+<p>49</p>
+<p>Spend xp</p>
+<p>At this point it is time to build the bulk of the character. During
+this step you may spend any of your Creation Points on any of
+the advancements or other items listed on the table below and
+apply the changes to your character sheet.</p>
+<p>Campaign Power Level
+Starting XP</p>
+<p>Power Level</p>
+<p>Low</p>
+<p>Medium</p>
+<p>High</p>
+<p>1500+</p>
+<p>3500+</p>
+<p>7500+</p>
+<p>Legendary</p>
+<p>12500+</p>
+<p>Starting XP
+Your characters starting XP is
+dependent on the Campaign
+Power Level: a category chosen
+by the GM that provides a start-
+ing baseline for the power and
+experience of the characters.</p>
+<p>Character Creation XP Costs</p>
+<p>Advance Type</p>
+<p>Cost</p>
+<p>Characteristic Advance (+1 score)</p>
+<p>30 x (Current Bonus) XP*</p>
+<p>Learning a Skill</p>
+<pre><code> Novice Rank (0)
+
+ Apprentice Rank (1)
+
+ Journeyman Rank (2)
+
+ Adept Rank (3)
+
+ Expert Rank (4)
+
+ Master Rank (5)
+</code></pre>
+<p>Varies by Skill Rank**</p>
+<p>100 XP</p>
+<p>200 XP (300 total)</p>
+<p>300 XP (600 total)</p>
+<p>400 XP (1000 total)</p>
+<p>500 XP (1500 total)</p>
+<p>800 XP (2300 total)</p>
+<pre><code> Gaining a Specialization
+
+ Expanding a Combat Style
+(adds one piece of equipment)
+</code></pre>
+<p>100 XP</p>
+<p>25 XP</p>
+<p>Learning a Talent</p>
+<pre><code> Novice Level
+
+ Apprentice Level
+
+ Journeyman Level
+
+ Adept Level
+
+ Expert Level
+
+ Master Level
+</code></pre>
+<p>Learning Magic</p>
+<p>Varies by Talent Level</p>
+<p>100 XP</p>
+<p>200 XP</p>
+<p>300 XP</p>
+<p>400 XP</p>
+<p>500 XP</p>
+<p>800 XP</p>
+<p>Varies by Magic</p>
+<pre><code> Learning Conventional Spell
+      (no tests are required)
+</code></pre>
+<p>20 x (Spell Level) XP or
+standard drakes cost***</p>
+<pre><code> Creating Unconventional Spell
+      (no tests are required)
+</code></pre>
+<p>30 x (Spell Level) XP or
+standard drakes cost***</p>
+<pre><code> Rituals
+</code></pre>
+<p>25 XP w/ GM Permission</p>
+<ul>
+<li>Characters cannot advance Luck.
+** Skill ranks must be purchased in order (see Chapter 3:
+Skills on page 62)
+*** Spells that exceed the characters Spellcasting Level cannot be
+purchased without advancing the associated skill. Additionally,
+GMs might restrict which resource can be used to purchase.</li>
+</ul>
+<p>Character Advancement Costs
+Remember that learning talents, improving skills (including spe-
+cializations) governed by a favored characteristic, or advancing
+that characteristic (increasing its score by 1), costs 75% of the
+usual XP (round down to the nearest multiple of 5).</p>
+<p>Talent Costs and Requirements</p>
+<p>Talent Level</p>
+<p>XP Cost</p>
+<p>Characteristic
+Requirement</p>
+<p>Novice</p>
+<p>Apprentice</p>
+<p>Journeyman</p>
+<p>Adept</p>
+<p>Expert</p>
+<p>Master</p>
+<p>100</p>
+<p>200</p>
+<p>300</p>
+<p>400</p>
+<p>500</p>
+<p>800</p>
+<p>25</p>
+<p>30</p>
+<p>35</p>
+<p>40</p>
+<p>45</p>
+<p>50</p>
+<p>Skill Level Maximum
+Depending on how much XP your character has, they can only
+purchase a certain amount of Ranks in any skill. These are the
+appropriate skill rank maximums that a character can have in
+relation to their total XP:</p>
+<p>Skill Level Maximums to Total XP</p>
+<p>Skill Rank</p>
+<p>Apprentice</p>
+<p>Journeyman</p>
+<p>Adept</p>
+<p>Expert</p>
+<p>Master</p>
+<p>Total XP</p>
+<p>1000</p>
+<p>2500</p>
+<p>4000</p>
+<p>5500</p>
+<p>7000</p>
+<p>50</p>
+<p>finiShinG touCheS</p>
+<p>Youre almost done! All thats left is to calculate your attributes,
+purchase gear, generate lucky numbers, and make any other last
+minute touches. Then youll be ready to go!</p>
+<p>Calculate Attributes
+The player should now calculate all their attributes based on
+the finalized values of their characteristics. Some of these have
+already been determined. The player should calculate the fol-
+lowing attributes and note the values on their character sheet:</p>
+<pre><code>         Health Points (HP): Endurance / 2 (round up)
+         Wound Threshold (WT): EB + SB + WB
+        Speed: SB + [2 x AB]
+        Initiative Rating (IR): AB + IB + PcB
+        Carry Rating (CR): [4 x SB] + [2 x EB]
+         Magicka Points (MP): Intelligence
+        Stamina Points (SP): EB
+</code></pre>
+<p>Luck Points (LP): LB
+Action Points (AP): 3
+Linguistics: IB - 2, to a maximum of 4 (See Languages</p>
+<p>on page 16)</p>
+<pre><code>         Size Category: Standard by default
+</code></pre>
+<p>Generate Lucky Numbers
+Before finishing off the character, it is time to decide which
+numbers are tied to your fate! Each character has a set of Lucky
+and Unlucky numbers that, when rolled as a result of a test, cause
+a critical success or critical failure (respectively). To generate
+your Lucky and Unlucky numbers, follow these steps:</p>
+<pre><code>          A character has a number of Lucky Numbers equal to 
+</code></pre>
+<p>their Luck bonus. Roll 1d100 this many times, rerolling
+any duplicates. These are your Lucky Numbers!</p>
+<pre><code>         A character has a number of Unlucky Numbers equal to 
+</code></pre>
+<p>five minus their Luck bonus. Roll 1d100 this many times,
+rerolling any duplicates (and rerolling any of your Lucky
+Numbers). These are your Unlucky Numbers!</p>
+<p>If a characters Luck bonus changes later, then convert Lucky
+into Unlucky numbers as appropriate.</p>
+<p>Purchase Gear &amp; Equipment
+Every adventurer needs equipment! The budget of drakes that
+your character has available to purchase gear before the start of
+the campaign is left to your GM, but we have provided some
+rough recommendations for their use below:</p>
+<p>Campaign Starting Wealth
+Starting Drakes
+Power Level</p>
+<p>Low</p>
+<p>Medium</p>
+<p>High</p>
+<p>0-1500</p>
+<p>1500-5000</p>
+<p>5000+</p>
+<p>Legendary</p>
+<p>GM discretion</p>
+<p>These numbers can vary drastically depending on your cam-
+paign. Some legendary games will begin in prisons! It is also
+worth noting that you should run your final gear selection by
+your GM for their approval; simply having enough money
+to theoretically buy something does not mean your character
+could reasonably acquire it. The specifics will come down to
+where your campaign is set and the tone and power level your
+GM wants to set.</p>
+<p>51</p>
+<p>Fill Out Your Character Sheet
+Once you have finalized your attributes and purchased your gear,
+you should finish filling out your character sheet, noting any
+aspects that still need to be finished. Do not forget to fill out
+relevant aspects of the character state, including things gained
+from equipment, magic, encumbrance level (taking into account
+everything the character will be on carrying), and so forth.</p>
+<p>Flesh Out Your Character
+Despite how much time we spend on them, the numbers on a
+character sheet arent everything. Much of the fun of role-playing
+is creating a character who feels like a believable part of their
+world, but it can often be difficult to decide where to start. You
+can spend as much or as little time on this before your game as
+you like, but its always good to put at least some thought into
+it. The following are a number of questions to consider when
+building any character:</p>
+<p>Where Are You From?
+This is a critical question, especially in a complex and divided
+world like Nirn. Were you born in your racial homeland? How
+does your character view their birthplace? How were they treated
+there? Would they rather have been born somewhere else? How
+do other people view them in light of where they are from?</p>
+<p>What Is Your Family Like?
+Are you an only child, or do you have brothers and sisters?
+Whats your place in the family? Are you the eldest and the heir
+apparent, or the disowned wild child? Are your parents still
+alive? If not, how did they die?</p>
+<p>What Is Your Social Class?
+Those in the upper classes seem to have all the advantages,
+but often the greatest heroes come from the lowest of places.
+What part of society did your parents come from? Did they
+pull themselves out of poverty? Are they still there? Or is your
+noble family destitute and on the verge of ruin? How has this
+influenced your life and your goals? How do you view it?</p>
+<p>Why Are You Here Now?
+What did you do before you came to be in the place you are
+now (or with the party if thats the case) and why did you stop?
+What did you see in an adventuring life?</p>
+<p>How Religious Are You?
+Tamriel is a place where gods often walk amongst mortals, but
+not all of them are worthy of worship. How devout are you?
+Have you had an important religious experience in your life?
+Or do you believe the gods have abandoned you?</p>
+<p>Who Are Your Best Friends and Worst Enemies?
+Ignoring the possibility that the other PCs fall into these cat-
+egories, who in your life would you call a best friend or worst
+enemy? What happened to make things that way? Where are
+they now? Do you want to see them again?</p>
+<p>What Are Your Prized Possessions?
+Do you have any Items of sentimental value? Something passed
+down by your family, a friend, or a mentor? You should also
+think about important things youve already lost that you would
+do anything to get back.</p>
+<p>Who Are You Loyal To?
+Real loners are rare: Tamriel can be a dangerous place without
+allies. Are there people or organizations that you are loyal to?
+What did they do to earn your loyalty?</p>
+<p>Yes. Youre in Morrowind. I dont know why youre here. Or
+why you were released from prison and shipped here. But your
+authorization comes directly from Emperor Uriel Septim VII
+himself. And I dont need to know any more than that. When
+you leave this office, you are a free man.</p>
+<pre><code>      Sellus Gravius, The Elder Scrolls III: Morrowind
+</code></pre>
+<p>Bonds
+Bonds are short phrases that describe something unique about
+your character personality. They are not necessary something
+that makes you a bad person, but something that can compli-
+cate your characters life. Whether its a vendetta, a personality
+compulsion, a large debt, an inconvenient loyalty, or a forbidden
+love, Bonds should be thematic and resonate with your character
+to bring depth and more importantly, interesting and organic
+plot hooks.</p>
+<p>Example Bonds include:</p>
+<p>Ive experienced great loss which I fill by obtaining material
+goods, whatever the cost.</p>
+<p>At the slightest insult to my honor, I find it difficult to</p>
+<p>temper my anger.
+I have a forbidden lover who I have complicated feelings
+regarding.</p>
+<p>A have taken a vow of pacifism and seek to avoid violence</p>
+<p>whenever I can.
+I owe a large debt to an illegal organization.
+I am wanted for a crime I didnt commit and seek to return
+honor to my name.
+I hold a great grudge against someone who did me wrong
+in the past.
+I am prideful and would do anything to protect my image.</p>
+<p>52</p>
+<p>Gaining Bonds
+During character creation, characters are encouraged
+to take a Bond or two. During the course of the game,
+the GM may prompt you to clear existing Bonds if they
+are resolved, or add new Bonds that arise throughout
+the course of the campaign.</p>
+<p>Example:</p>
+<p>GM: You see the symbol of the Black Heart Cabal on the
+corpse. It is unmistakable. How do you react?</p>
+<p>Erriana: I place my hand on my heart and say Its a
+matter of honour. Ill let no member of the Black Heart
+Cabal live.</p>
+<p>GM: Okay. Mark down a new Bond: Vendetta against
+the Black Heart Cabal.</p>
+<p>Exploiting Bonds
+If your character is in a situation where your Bonds
+will inconvenience, harm, or otherwise make the
+situation worse, someone, including you, can Exploit
+your Bond by describing how its relevant and offering
+a complication. In that case, you get two options:</p>
+<p>Accept the complication and gain +1 Luck Point</p>
+<p>Spend a Luck to avoid the complication</p>
+<p>Example:</p>
+<p>GM: An old Cyrodiilic man shakes your hand and tells
+you that adventurers are rare these days, and is willing
+to help you. The name is Celvus, by the way. Im the
+head of this village, he says in a friendly tone. Roll
+Observe for me.</p>
+<p>Erriana: I pass.</p>
+<p>GM: While shaking his hand, you notice a tattoo. The
+mark of the Black Heart Cabal.</p>
+<p>Erriana: I made swore a vow for vengeance. With my left
+hand behind my back I draw a dagger and attempt to
+gut him.</p>
+<p>GM: You gain a bonus Luck point this session. Roll for
+the attack, +20 for surprise.</p>
+<p>CharaCter traitS</p>
+<p>During character creation, players may take certain traits to add
+flavor to their characters. A character is not required to take
+any traits, but they are recommended. Traits are chosen from a
+preset list. Each trait has an associated Trait Point cost or bonus.
+Character Traits with positive effects (Listed here as Positive
+Traits) incur Trait Point costs, while traits with negative effects
+(Listed here as Negative Traits) provide Trait Point bonuses.</p>
+<p>In Character Creation, player characters start with 1 Trait Point.
+Then, players may purchase up to 5 Character Traits by pur-
+chasing any combination of Negative and Positive Traits. After
+Character Creation is completed, all remaining Trait Points are
+then lost. However, this is not the end-all be-all for Character
+Traits; GMs may determine that, given some series of events or
+some level of character growth, a player character might lose a
+trait and/or gain another.</p>
+<p>Positive Traits
+Characters can spend Trait Points in exchange for gaining one
+or more of the following positive traits.</p>
+<p>Attractive
+2 Trait Points
+The character is attractive. They gain a +10 bonus to any
+Personality test where their beauty plays a major role in the
+outcome.</p>
+<p>Brave
+3 Trait Points
+The character is lionhearted and does not scare easily. They gain
+a +20 bonus on Willpower tests to resist Fear or Intimidation.</p>
+<p>Common Sense
+3 Trait Points
+The character has innately good judgement, allowing them to
+avoid the simple disasters in life. Any time the character is about
+to make an objectively bad decision, the GM should intervene
+to prompt the character to reassess things.</p>
+<p>Direction Sense
+1 Trait Point
+The character has a good sense of direction, and can always find
+north when outdoors. Additionally, the character can reroll one
+failed Navigate test per Long Rest.</p>
+<p>First Impression
+1 Trait Point
+The character makes a good impression and gains a +10 bonus
+on any Personality test when first meeting someone new.</p>
+<p>53</p>
+<p>Good With Animals
+2 Trait Points
+The character has an affinity for animals and gains a +10 bonus
+on any Profession: Animal Handling, Ride, or Survival tests to
+train or calm an animal.</p>
+<p>Pain Tolerant
+3 Trait Points
+The character has a high threshold for pain, and gains a +10 to
+resist Wounds, and well as only suffering a -10 from the shock
+effects of wounds rather than -20.</p>
+<p>Perfect Memory
+3 Trait Points
+The character is are blessed with flawless memory, and never need
+any kind of roll to remember anything they have seen or heard,
+and gain +1 bonus DoS on any successful Lore tests they make.</p>
+<p>Preferred Enemy
+1 Trait Point (Character) / 3 Trait Points (Faction)
+The character holds a grudge for a specific character or faction.
+The character gains a +10 on any tests made that bring direct
+harm to their preferred enemy, including Cast Magic actions,
+melee and ranged attacks, and other insidious means of harm.</p>
+<p>Situational Awareness
+2 Trait Points
+The character is hyper-aware of their surroundings, and can
+ignore any negative modifiers to Perception for being distracted,
+but not for poor lighting or environmental conditions.</p>
+<p>Slippery
+3 Trait Points
+The character is especially flexible and gains a +10 on Acrobatics
+tests involving flexibility, and can perform the Resist Secondary
+Action using Acrobatics.</p>
+<p>Threat Awareness
+3 Trait Points
+The character has a sixth sense for danger. Any time the character
+is Surprised, they can choose to roll Initiative instead, but takes a
+-20 on all non-defensive reactions in the first Round of combat.</p>
+<p>Unremarkable
+2 Trait Points
+The character is exceptionally average looking, which for better
+or worse makes them harder to remember and recognize.
+Whenever this character attempts to blend in with a crowd
+(that being the general public, or dressed similarly to any group
+in which hes trying to pass for a member by looks alone) he
+gains a +10 to all Subterfuge and Stealth tests made to fit in.
+Additionally when appropriate and at the GMs discretion, any</p>
+<p>character or NPC trying to remember or describe the character
+will either have trouble doing so, such as wrongly describing
+them, or simply being unable to remember them entirely (for
+better or worse).</p>
+<p>Negative Traits
+Characters can gain the listed Trait Points in exchange for taking
+on one or more of the following negative traits.</p>
+<p>Addiction (X)
++2 Trait Points
+The character is addicted to some substance, such as alcohol,
+moonsugar, skooma, or even more alien or outlandish drugs
+such as feldew. Should the character not be able to indulge in
+the drug regularly (more accessible drugs require more frequent
+access), they suffer a -10 penalty on all tests, which increases
+in severity by an additional -10 to a maximum of -30 for each
+passing day until they get their fix.</p>
+<p>Aversion (X, Y)
++1 Trait Point per Y
+The character is afraid of or averse to something (X). This can
+be used to represent a phobia, compulsive avoidance, or strong
+dislike of a certain thing. When exposed to their aversion, the
+character suffers a -10 per Y on all tests.</p>
+<p>Bad Reflexes
++2 Trait Points
+The character is generally slow to react. When rolling for
+Initiative, the character rolls twice and takes the lowest.</p>
+<p>Combat Paralysis
++3 Trait Points
+The character has a habit of freezing in dangerous situations,
+and must make a Willpower test any time combat breaks out.
+If they fail, they cannot take any actions or reactions during
+the first Round.</p>
+<p>Dampened Senses (X)
++1 Trait Point
+The character suffers a -10 penalty on Perception tests based
+on the selected sense.</p>
+<p>Disturbing Voice
++1 Trait Point
+The character has an intimidating, disturbing voice. They gain
+a +10 bonus to Persuade tests made to intimidate, but suffers
+a -10 to all other Personality based tests that involve speaking.</p>
+<p>Illiterate
++3 Trait Points
+The character cannot read or write.</p>
+<p>54</p>
+<p>Weak Immune System (X)
++1 Trait Point per X
+The character suffers a -10 * X penalty to Endurance tests made
+to resist contracting diseases when exposed. If the character has
+the Disease Resistance trait, first subtract this value from the
+percentage on that trait. Any overflow is applied to the penalty.
+For example, if a character has Disease Resistance (25%) and
+they take this trait at a 3 X value, then they suffer a -5 penalty
+to their Endurance tests for resisting diseases.</p>
+<p>Incompetent (X, Y)
++1 Trait Point per X
+The character is particularly bad at something. Pick a skill that
+the character possesses, and choose something related to that skill
+the character would be considered incompetent in, just like you
+would choose a specialty. It must be something general enough
+that the character could conceivably be forced to roll at some
+point and must be a skill that the character has trained to at
+least +0, like Swimming for Athletics (the GM is the final arbiter
+of what qualifies as such). Whenever the character is forced to
+make a roll with the chosen skill that would be affected by the
+chosen Incompetence, gain a -10 penalty to said roll per X.</p>
+<p>Low Pain Tolerance
++3 Trait Points
+The character has a low threshold for pain, suffering a -10 penalty
+to resist the Shock Test inflicted by Wounds, as well as against
+any Willpower test to resist the effects of pain. Additionally,
+the passive Wound penalty is increased to -30 instead of -20.</p>
+<p>Naive
++2 Trait Points
+The character lacks experience in certain settings. Whenever
+they see fit to do so, the GM can call for the character to make
+an Intelligence test in order to not misunderstand a certain
+social situation.</p>
+<p>Oblivious
++2 Trait Points
+The character is often oblivious to danger. The character suffers
+a -20 on Perception based tests that would determine if the
+character is surprised by an enemy or not.</p>
+<p>Social Stigma (X)
++1 Trait Points
+The character suffers from a stigma (chosen when the trait is
+gained) in certain social situations. They suffer a -10 penalty to
+socially related tests in these situations. The character may have
+multiple instances of this trait for different stigmas.</p>
+<p>Timid
++3 Trait Points
+The character is timid and scares easily. They suffer a -10 penalty
+on Willpower based tests to resist Panic tests or intimidation,
+and a -20 penalty on Horror tests.</p>
+<p>Ugly
++2 Trait Points
+The character is ugly and suffers a -10 penalty to any Personality
+based tests where their appearance plays a major role in the
+outcome.</p>
+<p>55</p>
+<p>Severe Negative Traits
+These negative traits follow the same rules as above, but the
+effects from picking one of these arent necessarily limited to just
+the gaining of Trait Points, so be sure to read each entry carefully.</p>
+<p>Choosing any of these traits should only be done after careful
+deliberation (from both player and GM), as they can greatly
+affect the tone and amount of work required by the GM by
+being implemented.</p>
+<p>Amnesia
++5 Trait Points
+The character has a gap in their memory, they cannot remem-
+ber anything that happened during that time period. This is
+something that should be worked out with the GM, and should
+come back to haunt the character.</p>
+<p>Blind
++4 Trait Points
+Character has the Blinded condition while they have this trait.
+However, luck favors the suffering fool, granting them a free
+reroll on any one test not related to their lacking sight once
+per session.</p>
+<p>Deaf
++4 Trait Points
+Character has the deafened condition while they have this trait.
+However, luck favors the suffering fool, granting them a free
+reroll on any one test not related to their missing hearing once
+per session.</p>
+<p>Lingering Injury
++4 Trait Points
+The character has an old injury that comes back to bug them
+at the worst times. The GM and the player should work out
+the specifics of the injury, and how it affects the character.
+However, living with a painful injury has made the character
+tough, granting 1 Stamina Point to the character as powering
+through exhaustion and pain is everyday life for the character.</p>
+<p>Star Cursed
++5 Trait Points
+The character was born beneath an unlucky star and is consid-
+ered to be ill-fated. Add 2 unlucky numbers to the character.
+Additionally, things simply tend to go horribly wrong in their
+presence.</p>
+<p>56</p>
+<p>Character Names
+One of the hardest parts of making a new character can be
+coming up with the right name. In this section weve provided
+a list of sample names for the nine major races pulled from a
+variety of the Elder Scrolls games (which is why the number
+of names varies somewhat between races and genders). Some
+players might simply pick one they like, while others may only
+use them for inspiration. We hope theyll be helpful.</p>
+<p>Altmer Names
+Male Names: Aldaril, Anarenen, Andil, Angoril, Armion,
+Aronil, Arrille, Athellor, Carecalmo, Caryarel, Earmil, Eraamion,
+Erundil, Fainertil, Falanaamo, Fanildil, Fiiriel, Gladroon,
+Hecerinde, Hyarnarenquar, Ilmiril, Inganar, Iroroon, Itermerel,
+Kardryn, Landorume, Meanen, Meryaran, Mollimo, Moranarg,
+Mororurg, Mossanon, Nande, Nelacar, Norionil, Olquar,
+Qorwynn, Rimintil, Rumare, Sanyon, Seanwen, Sinyaramen,
+Sorcalin, Tauryon, Telinturco, Tragrim, Tunengore, Tusamircil,
+Tyermaillin, Umbacano, Undil, Uulernil, Volanaro, Yakov,
+Yanniss, Yarnar.</p>
+<p>Female Names: Anirne, Ardarume, Calmaninde, Camandil,
+Celria, Ciralinde, Culumaire, Cumanya, Dhaunayne, Elanande,
+Elante, Eldafire, Elenwen, Erissare, Erranil, Estalenya, Estirdalin,
+Estoril, Faire, Fistelle, Helende, Hession, Iirenoore, Imare, Iniel,
+Irinwe, Lorurmend, Mirkrand, Nalcarya, Siltalaure, Sirilonwe,
+Sondaale, Taarie, Tarerane, Tenyeminwe, Termanwe, Viraninde.</p>
+<p>Argonian Names
+Male Names (1-Word): Asum, Bunish, Busheeus, Chalureel,
+Chiwish, Chulz, Chuna, Haran, Hathei, Heedul, Huleeya,
+Huzei, Inee, Itan, Meer, Milos, Neetinei, Okaw, Peeradeeh,
+Rasha, Reemukeeus, Reesa, Seewul, Skeetul, Tanan, Teegla,
+Tul, Ukawei, Ula, Utadeek, Weeltul, Weer.</p>
+<p>Male Names (Hyphenated): An-Zaw, Bun-Teemeeta, Dan-Ru,
+Effe-Tei, Eleedal-Lei, Gah Julan, Gam-Kur, Geel-Lah, Haj-
+Ei, Han-Tulm, Heem-La, Heir-Zish, Im-Kilaya, Jeelus-Tei,
+Jeer-Maht, JRamDar, Junal-Lei, Keerasa-Tan, Miun-Gei,
+Mush-Mere, Okan-Shei, Oleen-Gei, Olink-Nur, Reeh-Jah,
+Silm-Dar, Tee-Lan, Tim-Jush, Vistha-Kai, Wanan-Dum, Wih-
+Eius, Wud-Neeus, Wuleen-Shei.</p>
+<p>Male Names (Cyrodilic): Also-He-Washes, Basks-In-The-
+Sun, Big Head, Dreaded-Water, Fine-Mouth, Grey-Throat,
+Hides-His-Eyes, Hides-His-Foot, High-Heart, Morning-
+Star-Steals-Away-Clouds,  Nelix  Fly-Breath,  Nine-Toes,
+Only-He-Stands-There, Skinkin-Trees-Shade, Smart-Snake,
+Smokeskin-Killer, Stream-Murk, Swims-In-Swells, Ten-Tongues
+Weerhat, Tongue-Toad, TwiceBitten, Wind-In-His-Hair.</p>
+<p>Female Names (1-Word): Ahaht, Akish, Banalz, Beekatan,
+Eutei, Gilm, Gish, Hul, Kasa, Milah, Nakuma, Neesha, Nuralg,
+Nush, Okur, Onasha, Shatalg, Tasha, Wusha.</p>
+<p>Female Names (Hyphenated): Ah-Meesei, Am-Ra, An-Deesei,
+Chanil-Lee, CheeshMeeus, Deesh-Meeus, El-Lurasha, Ereel-Lei,
+Gih-Ja, Jeed-Ei, Kal-Ma, Keel-Raniur, Meeh-Mei, Meen-Sa,
+Mim-Jeen,  Muz-Ra,  Nam-La,  Olank-Neeus,  On-Wan,
+On-Wazei, Seen-Rei.</p>
+<p>Female Names (Cyrodilic): Breech-Star, Snail-Tail, Tern-
+Feather, Travelling-New-Woman.</p>
+<p>Bosmer Names
+Male Names: Aengoth, Agarond, Allimir, Alveleg, Amring,
+Anglalos, Anruin, Arannir, Arathor, Baradras, Berengeval,
+Bolrin, Bragor, Brallion, Brithroth, Brolmir, Celegorn, Cingor,
+Clendil, Cun, Dangor, Denegor, Dirding, Dondir, Elberoth,
+Elegal, Eloroth, Endring, Engaer, Eradan, Erradan, Erval,
+Faldan, Fargoth, Faulgor, Fillin, Findulain, Foronir, Gaeldol,
+Gaenor, Galmir, Galthragoth, Gazalem, Gerrilgor, Glaum,
+Glonagoth, Godros, Gorchalas, Hingor, Meldor, Menelras,
+Minedhel, Minglos, Monthadan, Morth, Nalion, Nedhelas,
+Nedhelorn, Pegasai, Peragon, Rithrannir, Tarhiel, Thoromlallor,
+Thoronor, Tuundir, Ulwaen, Ungeleb.</p>
+<p>Female Names: Aerin, Aglaril, Anrel, Aradraen, Arangaer,
+Aranwen, Ardhil, Aredhel, Bauril, Baurin, Belwen, Berwen,
+Borwen, Celegil, Cirwedh, Cuunel, Distel, Dondreth, Dothiel,
+Dothruviel, Eindel, Elegnan, Elphiron, Emelin, Eraldil, Estinan,
+Falion, Fara, Filbeneth, Galbedir, Galdiir, Gelduin, Gildan,
+Giningil, Glathel, Hyna, Iingail, Indrel, Irwaen, Kirsty, Liette,
+Lorchel, Mara, Menelin, Milbereth, Nael, Natesse, Nathien,
+Nilioniel, Nona, Penglithil, Radras, Samia, Thaeril.</p>
+<p>Breton Names
+Male Names: Alodie, Andre, Arnand, Astien, Barnand,
+Bereditte, Birard, Ciel, Cirges, Danders, Daric, Debentien,
+Detritus, Dilborn, Elbert, Ernand, Ernard, Faric, Fenas, Ferarilie,
+Francois, Frizkav, Frostien, Gaban, Geon, Geor, Idhdean,
+Inwold, Irbran, Jadier, Jeanciele, Jerian, Jocien, Joncis, Juillen,
+Lanie, Listien, Louis, Manis, Marcel, Mebestien, Merard,
+Merthierry, Myn, Noleon, Ormax, Orrent, Paur, Perien, Phane,
+Relien, Rerlas, Roberto, Ruran, Simine, Socucius, Thetrard,
+Varnis, Verick.</p>
+<p>Female Names: Abelle, Aditte, Ales, Ama, Amarie, Arbene,
+Arielle, Asciene, Aurane, Aurnie, Belene, Bovkinna, Cienne,
+Dabienne, Darene, Derelle, Edre, Edwinna, Emusette, Fasele,
+Fasile, Frelene, Gulitte, Helviane, Heniele, Janand, Jeanne,
+Jeberilie, Joslin, Leles, Lielle, Lirielle, Mabrelle, Malielle, Maline,
+Maranique, Marelle, Marielle, Marthe, Masalinie, Maurrie,</p>
+<p>57</p>
+<p>Melie, Milie, Mitanne, Muriel, Pierlette, Piernette, Relie,
+Rianciene, Ronerelie, Sosia, Surane, Synette, Vienne, Virene.</p>
+<p>SVandra, Svirr, Thengil, Urjorad, Wadarkhu.</p>
+<p>Dunmer Names
+Male Names: Adril, Ambarys, Arvel, Athis, Aval, Belyn, Bradyn,
+Casimir, Daynas, Dravin, Drelas, Drevis, Drovas, Erandur, Evul,
+Falas, Faldrus, Faryl, Feran, Fethis, Galdrus, Garan, Garyn,
+Geldis, Indaryn, Jiub, Lleril, Malthyr, Malur, Maluril, Malyn,
+Meden, Mithorpa, Modyn, Naris, Neloth, Othreloth, Orini,
+Raleth, Ralis, Ravam, Ravyn, Revus, Revyn, Rirns, Romlyn,
+Saden, Sarthis, Savos, Servos, Sevan, Slitter, Sondas, Talvas,
+Talvur, Taron, Teldryn, Tolendos, Tythis, Ulves, Ulyn, Valin,
+Vals, Vanryth, Vendil, Veren, Wyndelius.</p>
+<p>Female Names: Adosi, Alves, Arvena, Boderi, Bralsa, Davela,
+Dervera, Dovesi, Dralora, Drarana, Dredena, Falanu, Gadeneri,
+Glistel, Llathasa, Llensi, Llevana, Malyani, Melisi, Mensa, Mirili,
+Mivryna, Myvryna, Nardhil, Norasa, Noveni, Ralsa, Relmyna,
+Satha, Saveri, Tadrose, Tanasa, Tilse, Tivela, Tolisi, Tolvasa,
+Ulene, Undena, Uravasa, Urnsi.</p>
+<p>Imperial Names
+Male Names: Adonato, Adventus, Aerin, Agrius, Alethius,
+Aquillius,  Aventus,  Bassianus,  Caius,  Calixto,  Cicero,
+Constantius, Corpulus, Crescius, Dexion, Dirge, Ennodius,
+Falx, Florentius, Gaius, Gallus, Gavros, Gian, Leontius, Lucan,
+Mallus, Marcurio, Maro, Metilius, Noster, Orthus, Paratus,
+Pavo, Plautis, Proventus, Quentin, Quintus, Reburrus, Rexus,
+Rogatus, Salvianus, Samuel, Septimus, Sergius, Severio, Silus,
+Sorex, Sulla, Tacitus, Taurinus, Telrav, Terek, Titus, Tyranus,
+Vantus, Varnius, Venarus, Verulus, Xander.</p>
+<p>Female Names: Aia, Ariela, Arnora, Arriana, Astia, Astinia,
+Augusta, Aviera, Avresa, Britta, Bronsila, Buntara, Caelia,
+Caldana, Cargas, Carmana, Casta, Caula, Ciirta, Dumania,
+Dynari, Erina, Etira, Faustina, Gruiand, Herminia, Isa, Ita,
+Janonia, Jantus, Jastia, Jastira, Javolia, Julitta, Lenka, Lucina,
+Lyra, Marana, Mariana, Marlena, Martina, Millona, Narina,
+Naspia, Perennia, Pista, Praxedes, Rena, Renee, Restita, Romana,
+Rona, Rosentia, Rusia, Salonia, Schlera, Selena, Sibylla, Silana,
+Simplicia, Tertia, Una, Viera, Vilena, Vinicia, Ysabel.</p>
+<p>Khajiit Names
+Male Names: Baadargo, DroBarri, Drofarahn, DroQanar,
+DroSakhar, DroShavir, DroTasarr, DroZah, DroZaymar,
+Drozharim, DroZhirr, JDato, JDhannar, JHanir, JJarsha,
+JJazha, JKara, Jobasha, Jodhur, JoRen-Dar, Joshur, JoThriDar,
+JRaksa, JRasha, JSaddha, JZamha, JZhirr, MaDara, MAiq,
+MaJidarr, MaKhar, MaZahn, Mnashi, MShan, QaDar,
+RaKarim, RaKothre, RaMhirr, RaSava, RaTesh, RaVirr,
+RaZahr, RaZhid, RiDarsha, RiDumiwa, RiShajirr, RiVassa,
+RiZaadha, SBakha, Sholani, SRadirr, SRava, SRaverr, SRenji,</p>
+<p>Female Names: Abanji, Adanja, Addhiranirr, Adharanji, Affri,
+Ahdahni, Ahdni, Ahdri, Ahjara, Ahnarra, Ahnassi, Ahndahra,
+Ahnia, Ahnisa, Ahzini, Aina, Ajira, Anjari, Arabhi, Aravi,
+Ashidasha, Bahdahna, Bahdrashi, Baissa, Bhusari, Chirranirr,
+Dahleena, Dahnara, Ekapi, Harassa, Habasi, Idhassi, Inerri,
+Inorra, Kaasha, Khamuzi, Khazura, Khinjarsi, Kiseena, Kishni,
+Kisimba, Kisisa, Nisaba, Rabinna, Shaba, Shivani, Shotherra,
+Shunari, Tsabhi, Tsajadhi, Tsalani, Tsani, Tsiya, Tsrazami,
+Ubaasi, Udarra, Unjara, Vanjirra, Zahraji.</p>
+<p>Nord Names
+Male Names: Agarmir, Agnar, Algot, Arctus, Beirir, Bittneld,
+Bjalfi, Burd, Carsten, Eitar, Erich, Esbern, Fafnir, Fjotreid,
+Geimund, Gromm, Gukimir, Gunder, Gundlar, Hafid, Hamlof,
+Hans, Havilstein, Heinrich, Henrik, Hil, Hjar, Hlofgar, Holger,
+Honmund, Horkvir, Hridi, Hrol, Irroke, Iver, Jayred, Jesper,
+Jofnhild, Jollring, Jorck, Jorundr, Kalthar, Keld, Larthjar,
+Logvaar, Lorenz, Lorkmir, Lynch, Manheim, Mogens, Msirae,
+Nels, Newheim, Niels, Olav, Olfand, Ongar, Orgnolf, Ortis,
+Regner, Reistr, Rolgarel, Roliand, Snar, Sten, Storn, Styrbjorn,
+Tolgan, Torbal, Torolf, Tove, Ulfgar, Valdemar, Vidkun, Vigge,
+Wilhelm, Wrath, Yngvar.</p>
+<p>Female Names: Aeta, Aldi, Anja, Aumsi, Barri, Bergljot, Brasteir,
+Eigma, Eiruki, Ekkhi, Erna, Eydis, Fryfnhild, Fryssa, Greidil,
+Grerid, Haema, Heddvild, Helga, Hidar, Hjotra, Holmgeira,
+Horski, Hreirek, Hroa, Hrordis, Hyring, Igna, Ilfhild, Imsin,
+Ingokning, Jolding, Kar, Kili, Kjolver, Kolfinna, Lisaa, Merta,
+Mette, Olfeigr, Ondi, Rangela, Ringvild, Risi, Rostlogi, Runa,
+Siri, Sottilde, Svenja, Thalestris, Thunmund, Ulfrun, Ursine,
+Val, Vori, Ygfa.</p>
+<p>Orsimer Names
+Male Names: Agronak, Bat, Bazur, Brugo, Bogrum, Brag, Brokil,
+Bugak, Buramog, Burz, Dubok, Dul, Dulfish, Dulphumph,
+Dumag, Gaturn, Ghola, Ghorub, Gogron, Gorgo, Graklak,
+Graman, Grommok, Gul, Hanz, Krognak, Kurdan, Kurz,
+Lum, Lumdum, Luronk, Magra, Magub, Maknok, Mug, Orok,
+Rugdumph, Shagol, Shagrol, Shobob, Shum, Ulmug, Urbul,
+Urul, Ushnar, Uzul.
+Female Names: Agrob, Badbog, Bashuk, Bogdub, Bugdurash,
+Bula, Bulak, Bulfim, Bum, Burub, Burzob, Dura, Durgat, Durz,
+Gashnakh, Ghob, Glasha, Glob, Gluronk, Gonk, Grat, Grazob,
+Gulfim, Kharzug, Lagakh, Lambug, Lazgar, Mogak, Morn,
+Murob, Murzush, Nargol, Orbul, Ragash, Rolfish, Rulfim,
+Shadbak, Shagar, Shagdub, Sharn, Sharog, Shelur, Sloomalah,
+Uloth, Ulumpha, Urzoth, Urzul, Ushug, Yazgash.</p>
+<p>Redguard Names
+Male Names: Ahtar, Alesan, Amren, Ataf, Avidius, Azzada,</p>
+<p>58</p>
+<p>Azzadal, Baral, Brenuin, Endon, Ennis, Falion, Fihada, Firir,
+Haldyn, Isran, Jawanan, Kayd, Kematu, Mani, Maramal,
+Namasur, Nazeem, Nazir, Razelan, Shadr, Talib.</p>
+<p>Female Names: Adara, Ahlam, Anwen, Atmah, Braith, Eriana,
+Faleen, Iman, Jayri, Jonna, Kerah, Luah, Niyya, Ramati, Rayya,
+Rochelle, Saadia, Saffir, Saliah, Salma, Sayma, Seren, Sudi,
+Tonilia, Umana, Yisra, Zaria.</p>
+<p>59</p>
+<p>powerS</p>
+<p>Powers are magic abilities inherent to certain people that cost
+no magicka, but whose use is limited. They are typically granted
+by virtue of a characters race or the sign under which they were
+born. Some provide passive effects, while others are activated
+abilities.</p>
+<p>Adrenaline Rush
+The character may choose to gain 1 SP at any time. If the
+character is fatigued when this power is used then remove a
+level of fatigue instead. This SP persists only for that encounter,
+and this power may only be used once until after the characters
+next long rest.</p>
+<p>Akaviri Danger-Sense
+The character may make a Luck test in order to avoid surprise.</p>
+<p>Ancestor Guardian
+Each Dunmer is capable of invoking a guardian spirit of one
+of their ancestors and can, through the use of the Cast Magic
+action, bring that spirit into the Mundus to aid them. The spirit
+counts as a ghost (see the Inhabitants of Tamriel supplement)
+which, if killed, is sent back to whence it came. Otherwise, the
+spirit persists until 30 minutes pass or until the end of a Combat
+Encounter that it participates in, whichever comes first. This
+power may only be used once until after the characters next
+long rest.</p>
+<p>The GM should remember for roleplaying purposes that spirits
+are capable of communicating with mortals, and that Dunmer
+are likely to know the name of their own ancestral spirit. The
+GM should also feel free to customize the profile of the spirit
+beyond that of a generic ghost.</p>
+<p>Blessed Touch
+This character can speak the word of the divines for an hour
+in order to remove a single wound and all of its effects (not
+including lost limbs) from another character. This also restores
+an amount of HP equal to the amount of damage dealt to cause
+the wound. This character or the target character may choose
+to burn 2d6 Luck to allow this power to also restore lost limbs.
+The target character must remain still for the entire duration
+while the character performs the ritual. This power can only be
+used once until after the characters next long rest.</p>
+<p>flee the circle and no characters with those traits may willingly
+enter it unless they can pass a -40 Willpower test (which may
+only be attempted once per round).
+The circle follows the character, but it only remains as long
+as they continue to speak the words and take the Cast Magic
+action each turn. Blessed Word can be sustained for at most 1
+minute (10 rounds). This power can only be used once until
+after the characters next long rest.</p>
+<p>The Calling
+The Dwemer have developed the capability to form connections
+with the minds of others, allowing silent and instant com-
+munication across great distances. A Dwemer may do this at
+any time, though they may not attempt to contact someone
+they have not met. Forming a mental connection requires the
+character to pass a Willpower test or gain a level of fatigue. Once
+a connection is formed the two minds may communicate as
+they see fit. Every minute of communication beyond the first
+imposes another Willpower test, where failure incurs a level
+of fatigue. Alternatively, they may form a connection with a
+number of others equal to their Willpower bonus, but doing so
+causes them to automatically fail the Willpower tests imposed
+by normal communication.</p>
+<p>Maras Gift
+This character can speak the word of the divines for an hour
+in order to remove a single wound and all of its effects (not
+including lost limbs) from themselves. This also restores an
+amount of HP equal to the amount of damage dealt to cause
+the wound. The character may choose to burn 2d6 Luck in
+order to allow this power to also restore lost limbs. The character
+must remain still for the entire duration while they perform
+the ritual. This power can only be used once until after the
+characters next long rest.</p>
+<p>Moonshadow
+The character possesses a simple form of innate shadow magic.
+This power may be activated once a day with the use of the Cast
+Magic action. The character becomes Invisible for 18 seconds
+(3 rounds). The character may spend a Luck point, or burn
+one Luck, to extend this duration by one round (this may be
+done as many times as the character desires). This invisibility is
+broken if the character makes an attack, after which it reforms
+at the beginning of the next round as long as there is 1 round
+of duration left. This power may only be used once until after
+the characters next long rest.</p>
+<p>Blessed Word
+The character may begin speaking the word of the divines
+through the use of the Cast Magic action. This has the effect
+of creating a circle with a radius equal to their Willpower bonus
+in meters. Characters with the Undead or Undying traits must</p>
+<p>Treasure Seeker
+The character has a knack for finding treasure and overcoming
+the obstacles that protect it. At any time the character can choose
+to reroll a failed Subterfuge test made to pick a lock or disarm
+a trap, but only once for a given test. This power may only be</p>
+<p>60</p>
+<p>used once until after the characters next long rest.</p>
+<p>War Cry
+Nords are able to call on a very simple form of the Thuum and
+harness it to frighten their enemies in battle. As an action, they
+can issue a mighty war cry that forces all enemies who hear it
+to make a Panic (+30) test. If a character passes this test, they
+are immune to the effects of this power for the remainder of
+the encounter. This power may only be used once until after
+the characters next long rest.</p>
+<p>61</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>
