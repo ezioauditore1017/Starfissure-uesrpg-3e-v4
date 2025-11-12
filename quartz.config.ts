@@ -12,12 +12,16 @@ export default {
   },
 
   build: {
-    contentDir: path.resolve("C:/Users/aceti/Obsidian Vaults/TTRPGs/Rules Systems/UESRPG"),
-    outputDir: path.resolve("./public"),
-    recursive: true,
-    emitAll: true,
-    indexFile: "index.md"
-  },
+  contentDir: path.resolve("C:/Users/aceti/Obsidian Vaults/TTRPGs/Rules Systems/UESRPG"),
+  outputDir: path.resolve("./public"),
+  recursive: true,
+  emitAll: true,
+  indexFile: "index.md",
+
+  // Force all nested directories to be recognized
+  includeFolders: true,
+},
+
 
   theme: {
     cdnCaching: false,           // prevents "Cannot read cdnCaching" crash
